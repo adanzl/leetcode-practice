@@ -1,12 +1,15 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 import java.util.Arrays;
 
 public class Q283 {
-    @Test
+
+    public static void main(String[] args) {
+        new Q283().TestOJ();
+    }
+
     public void TestOJ() {
         int[] nums = LCUtil.stringToIntegerArray("[0,1,0,3,12]");
         moveZeroes(nums);

@@ -2,10 +2,13 @@ package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
 import com.leo.utils.TreeNode;
-import org.junit.Test;
 
 public class Q124 {
-    @Test
+
+    public static void main(String[] args) {
+        new Q124().TestOJ();
+    }
+
     public void TestOJ() {
         System.out.println(maxPathSum(LCUtil.stringToTreeNode("[9,6,-3,null,null,-6,2,null,null,2,null,-6,-6,-6]"))); // 16
         System.out.println(maxPathSum(LCUtil.stringToTreeNode("[2,-1]"))); // 2

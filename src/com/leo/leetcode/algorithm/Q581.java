@@ -1,10 +1,13 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 public class Q581 {
-    @Test
+
+    public static void main(String[] args) {
+        new Q581().TestOJ();
+    }
+
     public void TestOJ() {
         System.out.println(findUnsortedSubarray(LCUtil.stringToIntegerArray("[1,2,3,4,5]"))); // 0
         System.out.println(findUnsortedSubarray(LCUtil.stringToIntegerArray("[2,1,1,1,1]"))); // 5

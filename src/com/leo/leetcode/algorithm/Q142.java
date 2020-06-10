@@ -2,10 +2,13 @@ package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
 import com.leo.utils.ListNode;
-import org.junit.Test;
 
 public class Q142 {
-    @Test
+
+    public static void main(String[] args) {
+        new Q142().TestOJ();
+    }
+
     public void TestOJ() {
         ListNode p;
         p = LCUtil.stringToListNode("[3,2,0,-4]");

@@ -2,10 +2,13 @@ package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
 import com.leo.utils.TreeNode;
-import org.junit.Test;
 
 public class Q226 {
-    @Test
+
+    public static void main(String[] args) {
+        new Q226().TestOJ();
+    }
+
     public void TestOJ() {
         TreeNode head = LCUtil.stringToTreeNode("[4,2,7,1,3,6,9]"); // [4,7,2,9,6,3,1]
         invertTree(head);
