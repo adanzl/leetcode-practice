@@ -1,14 +1,12 @@
 package com.leo.interview;
 
-import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
 public class QRandom {
-    @Test
-    public void TestFun() {
+    public static void main(String[] args) {
+
         int count = 1_000_000;
         Runtime rt = Runtime.getRuntime();
         rt.gc();

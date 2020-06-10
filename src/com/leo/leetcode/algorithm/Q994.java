@@ -1,7 +1,6 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 /**
  * 在给定的网格中，每个单元格可以有以下三个值之一：
@@ -17,7 +16,10 @@ import org.junit.Test;
  * 链接：https://leetcode-cn.com/problems/rotting-oranges
  */
 public class Q994 {
-    @Test
+    public static void main(String[] args) {
+        new Q994().TestOJ();
+    }
+
     public void TestOJ() {
         System.out.println(orangesRotting(LCUtil.stringToInt2dArray("[[2,1,1],[1,1,0],[0,1,1]]"))); // 4
     }

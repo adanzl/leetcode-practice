@@ -1,14 +1,15 @@
 package com.leo.interview;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 import java.util.Arrays;
 
 public class QSort {
 
+    public static void main(String[] args) {
+        new QSort().TestOJ();
+    }
 
-    @Test
     public void TestOJ() {
         System.out.println(Arrays.toString(qSort(LCUtil.stringToIntegerArray("[4,3,12,1,5,5,2,6]")))); // [1, 2, 3, 4, 5, 5, 6, 12]
     }

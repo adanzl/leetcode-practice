@@ -1,12 +1,15 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 import java.util.Arrays;
 
 public class Q739 {
-    @Test
+
+    public static void main(String[] args) {
+        new Q739().TestOJ();
+    }
+
     public void TestOJ() {
         // [8,1,5,4,3,2,1,1,0,0]
         System.out.println(Arrays.toString(dailyTemperatures(LCUtil.stringToIntegerArray("[89,62,70,58,47,47,46,76,100,70]"))));
@@ -22,7 +25,7 @@ public class Q739 {
             flag[v] = i;
             for (int j = v + 1; j < 71; j++) {
                 if (flag[j] != -1) {
-                    out[i] = out[i] == 0 ? flag[j] - i: Math.min(out[i], flag[j] - i);
+                    out[i] = out[i] == 0 ? flag[j] - i : Math.min(out[i], flag[j] - i);
                 }
             }
 

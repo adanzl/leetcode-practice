@@ -1,12 +1,15 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 import java.util.Arrays;
 
 public class Q322 {
-    @Test
+
+    public static void main(String[] args) {
+        new Q322().TestOJ();
+    }
+
     public void TestOJ() {
         System.out.println(coinChange(LCUtil.stringToIntegerArray("[1, 2, 5]"), 100)); // 20
         System.out.println(coinChange(LCUtil.stringToIntegerArray("[1, 2, 5]"), 11)); // 3
@@ -49,8 +52,8 @@ public class Q322 {
         if (m[amount - 1] != -2) return m[amount - 1];
         int out = Integer.MAX_VALUE;
         boolean found = false;
-        for (int i = 0; i < coins.length; i++) {
-            int ret = dfs(coins, amount - coins[i], m) + 1;
+        for (int coin : coins) {
+            int ret = dfs(coins, amount - coin, m) + 1;
             if (ret > 0 && ret < out) {
                 out = ret;
                 found = true;

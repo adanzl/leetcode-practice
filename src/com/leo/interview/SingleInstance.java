@@ -4,6 +4,8 @@ public class SingleInstance {
 
     static private volatile SingleInstance _instance;
 
+    private final int value = 0;
+
     private SingleInstance() {
     }
 
@@ -19,6 +21,6 @@ public class SingleInstance {
     }
 
     public static void main(String[] args) {
-        System.out.println(SingleInstance.getInstance());
+        System.out.println(SingleInstance.getInstance().value);
     }
 }

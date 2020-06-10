@@ -22,10 +22,6 @@ public class Q34 {
             return l;
         }
         int r = s(nums, target, i + 1, end);
-        if (r != -1) {
-            return r;
-        }
-
-        return -1;
+        return r;
     }
 }

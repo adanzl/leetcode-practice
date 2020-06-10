@@ -2,10 +2,12 @@ package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
 import com.leo.utils.TreeNode;
-import org.junit.Test;
 
 public class Q437 {
-    @Test
+    public static void main(String[] args) {
+        new Q437().TestOJ();
+    }
+
     public void TestOJ() {
         System.out.println(pathSum(LCUtil.stringToTreeNode("[10,5,-3,3,2,null,11,3,-2,null,1]"), 8)); // 3
     }

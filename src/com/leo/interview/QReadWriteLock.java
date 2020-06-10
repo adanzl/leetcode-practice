@@ -1,12 +1,13 @@
 package com.leo.interview;
 
-import org.junit.Test;
-
 import java.util.concurrent.CountDownLatch;
 
 public class QReadWriteLock {
 
-    @Test
+    public static void main(String[] args) throws InterruptedException {
+        new QReadWriteLock().TestOJ();
+    }
+
     public void TestOJ() throws InterruptedException {
         QReadWriteLock rwLock = new QReadWriteLock();
         CountDownLatch cd = new CountDownLatch(4);
