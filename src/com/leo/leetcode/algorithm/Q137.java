@@ -1,12 +1,10 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 import java.util.Arrays;
 
 public class Q137 {
-    @Test
     public void TestOJ() {
         System.out.println(singleNumber(LCUtil.stringToIntegerArray("[-2,-2,1,1,-3,1,-3,-3,-4,-2]"))); // -4
         System.out.println(singleNumber(LCUtil.stringToIntegerArray("[2,2,3,2]"))); // 3

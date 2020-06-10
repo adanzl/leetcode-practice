@@ -1,11 +1,8 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 import java.util.Stack;
 
 public class Q150 {
-    @Test
     public void TestOJ() {
         System.out.println(evalRPN(new String[]{"2", "1", "+", "3", "*"})); // 9
         System.out.println(evalRPN(new String[]{"4", "13", "5", "/", "+"})); // 6

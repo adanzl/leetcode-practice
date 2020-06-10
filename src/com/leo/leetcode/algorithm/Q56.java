@@ -1,12 +1,10 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 import java.util.Arrays;
 
 public class Q56 {
-    @Test
     public void TestOJ() {
         System.out.println(LCUtil.int2dArrayToString(merge(new int[][]{{1, 3}, {2, 6}, {8, 10}, {15, 18}}))); // [[1,6],[8,10],[15,18]]
         System.out.println(LCUtil.int2dArrayToString(merge(new int[][]{{1, 4}, {5, 6}}))); // [[1,4],[5,6]]

@@ -2,14 +2,12 @@ package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
 import com.leo.utils.TreeNode;
-import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
 public class Q144 {
-    @Test
     public void TestOJ() {
         System.out.println(preOrderTraversal(LCUtil.stringToTreeNode("[1,null,2,3]"))); // [1,2,3]
     }

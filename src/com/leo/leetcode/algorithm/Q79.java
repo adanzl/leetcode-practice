@@ -1,11 +1,8 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 public class Q79 {
-    @Test
     public void TestOJ() {
-        char board[][] = new char[][]{{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}};
+        char[][] board = new char[][]{{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}};
         System.out.println(exist(board, "ABCCED")); // t
         System.out.println(exist(board, "SEE")); // t
         System.out.println(exist(board, "ABCB")); // f

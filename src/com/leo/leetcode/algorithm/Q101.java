@@ -2,10 +2,8 @@ package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
 import com.leo.utils.TreeNode;
-import org.junit.Test;
 
 public class Q101 {
-    @Test
     public void TestOJ() {
         System.out.println(isSymmetric(LCUtil.stringToTreeNode("[1,2,2,3,4,4,3]"))); // t
         System.out.println(isSymmetric(LCUtil.stringToTreeNode("[1,2,2,null,3,null,3]"))); // f

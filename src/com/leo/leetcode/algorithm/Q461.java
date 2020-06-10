@@ -1,9 +1,6 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 public class Q461 {
-    @Test
     public void TestOJ() {
         System.out.println(hammingDistance(93, 73)); // 2
         System.out.println(hammingDistance(1, 4)); // 2

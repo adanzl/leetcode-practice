@@ -1,12 +1,10 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 import java.util.Arrays;
 
 public class Q238 {
-    @Test
     public void TestOJ() {
         System.out.println(Arrays.toString(productExceptSelf(LCUtil.stringToIntegerArray("[1,2,3,4,5]")))); // [120, 60, 40, 30, 24]
         System.out.println(Arrays.toString(productExceptSelf(LCUtil.stringToIntegerArray("[1,2]")))); // [2,1]

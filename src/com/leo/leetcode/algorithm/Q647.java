@@ -1,9 +1,6 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 public class Q647 {
-    @Test
     public void TestOJ() {
         System.out.println(countSubstrings("aba")); // 4
         System.out.println(countSubstrings("")); // 0

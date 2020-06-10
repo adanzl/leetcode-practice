@@ -1,7 +1,6 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -9,7 +8,6 @@ import java.util.Map;
 import java.util.Set;
 
 public class Q128 {
-    @Test
     public void TestOJ() {
         System.out.println(longestConsecutive(LCUtil.stringToIntegerArray("[1,3,5,2,4]"))); // 5
         System.out.println(longestConsecutive(LCUtil.stringToIntegerArray("[1,2,0,1]"))); // 3

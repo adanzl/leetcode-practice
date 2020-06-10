@@ -1,7 +1,5 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 /**
  * 给定一个字符串，逐个翻转字符串中的每个单词。
  * 说明：
@@ -15,7 +13,6 @@ import org.junit.Test;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Q151 {
-    @Test
     public void TestOJ() {
         System.out.println(reverseWords("  hello world!  ")); // "world! hello"
         System.out.println(reverseWords("the sky is blue")); // "blue is sky the"

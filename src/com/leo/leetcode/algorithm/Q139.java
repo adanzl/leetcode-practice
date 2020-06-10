@@ -1,13 +1,11 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class Q139 {
-    @Test
     public void TestOJ() {
         System.out.println(wordBreak("leetcode", LCUtil.stringToStringList("[\"leet\",\"code\"]"))); // t
         System.out.println(wordBreak("applepenapple", LCUtil.stringToStringList("[\"apple\",\"pen\"]"))); // t

@@ -1,12 +1,9 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Q78 {
-    @Test
     public void TestOJ() {
         System.out.println(subsets(new int[]{1, 2, 3}));
     }

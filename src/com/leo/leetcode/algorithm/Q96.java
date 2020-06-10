@@ -1,9 +1,6 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 public class Q96 {
-    @Test
     public void TestOJ() {
         System.out.println(numTrees(3)); // 5
         System.out.println(numTrees(0)); // 1

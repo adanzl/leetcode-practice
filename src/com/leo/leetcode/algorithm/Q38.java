@@ -1,9 +1,6 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 public class Q38 {
-    @Test
     public void TestOJ() {
         System.out.println(countAndSay(4));
 

@@ -1,10 +1,8 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 public class Q416 {
-    @Test
     public void TestOJ() {
         System.out.println(canPartition(LCUtil.stringToIntegerArray("[1, 2, 5]"))); // f
         System.out.println(canPartition(LCUtil.stringToIntegerArray("[3, 3, 3, 4, 5]"))); // t

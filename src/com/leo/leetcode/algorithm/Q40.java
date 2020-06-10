@@ -1,14 +1,12 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Q40 {
-    @Test
     public void TestOJ() {
         System.out.println(combinationSum2(LCUtil.stringToIntegerArray("[10,1,2,7,6,1,5]"), 8)); // [[1,1,6],[1,2,5],[1,7],[2,6]]
     }

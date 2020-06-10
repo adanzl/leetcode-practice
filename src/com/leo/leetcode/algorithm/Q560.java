@@ -2,10 +2,7 @@ package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
 
-import org.junit.Test;
-
 public class Q560 {
-    @Test
     public void TestOJ() {
         System.out.println(subArraySum(LCUtil.stringToIntegerArray("[-1,-1,1]"), 0)); // 1
         System.out.println(subArraySum(LCUtil.stringToIntegerArray("[1,2,3]"), 3)); // 2

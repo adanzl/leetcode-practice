@@ -2,13 +2,11 @@ package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
 import com.leo.utils.ListNode;
-import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Q143 {
-    @Test
     public void TestOJ() {
         ListNode l = LCUtil.stringToListNode("[1,2,3,4]");
         reorderList(l);

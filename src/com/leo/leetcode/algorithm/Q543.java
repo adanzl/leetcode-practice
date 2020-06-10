@@ -2,10 +2,8 @@ package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
 import com.leo.utils.TreeNode;
-import org.junit.Test;
 
 public class Q543 {
-    @Test
     public void TestOJ() {
         System.out.println(diameterOfBinaryTree(LCUtil.stringToTreeNode("[1,2,3,4,5]"))); // 3
     }

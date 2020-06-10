@@ -2,10 +2,8 @@ package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
 import com.leo.utils.TreeNode;
-import org.junit.Test;
 
 public class Q114 {
-    @Test
     public void TestOJ() {
 //        TreeNode p = LCUtil.stringToTreeNode("[1,2,5,3,4,null,6]");
         TreeNode p = LCUtil.stringToTreeNode("[1]");

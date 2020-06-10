@@ -1,11 +1,15 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
+import com.leo.utils.LCUtil;
 
 public class Q27 {
+    public static void main(String[] args) {
+        new Q27().TestOJ();
+    }
 
-    @Test
     public void TestOJ() {
+        System.out.println(removeElement(LCUtil.stringToIntegerArray("[3,2,2,3]"), 3)); // 2
+        System.out.println(removeElement(LCUtil.stringToIntegerArray("[0,1,2,2,3,0,4,2]"), 2)); // 5
     }
 
     public int removeElement(int[] nums, int val) {

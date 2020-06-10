@@ -2,14 +2,12 @@ package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
 import com.leo.utils.ListNode;
-import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Q148 {
-    @Test
     public void TestOJ() {
         System.out.println(sortList1(LCUtil.stringToListNode("[4,2,1,3]"))); //
         System.out.println(sortList1(LCUtil.stringToListNode("[-1,5,3,4,0]"))); //

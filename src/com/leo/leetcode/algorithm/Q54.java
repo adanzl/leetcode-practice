@@ -1,14 +1,12 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Q54 {
 
-    @Test
     public void TestOJ() {
         System.out.println(spiralOrder(LCUtil.stringToInt2dArray("[[1,2,3],[4,5,6],[7,8,9]]"))); // [1,2,3,6,9,8,7,4,5]
     }

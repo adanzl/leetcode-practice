@@ -2,10 +2,7 @@ package com.leo.leetcode.algorithm;
 
 import java.util.Arrays;
 
-import org.junit.Test;
-
 public class Q85 {
-    @Test
     public void TestOJ() {
         System.out.println(maximalRectangle(new char[][] { { '1', '0', '1', '0', '0' }, { '1', '0', '1', '1', '1' },
                 { '1', '1', '1', '1', '1' }, { '1', '0', '0', '1', '0' } })); // 6

@@ -1,9 +1,6 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 public class Q5 {
-    @Test
     public void TestOJ() {
         System.out.println(longestPalindrome("babad")); // bab
         System.out.println(longestPalindrome("cbbd")); // bb

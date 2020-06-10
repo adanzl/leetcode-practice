@@ -1,9 +1,6 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 public class Q70 {
-    @Test
     public void TestOJ() {
         System.out.println(climbStairs(2)); // 2
         System.out.println(climbStairs(3)); // 3

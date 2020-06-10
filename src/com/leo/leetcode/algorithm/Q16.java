@@ -1,12 +1,10 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 import java.util.Arrays;
 
 public class Q16 {
-    @Test
     public void TestOJ() {
         System.out.println(threeSumClosest(LCUtil.stringToIntegerArray("[0,2,1,-3]"), 1)); // t
         System.out.println(threeSumClosest(LCUtil.stringToIntegerArray("[1,1,1,1]"), 0)); // t

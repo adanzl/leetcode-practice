@@ -1,9 +1,6 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 public class Q394 {
-    @Test
     public void TestOJ() {
         System.out.println(decodeString("3[a]a2[bc]")); // "aaaabcbc"
         System.out.println(decodeString("3[a2[c]]")); // "accaccacc"

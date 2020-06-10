@@ -1,14 +1,11 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Q46 {
-    @Test
     public void TestOJ() {
         // System.out.println(permute(new int[]{1, 2, 3, 6}));
         System.out.println(permute(new int[]{1, 2, 3,}));

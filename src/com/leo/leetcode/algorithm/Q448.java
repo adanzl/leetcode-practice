@@ -1,13 +1,11 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Q448 {
-    @Test
     public void TestOJ() {
         System.out.println(findDisappearedNumbers(LCUtil.stringToIntegerArray("[4,3,2,7,8,2,3,1]"))); // [5,6]
         System.out.println(findDisappearedNumbers(LCUtil.stringToIntegerArray("[1]"))); // []

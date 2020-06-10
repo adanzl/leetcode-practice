@@ -2,12 +2,10 @@ package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
 import com.leo.utils.TreeNode;
-import org.junit.Test;
 
 import java.util.Stack;
 
 public class Q98 {
-    @Test
     public void TestOJ() {
         System.out.println(isValidBST(LCUtil.stringToTreeNode("[1,1]"))); // false
         System.out.println(isValidBST(LCUtil.stringToTreeNode("[5,1,4,null,null,3,6]"))); // false

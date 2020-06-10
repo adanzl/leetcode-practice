@@ -1,11 +1,8 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 import java.util.Arrays;
 
 public class Q221 {
-    @Test
     public void TestOJ() {
         System.out.println(maximalSquare(new char[][]{{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}})); // 4
     }

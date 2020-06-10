@@ -1,12 +1,10 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 import java.util.Arrays;
 
 public class Q300 {
-    @Test
     public void TestOJ() {
         System.out.println(lengthOfLIS(LCUtil.stringToIntegerArray("[10,9,2,5,3,4]"))); // 3
         System.out.println(lengthOfLIS(LCUtil.stringToIntegerArray("[10,9,2,5,3,7,101,18]"))); // 4

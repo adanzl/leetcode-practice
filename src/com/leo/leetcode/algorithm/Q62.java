@@ -1,9 +1,6 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 public class Q62 {
-    @Test
     public void TestOJ() {
         System.out.println(uniquePaths(3, 2)); // 3
         System.out.println(uniquePaths(7, 3)); // 28

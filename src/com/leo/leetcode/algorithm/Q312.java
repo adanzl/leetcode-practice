@@ -1,10 +1,8 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 public class Q312 {
-    @Test
     public void TestOJ() {
         System.out.println(maxCoins(LCUtil.stringToIntegerArray("[3,1,5,8]"))); // 167
     }

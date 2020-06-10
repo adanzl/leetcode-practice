@@ -1,11 +1,10 @@
 package com.leo.leetcode.algorithm;
 
-import java.util.*;
-
 import com.leo.utils.LCUtil;
 import com.leo.utils.TreeNode;
 
-import org.junit.Test;
+import java.util.Objects;
+import java.util.Stack;
 
 /**
  * 给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
@@ -22,7 +21,6 @@ import org.junit.Test;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Q236 {
-    @Test
     public void TestOJ() {
         System.out.println(lowestCommonAncestor(
                 LCUtil.stringToTreeNode("[3,5,1,6,2,0,8,null,null,7,4]"),

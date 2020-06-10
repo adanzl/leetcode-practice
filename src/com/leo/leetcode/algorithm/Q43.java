@@ -1,9 +1,6 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 public class Q43 {
-    @Test
     public void TestOJ() {
         System.out.println(multiply("9", "9")); // "81"
         System.out.println(multiply("123", "456")); // "56088"

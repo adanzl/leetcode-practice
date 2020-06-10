@@ -1,12 +1,10 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 import java.util.*;
 
 public class Q399 {
-    @Test
     public void TestOJ() {
         System.out.println(Arrays.toString(calcEquation(
                 LCUtil.stringToListListString("[[\"a\",\"b\"],[\"b\",\"c\"]]"),

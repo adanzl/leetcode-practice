@@ -1,11 +1,8 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 import java.util.Arrays;
 
 public class Q338 {
-    @Test
     public void TestOJ() {
         System.out.println(Arrays.toString(countBits(0))); // []
         System.out.println(Arrays.toString(countBits(2))); // [0,1,1]

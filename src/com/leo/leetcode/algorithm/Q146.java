@@ -1,11 +1,9 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Q146 {
-    @Test
     public void TestOJ() {
         LRUCache cache = new LRUCache(2);
         cache.put(1, 1);

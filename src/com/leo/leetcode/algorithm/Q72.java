@@ -1,12 +1,14 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class Q72 {
-    @Test
+
+    public static void main(String[] args) {
+        new Q72().TestOJ();
+    }
+
     public void TestOJ() {
         System.out.println(minDistance("horse", "ros")); // 3
         System.out.println(minDistance("intention", "execution")); // 5
@@ -20,7 +22,7 @@ public class Q72 {
     int dp(Map<String, Integer> memMap, String w1, String w2, int i1, int i2) {
         String k = i1 + "_" + i2;
         if (memMap.containsKey(k)) return memMap.get(k);
-        int ret = 0;
+        int ret;
         if (i1 < 0) return i2 + 1;
         if (i2 < 0) return i1 + 1;
         if (w1.charAt(i1) == w2.charAt(i2)) {

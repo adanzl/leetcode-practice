@@ -1,10 +1,12 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 public class Q152 {
-    @Test
+    public static void main(String[] args) {
+        new Q152().TestOJ();
+    }
+
     public void TestOJ() {
         System.out.println(maxProduct(LCUtil.stringToIntegerArray("[2,3,-2,4]"))); // 6
         System.out.println(maxProduct(LCUtil.stringToIntegerArray("[-2,0,-1]"))); // 0
@@ -27,14 +29,14 @@ public class Q152 {
 
     public int maxProduct1(int[] nums) {
         int max = Integer.MIN_VALUE, imax = 1, imin = 1;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] < 0) {
+        for (int num : nums) {
+            if (num < 0) {
                 int tmp = imax;
                 imax = imin;
                 imin = tmp;
             }
-            imax = Math.max(imax * nums[i], nums[i]);
-            imin = Math.min(imin * nums[i], nums[i]);
+            imax = Math.max(imax * num, num);
+            imin = Math.min(imin * num, num);
 
             max = Math.max(max, imax);
         }

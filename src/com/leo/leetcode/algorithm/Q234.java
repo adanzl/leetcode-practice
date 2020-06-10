@@ -2,10 +2,13 @@ package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
 import com.leo.utils.ListNode;
-import org.junit.Test;
 
 public class Q234 {
-    @Test
+
+    public static void main(String[] args) {
+        new Q234().TestOJ();
+    }
+
     public void TestOJ() {
         System.out.println(isPalindrome(LCUtil.stringToListNode("[1]"))); // t
         System.out.println(isPalindrome(LCUtil.stringToListNode("[1,2]"))); // f
@@ -34,8 +37,10 @@ public class Q234 {
                 right = n;
             } else {
                 if (c == limit && count % 2 == 1) {
+                    assert left != null;
                     left = left.next;
                 }
+                assert left != null;
                 if (left.val != right.val) {
                     return false;
                 }

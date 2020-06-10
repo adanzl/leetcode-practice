@@ -3,17 +3,19 @@ package com.leo.leetcode.algorithm;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.junit.Test;
-
 public class Q76 {
-    @Test
+
+    public static void main(String[] args) {
+        new Q76().TestOJ();
+    }
+
     public void TestOJ() {
-//        System.out.println(minWindow("ADOBECODEBANC", "ABC")); // "BANC"
-//        System.out.println(minWindow("ADAEBECADDABC", "ABC")); // "BECA"
-//        System.out.println(minWindow("ADABC", "ABC")); // "ABC"
-//        System.out.println(minWindow("ABC", "A")); // "A"
+        System.out.println(minWindow("ADOBECODEBANC", "ABC")); // "BANC"
+        System.out.println(minWindow("ADAEBECADDABC", "ABC")); // "BECA"
+        System.out.println(minWindow("ADABC", "ABC")); // "ABC"
+        System.out.println(minWindow("ABC", "A")); // "A"
         System.out.println(minWindow("BC", "A")); // ""
-//        System.out.println(minWindow("AA", "AA")); // "AA"
+        System.out.println(minWindow("AA", "AA")); // "AA"
         System.out.println(minWindow("babb", "baba")); // ""
     }
 
@@ -30,7 +32,7 @@ public class Q76 {
             }
             mapT.put(v, c);
         }
-        int find = 0, l = 0, r = 0;
+        int find = 0, l = 0, r;
         int minLen = Integer.MAX_VALUE, minL = -1, minR = -1;
         Map<Character, Integer> mapS = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {

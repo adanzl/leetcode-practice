@@ -1,19 +1,23 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class Q239 {
-    @Test
+    public static void main(String[] args) {
+        new Q239().TestOJ();
+    }
+
     public void TestOJ() {
         System.out.println(Arrays.toString(maxSlidingWindow(LCUtil.stringToIntegerArray(" [1,3,-1,-3,5,3,6,7]"), 3))); // [3,3,5,5,6,7]
         System.out.println(Arrays.toString(maxSlidingWindow1(LCUtil.stringToIntegerArray(" [1,3,-1,-3,5,3,6,7]"), 3))); // [3,3,5,5,6,7]
     }
 
     public int[] maxSlidingWindow(int[] nums, int k) {
-        if (nums.length == 0) return nums;
+        if (nums.length == 0 || k == 0) return nums;
         int[] out = new int[nums.length - k + 1];
         Queue<Integer> q = new PriorityQueue<>((o1, o2) -> o2 - o1);
         int j = 0;

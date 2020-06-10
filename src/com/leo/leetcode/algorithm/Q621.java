@@ -1,11 +1,8 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 import java.util.Arrays;
 
 public class Q621 {
-    @Test
     public void TestOJ() {
         System.out.println(leastInterval(new char[]{'A', 'A', 'A', 'B', 'B', 'B'}, 2)); // 8
         System.out.println(leastInterval(new char[]{'A'}, 2)); // 1

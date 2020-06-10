@@ -1,10 +1,8 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 public class Q494 {
-    @Test
     public void TestOJ() {
         System.out.println(findTargetSumWays(LCUtil.stringToIntegerArray("[1, 1, 1, 1, 1]"), 3)); // 5
         System.out.println(findTargetSumWays(LCUtil.stringToIntegerArray("[0,0,0,0]"), 3)); // 0

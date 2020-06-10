@@ -2,10 +2,8 @@ package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
 import com.leo.utils.ListNode;
-import org.junit.Test;
 
 public class Q206 {
-    @Test
     public void TestOJ() {
         System.out.println(reverseList(LCUtil.stringToListNode("[1,2,3,4,5,6]")));
     }

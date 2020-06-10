@@ -1,7 +1,6 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,7 +8,6 @@ import java.util.List;
 
 public class Q47 {
 
-    @Test
     public void TestOJ() {
         System.out.println(permuteUnique(LCUtil.stringToIntegerArray("[1,1,2]")));
     }

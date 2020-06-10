@@ -1,11 +1,8 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 import java.util.*;
 
 public class Q49 {
-    @Test
     public void TestOJ() {
         groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"});
     }

@@ -1,7 +1,6 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 /**
  * 假设按照升序排序的数组在预先未知的某个点上进行了旋转。
@@ -11,7 +10,6 @@ import org.junit.Test;
  * 链接：https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array
  */
 public class Q153 {
-    @Test
     public void TestOJ() {
         System.out.println(findMin(LCUtil.stringToIntegerArray("[5,1,2,3,4]"))); // 1
         System.out.println(findMin(LCUtil.stringToIntegerArray("[1,2]"))); // 1

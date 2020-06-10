@@ -2,10 +2,7 @@ package com.leo.leetcode.algorithm;
 
 import java.util.Stack;
 
-import org.junit.Test;
-
 public class Q155 {
-    @Test
     public void TestOJ() {
         MinStack minStack = new MinStack();
 //        minStack.push(-2);

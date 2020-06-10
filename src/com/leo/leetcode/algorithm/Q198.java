@@ -1,10 +1,8 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 public class Q198 {
-    @Test
     public void TestOJ() {
         System.out.println(rob(LCUtil.stringToIntegerArray("[1,2,3,1]"))); // 4
         System.out.println(rob(LCUtil.stringToIntegerArray("[2,7,9,3,1]"))); // 12

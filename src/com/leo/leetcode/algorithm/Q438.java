@@ -1,11 +1,10 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Q438 {
-    @Test
     public void TestOJ() {
         System.out.println(findAnagrams("cbaebabac", "bac")); // [0, 6]
         System.out.println(findAnagrams("abab", "ab")); // [0, 1, 2]

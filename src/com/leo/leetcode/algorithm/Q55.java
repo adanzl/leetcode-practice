@@ -1,9 +1,6 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 public class Q55 {
-    @Test
     public void TestOJ() {
         System.out.println(canJump1(new int[]{3, 2, 1, 0, 2,4})); // f
 //        System.out.println(canJump(new int[]{2, 3, 1, 1, 4})); // t

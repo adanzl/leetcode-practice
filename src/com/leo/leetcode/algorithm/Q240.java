@@ -1,10 +1,8 @@
 package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
-import org.junit.Test;
 
 public class Q240 {
-    @Test
     public void TestOJ() {
         int[][] matrix = LCUtil.stringToInt2dArray("["
                 + "[ 1,  4,  7, 11, 15],"

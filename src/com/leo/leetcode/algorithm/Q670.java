@@ -1,7 +1,5 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 import java.util.Arrays;
 
 /**
@@ -9,7 +7,6 @@ import java.util.Arrays;
  */
 public class Q670 {
 
-    @Test
     public void TestOJ() {
         System.out.println(maximumSwap(2736)); // 7236
         System.out.println(maximumSwap(9973)); // 9973

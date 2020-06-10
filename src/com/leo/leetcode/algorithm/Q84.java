@@ -1,10 +1,7 @@
 package com.leo.leetcode.algorithm;
 
-import org.junit.Test;
-
 public class Q84 {
     // 以第i根柱子为最矮柱子所能延伸的最大面积
-    @Test
     public void TestOJ() {
 //        int heights[] = new int[]{2, 1, 5, 6, 2, 3}; // 10
         int[] heights = {1}; // 1

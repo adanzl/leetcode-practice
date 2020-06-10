@@ -2,11 +2,9 @@ package com.leo.leetcode.algorithm;
 
 import com.leo.utils.LCUtil;
 import com.leo.utils.TreeNode;
-import org.junit.Test;
 
 public class Q337 {
 
-    @Test
     public void TestOJ() {
         System.out.println(rob(LCUtil.stringToTreeNode("[3,2,3,null,3,null,1]"))); // 7
         System.out.println(rob(LCUtil.stringToTreeNode("[3,4,5,1,3,null,1]"))); // 9
