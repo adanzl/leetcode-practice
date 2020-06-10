@@ -1,4 +1,4 @@
-package com.leo.leetcode.offer;
+package com.leo.leetcode.lcof;
 
 public class Q56 {
     public static void main(String[] args) {

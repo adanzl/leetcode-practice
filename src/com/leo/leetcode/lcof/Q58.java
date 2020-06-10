@@ -1,4 +1,4 @@
-package com.leo.leetcode.offer;
+package com.leo.leetcode.lcof;
 
 public class Q58 {
 

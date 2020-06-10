@@ -1,4 +1,4 @@
-package com.leo.leetcode.offer;
+package com.leo.leetcode.lcof;
 
 import java.util.Objects;
 import java.util.PriorityQueue;
