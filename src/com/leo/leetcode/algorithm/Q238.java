@@ -5,6 +5,10 @@ import com.leo.utils.LCUtil;
 import java.util.Arrays;
 
 public class Q238 {
+    public static void main(String[] args) {
+        new Q238().TestOJ();
+    }
+
     public void TestOJ() {
         System.out.println(Arrays.toString(productExceptSelf(LCUtil.stringToIntegerArray("[1,2,3,4,5]")))); // [120, 60, 40, 30, 24]
         System.out.println(Arrays.toString(productExceptSelf(LCUtil.stringToIntegerArray("[1,2]")))); // [2,1]
