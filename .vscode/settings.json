@@ -1,0 +1,42 @@
+{
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "**/*.meta": true,
+        "temp": true,
+        "library": true,
+        "build": true,
+        "node_modules": true,
+        "**/.classpath": false,
+        "**/.project": false,
+        "**/.settings": false,
+        "**/.factorypath": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.tslint": true
+    },
+    "editor.formatOnSave": true,
+    "editor.quickSuggestionsDelay": 100,
+    "vsicons.projectDetection.autoReload": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "cSpell.words": [
+        "leetcode",
+        "nums"
+    ],
+    "cSpell.ignorePaths": [
+        "**/package-lock.json",
+        "**/node_modules/**",
+        "**/vscode-extension/**",
+        "**/.git/objects/**",
+        ".vscode",
+        "packages/build_index/Const.js",
+        "**/creator.d.ts"
+    ],
+    "files.autoSaveDelay": 3000,
+    "todo-tree.filtering.excludeGlobs": [
+        "bin",
+        "release",
+        "node_modules",
+        "creator.d.ts"
+    ],
+    "java.dependency.packagePresentation": "hierarchical",
+}

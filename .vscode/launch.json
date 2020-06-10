@@ -1,0 +1,179 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Q1371",
+      "request": "launch",
+      "mainClass": "com.leo.leetcode.algorithm.Q1371",
+      "projectName": "leetcode"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Q145",
+      "request": "launch",
+      "mainClass": "com.leo.leetcode.algorithm.Q145",
+      "projectName": "leetcode"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch) - Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-QHW<LeetCode>",
+      "request": "launch",
+      "mainClass": "com.leo.leetcode.QHW",
+      "projectName": "LeetCode"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Q103<LeetCode>",
+      "request": "launch",
+      "mainClass": "com.leo.leetcode.algorithm.Q103",
+      "projectName": "LeetCode"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Q23<LeetCode>",
+      "request": "launch",
+      "mainClass": "com.leo.leetcode.algorithm.Q23",
+      "projectName": "LeetCode"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Q25<LeetCode>",
+      "request": "launch",
+      "mainClass": "com.leo.leetcode.algorithm.Q25",
+      "projectName": "LeetCode"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Q3<LeetCode>",
+      "request": "launch",
+      "mainClass": "com.leo.leetcode.algorithm.Q3",
+      "projectName": "LeetCode"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Q41<LeetCode>",
+      "request": "launch",
+      "mainClass": "com.leo.leetcode.algorithm.Q41",
+      "projectName": "LeetCode"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Q71<LeetCode>",
+      "request": "launch",
+      "mainClass": "com.leo.leetcode.algorithm.Q71",
+      "projectName": "LeetCode"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Q89<LeetCode>",
+      "request": "launch",
+      "mainClass": "com.leo.leetcode.algorithm.Q89",
+      "projectName": "LeetCode"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Interview0331<LeetCode>",
+      "request": "launch",
+      "mainClass": "com.leo.leetcode.interview.Interview0331",
+      "projectName": "LeetCode"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-QByteDance<LeetCode>",
+      "request": "launch",
+      "mainClass": "com.leo.leetcode.interview.QByteDance",
+      "projectName": "LeetCode"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-SingleInstance<LeetCode>",
+      "request": "launch",
+      "mainClass": "com.leo.leetcode.interview.SingleInstance",
+      "projectName": "LeetCode"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-QHW<leetcode_3fb52651>",
+      "request": "launch",
+      "mainClass": "_.src.com.leo.leetcode.QHW",
+      "projectName": "leetcode_3fb52651"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Q103<leetcode_3fb52651>",
+      "request": "launch",
+      "mainClass": "_.src.com.leo.leetcode.algorithm.Q103",
+      "projectName": "leetcode_3fb52651"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Q23<leetcode_3fb52651>",
+      "request": "launch",
+      "mainClass": "_.src.com.leo.leetcode.algorithm.Q23",
+      "projectName": "leetcode_3fb52651"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Q25<leetcode_3fb52651>",
+      "request": "launch",
+      "mainClass": "_.src.com.leo.leetcode.algorithm.Q25",
+      "projectName": "leetcode_3fb52651"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Q3<leetcode_3fb52651>",
+      "request": "launch",
+      "mainClass": "_.src.com.leo.leetcode.algorithm.Q3",
+      "projectName": "leetcode_3fb52651"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Q41<leetcode_3fb52651>",
+      "request": "launch",
+      "mainClass": "_.src.com.leo.leetcode.algorithm.Q41",
+      "projectName": "leetcode_3fb52651"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Q71<leetcode_3fb52651>",
+      "request": "launch",
+      "mainClass": "_.src.com.leo.leetcode.algorithm.Q71",
+      "projectName": "leetcode_3fb52651"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Q89<leetcode_3fb52651>",
+      "request": "launch",
+      "mainClass": "_.src.com.leo.leetcode.algorithm.Q89",
+      "projectName": "leetcode_3fb52651"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Interview0331<leetcode_3fb52651>",
+      "request": "launch",
+      "mainClass": "_.src.com.leo.leetcode.interview.Interview0331",
+      "projectName": "leetcode_3fb52651"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-QByteDance<leetcode_3fb52651>",
+      "request": "launch",
+      "mainClass": "_.src.com.leo.leetcode.interview.QByteDance",
+      "projectName": "leetcode_3fb52651"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-SingleInstance<leetcode_3fb52651>",
+      "request": "launch",
+      "mainClass": "_.src.com.leo.leetcode.interview.SingleInstance",
+      "projectName": "leetcode_3fb52651"
+    }
+  ]
+}
