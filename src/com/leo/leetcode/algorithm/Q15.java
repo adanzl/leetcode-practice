@@ -5,6 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Q15 {
+
+    public static void main(String[] args) {
+        System.out.println(new Q15().threeSum(new int[]{-1, 0, 1, 2, -1, -4})); // [[-1, 0, 1],[-1, -1, 2]]
+    }
+
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> out = new ArrayList<>();
         if (nums.length < 3) return out;
@@ -16,11 +21,7 @@ public class Q15 {
             while (l < r) {
                 int t = v1 + nums[l] + nums[r];
                 if (t == 0) {
-                    List<Integer> answer = new ArrayList<>();
-                    answer.add(v1);
-                    answer.add(nums[l]);
-                    answer.add(nums[r]);
-                    out.add(answer);
+                    out.add(Arrays.asList(v1, nums[l], nums[r]));
                     while (l < r && nums[l] == nums[l + 1]) l++;
                     while (l < r && nums[r] == nums[r - 1]) r--;
                     r--;
