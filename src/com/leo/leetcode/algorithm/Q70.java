@@ -1,6 +1,11 @@
 package com.leo.leetcode.algorithm;
 
 public class Q70 {
+
+    public static void main(String[] args) {
+        new Q70().TestOJ();
+    }
+
     public void TestOJ() {
         System.out.println(climbStairs(2)); // 2
         System.out.println(climbStairs(3)); // 3
