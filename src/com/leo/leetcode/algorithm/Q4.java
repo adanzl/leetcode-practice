@@ -1,6 +1,17 @@
 package com.leo.leetcode.algorithm;
 
 public class Q4 {
+    /**
+     * 给定两个大小为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。
+     * 请你找出这两个正序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。
+     * 你可以假设 nums1 和 nums2 不会同时为空。
+     * 链接：https://leetcode-cn.com/problems/median-of-two-sorted-arrays
+     */
+    public static void main(String[] args) {
+        System.out.println(new Q4().findMedianSortedArrays(new int[]{1, 3}, new int[]{2}));// 2.0
+        System.out.println(new Q4().findMedianSortedArrays(new int[]{1, 2}, new int[]{3, 4}));// 2.5
+    }
+
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int limit = nums1.length + nums2.length;
         int count = 0;
