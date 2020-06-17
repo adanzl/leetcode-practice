@@ -4,6 +4,7 @@
         "**/*.meta": true,
         "temp": true,
         "library": true,
+        "out": true,
         "build": true,
         "node_modules": true,
         "**/.classpath": false,
