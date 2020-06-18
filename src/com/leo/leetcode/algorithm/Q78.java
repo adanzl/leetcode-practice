@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Q78 {
+
+    public static void main(String[] args) {
+        new Q78().TestOJ();
+    }
+
     public void TestOJ() {
         System.out.println(subsets(new int[]{1, 2, 3}));
     }

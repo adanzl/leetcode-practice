@@ -6,6 +6,11 @@ import com.leo.utils.TreeNode;
 import java.util.HashMap;
 
 public class Q105 {
+
+    public static void main(String[] args) {
+        new Q105().TestOJ();
+    }
+
     public void TestOJ() {
         System.out.println(LCUtil.treeNodeToString(buildTree(LCUtil.stringToIntegerArray("[3,9,20,15,7]"), LCUtil.stringToIntegerArray("[9,3,15,20,7]")))); // [3, 9, 20, 15, 7]
         System.out.println(LCUtil.treeNodeToString(buildTree(LCUtil.stringToIntegerArray("[]"), LCUtil.stringToIntegerArray("[]"))));

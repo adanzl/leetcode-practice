@@ -1,6 +1,11 @@
 package com.leo.leetcode.algorithm;
 
 public class Q84 {
+
+    public static void main(String[] args) {
+        new Q84().TestOJ();
+    }
+
     // 以第i根柱子为最矮柱子所能延伸的最大面积
     public void TestOJ() {
 //        int heights[] = new int[]{2, 1, 5, 6, 2, 3}; // 10

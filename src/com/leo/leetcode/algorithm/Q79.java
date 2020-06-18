@@ -1,6 +1,11 @@
 package com.leo.leetcode.algorithm;
 
 public class Q79 {
+
+    public static void main(String[] args) {
+        new Q79().TestOJ();
+    }
+
     public void TestOJ() {
         char[][] board = new char[][]{{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}};
         System.out.println(exist(board, "ABCCED")); // t

@@ -3,6 +3,10 @@ package com.leo.leetcode.algorithm;
 import java.util.Arrays;
 
 public class Q75 {
+    public static void main(String[] args) {
+        new Q75().TestOJ();
+    }
+
     public void TestOJ() {
         System.out.println(Arrays.toString(sortColors(new int[]{2, 0, 2, 1, 1, 0})));
         System.out.println(Arrays.toString(sortColors(new int[]{2, 0, 1})));

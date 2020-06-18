@@ -4,6 +4,10 @@ import com.leo.utils.LCUtil;
 import com.leo.utils.TreeNode;
 
 public class Q114 {
+    public static void main(String[] args) {
+        new Q114().TestOJ();
+    }
+
     public void TestOJ() {
 //        TreeNode p = LCUtil.stringToTreeNode("[1,2,5,3,4,null,6]");
         TreeNode p = LCUtil.stringToTreeNode("[1]");

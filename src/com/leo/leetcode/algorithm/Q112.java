@@ -4,6 +4,10 @@ import com.leo.utils.LCUtil;
 import com.leo.utils.TreeNode;
 
 public class Q112 {
+    public static void main(String[] args) {
+        new Q112().TestOJ();
+    }
+
     public void TestOJ() {
         System.out.println(hasPathSum(LCUtil.stringToTreeNode("[-2,null,-3]"), -5)); // true
     }
