@@ -153,6 +153,7 @@ public class LCUtil {
     }
 
     public static String listNodeToString(ListNode node) {
+        if (null == node) return "[]";
         StringBuilder output = new StringBuilder();
         while (null != node) {
             output.append(node).append("->");
