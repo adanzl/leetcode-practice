@@ -41,10 +41,8 @@ public class Q215 {
             }
             swap(nums, start, l);
             if (l == nums.length - k) return nums[l];
-
             if (l < nums.length - k) start = l + 1;
             else end = l - 1;
-
         }
     }
 
