@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 给定两个整数 n 和 k，返回 1 ... n 中所有可能的 k 个数的组合。
+ * 给定两个整数 n 和 k，返回 1 ... n 中所有可能的 k 个Q数的组合。
  * 链接：https://leetcode-cn.com/problems/combinations/
  */
 public class Q77 {
