@@ -2,8 +2,10 @@ package com.leo.leetcode.algorithm;
 
 import com.leo.utils.TreeNode;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+
+import static com.leo.utils.LCUtil.treeNodeArrayToString;
 
 /**
  * 给定一个整数 n，生成所有由 1 ... n 为节点所组成的 二叉搜索树 。
@@ -12,52 +14,39 @@ import java.util.List;
 public class Q95 {
 
     public static void main(String[] args) {
-        System.out.println(new Q95().generateTrees(3)); // [[1,null,2,null,3],[1,null,3,2],[2,1,3],[3,1,null,null,2],[3,2,null,1]]
+        System.out.println(treeNodeArrayToString(new Q95().generateTrees(4))); //
+        System.out.println(treeNodeArrayToString(new Q95().generateTrees(3))); // [[1,null,2,null,3],[1,null,3,2],[2,1,3],[3,1,null,null,2],[3,2,null,1]]
     }
 
-    int count = 0;
-    int limit;
-    int[] arr;
-    List<TreeNode> out = new ArrayList<>();
+    public LinkedList<TreeNode> generate_trees(int start, int end) {
+        LinkedList<TreeNode> all_trees = new LinkedList<>();
+        if (start > end) {
+            all_trees.add(null);
+            return all_trees;
+        }
+        // pick up a root
+        for (int i = start; i <= end; i++) {
+            // all possible left subtrees if i is chosen to be a root
+            LinkedList<TreeNode> left_trees = generate_trees(start, i - 1);
+            // all possible right subtrees if i is chosen to be a root
+            LinkedList<TreeNode> right_trees = generate_trees(i + 1, end);
+            // connect left and right trees to the root i
+            for (TreeNode l : left_trees) {
+                for (TreeNode r : right_trees) {
+                    TreeNode current_tree = new TreeNode(i);
+                    current_tree.left = l;
+                    current_tree.right = r;
+                    all_trees.add(current_tree);
+                }
+            }
+        }
+        return all_trees;
+    }
 
     public List<TreeNode> generateTrees(int n) {
-        arr = new int[n];
-        for (int i = 0; i < n; i++) arr[i] = i + 1;
-        this.limit = n;
-        for (int i = 0; i < arr.length; i++) {
-            this.count = 1;
-            TreeNode root = new TreeNode(arr[i]);
-            buildTree(0, i, 0, root, root);
-            buildTree(i + 1, arr.length, 1, root, root);
+        if (n == 0) {
+            return new LinkedList<>();
         }
-        return out;
-    }
-
-    void buildTree(int l, int r, int flag, TreeNode node, TreeNode root) {
-        if (l >= r) {
-            return;
-        }
-        int preCount = count;
-        for (int i = l; i < r; i++) {
-            TreeNode tNode = new TreeNode(arr[i]);
-            if (flag == 0) node.left = tNode;
-            else node.right = tNode;
-            count++;
-            if (count == limit) {
-                out.add(cloneTreeNode(root));
-                if (flag == 0) node.left = null;
-                else node.right = null;
-                count--;
-                continue;
-            }
-            buildTree(l, i, 0, tNode, root);
-            buildTree(i + 1, r, 1, tNode, root);
-        }
-        this.count = preCount;
-    }
-
-    TreeNode cloneTreeNode(TreeNode node) {
-        if (node == null) return null;
-        return new TreeNode(node.val, cloneTreeNode(node.left), cloneTreeNode(node.right));
+        return generate_trees(1, n);
     }
 }
