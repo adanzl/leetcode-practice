@@ -9,9 +9,12 @@ import java.util.Stack;
 public class Q32 {
 
     public static void main(String[] args) {
+        System.out.println(new Q32().longestValidParentheses("()(()")); // 2
         System.out.println(new Q32().longestValidParentheses("(()")); // 2
-        System.out.println(new Q32().longestValidParentheses(")()())")); // 4
+        System.out.println(new Q32().longestValidParentheses1(")()())")); // 4
+        System.out.println(new Q32().longestValidParentheses1("()(())")); // 6
     }
+
 
     public int longestValidParentheses(String s) {
         Stack<Integer> stack = new Stack<>();
@@ -39,4 +42,22 @@ public class Q32 {
         }
         return ret;
     }
+
+    // 栈
+    public int longestValidParentheses1(String s) {
+        int max = 0;
+        Stack<Integer> stack = new Stack<>();
+        stack.push(-1);
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                stack.push(i);
+            } else {
+                stack.pop();
+                if (stack.empty()) stack.push(i);
+                else max = Math.max(max, i - stack.peek());
+            }
+        }
+        return max;
+    }
+
 }
