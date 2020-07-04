@@ -9,11 +9,11 @@ import com.leo.utils.TreeNode;
  * 你可以假设树中没有重复的元素。
  * 链接：https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
  */
-public class Q109 {
+public class Q106 {
 
     public static void main(String[] args) {
         // [3,9,20,null,null,15,7]
-        System.out.println(LCUtil.treeNodeToString(new Q109().buildTree(new int[]{9, 3, 15, 20, 7}, new int[]{9, 15, 7, 20, 3})));
+        System.out.println(LCUtil.treeNodeToString(new Q106().buildTree(new int[]{9, 3, 15, 20, 7}, new int[]{9, 15, 7, 20, 3})));
     }
 
     public TreeNode buildTree(int[] inOrder, int[] postOrder) {
