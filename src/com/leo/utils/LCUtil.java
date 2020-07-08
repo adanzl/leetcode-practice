@@ -7,6 +7,18 @@ import java.util.*;
 
 public class LCUtil {
 
+    public static String char2dToString(char[][] array) {
+        if (array == null) return "null";
+        if (array.length == 0) return "[]";
+        StringBuilder sb = new StringBuilder("[");
+        for (char[] item : array) {
+            sb.append(Arrays.toString(item));
+            sb.append(",");
+        }
+        sb.setCharAt(sb.length() - 1, ']');
+        return sb.toString();
+    }
+
     public static String int2dArrayToString(int[][] array) {
         if (array == null) return "null";
         if (array.length == 0) return "[]";
