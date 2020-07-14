@@ -207,6 +207,20 @@ public class LCUtil {
         return arr;
     }
 
+    public static List<List<Integer>> stringToListListInt(String input) {
+        List<List<Integer>> out = new ArrayList<>();
+        JsonArray jsonArray = Json.parse(input).asArray();
+        for (int i = 0; i < jsonArray.size(); i++) {
+            JsonArray cols = jsonArray.get(i).asArray();
+            List<Integer> c = new ArrayList<>();
+            out.add(c);
+            for (int j = 0; j < cols.size(); j++) {
+                c.add(cols.get(j).asInt());
+            }
+        }
+        return out;
+    }
+
     public static char[][] stringToChar2dArray(String input) {
         JsonArray jsonArray = Json.parse(input).asArray();
         if (jsonArray.size() == 0) return new char[0][0];
