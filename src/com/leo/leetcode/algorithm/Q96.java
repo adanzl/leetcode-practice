@@ -16,10 +16,11 @@ public class Q96 {
         System.out.println(numTrees(2)); // 2
     }
 
-
     public int numTrees1(int n) {
-        if (n == 0) return 1;
-        if (n == 1) return 1;
+        if (n == 0)
+            return 1;
+        if (n == 1)
+            return 1;
         int ret = 0;
         for (int i = 0; i < n; i++) {
             ret += numTrees(i) * numTrees(n - 1 - i);
@@ -28,6 +29,10 @@ public class Q96 {
     }
 
     public int numTrees(int n) {
+        if (n == 0)
+            return 1;
+        if (n == 1)
+            return 1;
         int[] dp = new int[n + 1];
         dp[0] = 1;
         dp[1] = 1;

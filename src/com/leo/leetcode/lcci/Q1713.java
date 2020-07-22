@@ -6,8 +6,9 @@ import com.leo.utils.LCUtil;
 import com.leo.utils.TestCase;
 
 /**
- * TODO
+ * 
  */
+// TODO
 public class Q1713 {
     public static void main(String[] args) {
         final TestCase tc1 = new TestCase("resources/Q1713/Case001");
