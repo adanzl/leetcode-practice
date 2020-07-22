@@ -8,8 +8,10 @@ import java.util.*;
 public class LCUtil {
 
     public static String char2dToString(char[][] array) {
-        if (array == null) return "null";
-        if (array.length == 0) return "[]";
+        if (array == null)
+            return "null";
+        if (array.length == 0)
+            return "[]";
         StringBuilder sb = new StringBuilder("[");
         for (char[] item : array) {
             sb.append(Arrays.toString(item));
@@ -20,8 +22,10 @@ public class LCUtil {
     }
 
     public static String int2dArrayToString(int[][] array) {
-        if (array == null) return "null";
-        if (array.length == 0) return "[]";
+        if (array == null)
+            return "null";
+        if (array.length == 0)
+            return "[]";
         StringBuilder sb = new StringBuilder("[");
         for (int[] item : array) {
             sb.append(Arrays.toString(item));
@@ -35,7 +39,8 @@ public class LCUtil {
     public static int[] stringToIntegerArray(String input) {
         input = input.trim();
         input = input.substring(1, input.length() - 1);
-        if (input.length() == 0) return new int[0];
+        if (input.length() == 0)
+            return new int[0];
         String[] parts = input.split(",");
         int[] output = new int[parts.length];
         for (int index = 0; index < parts.length; index++) {
@@ -48,7 +53,8 @@ public class LCUtil {
     public static char[] stringToCharArray(String input) {
         input = input.trim();
         input = input.substring(1, input.length() - 1);
-        if (input.length() == 0) return new char[0];
+        if (input.length() == 0)
+            return new char[0];
         String[] parts = input.split(",");
         char[] output = new char[parts.length];
         for (int index = 0; index < parts.length; index++) {
@@ -61,7 +67,8 @@ public class LCUtil {
     public static TreeNode stringToTreeNode(String input) {
         input = input.trim();
         input = input.substring(1, input.length() - 1);
-        if (input.length() == 0) return null;
+        if (input.length() == 0)
+            return null;
 
         String[] parts = input.split(",");
         String item = parts[0];
@@ -72,7 +79,8 @@ public class LCUtil {
         int index = 1;
         while (!nodeQueue.isEmpty()) {
             TreeNode node = nodeQueue.remove();
-            if (index == parts.length) break;
+            if (index == parts.length)
+                break;
             item = parts[index++];
             item = item.trim();
             if (!item.equals("null")) {
@@ -80,7 +88,8 @@ public class LCUtil {
                 node.left = new TreeNode(leftNumber);
                 nodeQueue.add(node.left);
             }
-            if (index == parts.length) break;
+            if (index == parts.length)
+                break;
             item = parts[index++];
             item = item.trim();
             if (!item.equals("null")) {
@@ -107,7 +116,8 @@ public class LCUtil {
 
     public static ListNode[] stringToListNodeArray(String input) {
         JsonArray jsonArray = Json.parse(input).asArray();
-        if (jsonArray.size() == 0) return new ListNode[0];
+        if (jsonArray.size() == 0)
+            return new ListNode[0];
         ListNode[] arr = new ListNode[jsonArray.size()];
         for (int i = 0; i < arr.length; i++) {
             JsonArray cols = jsonArray.get(i).asArray();
@@ -117,7 +127,8 @@ public class LCUtil {
     }
 
     public static String treeNodeToString(TreeNode root) {
-        if (root == null) return "[]";
+        if (root == null)
+            return "[]";
         StringBuilder output = new StringBuilder();
         Queue<TreeNode> nodeQueue = new LinkedList<>();
         nodeQueue.add(root);
@@ -135,7 +146,8 @@ public class LCUtil {
     }
 
     public static String listNodeToString(ListNode node) {
-        if (null == node) return "[]";
+        if (null == node)
+            return "[]";
         StringBuilder output = new StringBuilder();
         while (null != node) {
             output.append(node).append("->");
@@ -145,7 +157,8 @@ public class LCUtil {
     }
 
     public static String treeNodeArrayToString(List<TreeNode> treeNodeList) {
-        if (null == treeNodeList) return "[]";
+        if (null == treeNodeList)
+            return "[]";
         StringBuilder output = new StringBuilder();
         Queue<TreeNode> q = new LinkedList<>();
         for (TreeNode treeNode : treeNodeList) {
@@ -167,14 +180,17 @@ public class LCUtil {
     }
 
     public static void buildListNode(ListNode head, int tailPos) {
-        if (head == null) return;
+        if (head == null)
+            return;
         ListNode p = head, tail = null;
         int i = 0;
         while (p.next != null) {
-            if (i++ == tailPos) tail = p;
+            if (i++ == tailPos)
+                tail = p;
             p = p.next;
         }
-        if (i == tailPos) tail = p;
+        if (i == tailPos)
+            tail = p;
         p.next = tail;
     }
 
@@ -187,18 +203,19 @@ public class LCUtil {
         return ret;
     }
 
-//    public static String[] stringToStringArray(String input) {
-//        JsonArray jsonArray = Json.parse(input).asArray();
-//        String[] arr = new String[jsonArray.size()];
-//        for (int i = 0; i < arr.length; i++) {
-//            arr[i] = jsonArray.get(i).asString();
-//        }
-//        return arr;
-//    }
+    public static String[] stringToStringArray(String input) {
+        JsonArray jsonArray = Json.parse(input).asArray();
+        String[] arr = new String[jsonArray.size()];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = jsonArray.get(i).asString();
+        }
+        return arr;
+    }
 
     public static int[][] stringToInt2dArray(String input) {
         JsonArray jsonArray = Json.parse(input).asArray();
-        if (jsonArray.size() == 0) return new int[0][0];
+        if (jsonArray.size() == 0)
+            return new int[0][0];
         int[][] arr = new int[jsonArray.size()][];
         for (int i = 0; i < arr.length; i++) {
             JsonArray cols = jsonArray.get(i).asArray();
@@ -223,7 +240,8 @@ public class LCUtil {
 
     public static char[][] stringToChar2dArray(String input) {
         JsonArray jsonArray = Json.parse(input).asArray();
-        if (jsonArray.size() == 0) return new char[0][0];
+        if (jsonArray.size() == 0)
+            return new char[0][0];
         char[][] arr = new char[jsonArray.size()][];
         for (int i = 0; i < arr.length; i++) {
             JsonArray cols = jsonArray.get(i).asArray();
@@ -235,7 +253,8 @@ public class LCUtil {
     public static double[] stringToDoubleArray(String input) {
         input = input.trim();
         input = input.substring(1, input.length() - 1);
-        if (input.length() == 0) return new double[0];
+        if (input.length() == 0)
+            return new double[0];
         String[] parts = input.split(",");
         double[] output = new double[parts.length];
         for (int index = 0; index < parts.length; index++) {
