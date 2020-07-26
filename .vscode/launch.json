@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - Q392",
+      "request": "launch",
+      "mainClass": "com.leo.leetcode.algorithm.Q392",
+      "projectName": "leetcode"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - Q96",
       "request": "launch",
       "mainClass": "com.leo.leetcode.algorithm.Q96",

@@ -5,6 +5,7 @@ package com.leo.leetcode.algorithm;
  * 链接：https://leetcode-cn.com/problems/unique-binary-search-trees/
  */
 public class Q96 {
+
     public static void main(String[] args) {
         new Q96().TestOJ();
     }
@@ -17,10 +18,8 @@ public class Q96 {
     }
 
     public int numTrees1(int n) {
-        if (n == 0)
-            return 1;
-        if (n == 1)
-            return 1;
+        if (n == 0) return 1;
+        if (n == 1) return 1;
         int ret = 0;
         for (int i = 0; i < n; i++) {
             ret += numTrees(i) * numTrees(n - 1 - i);
@@ -29,10 +28,8 @@ public class Q96 {
     }
 
     public int numTrees(int n) {
-        if (n == 0)
-            return 1;
-        if (n == 1)
-            return 1;
+        if (n == 0) return 1;
+        if (n == 1) return 1;
         int[] dp = new int[n + 1];
         dp[0] = 1;
         dp[1] = 1;
@@ -41,5 +38,4 @@ public class Q96 {
                 dp[i] += dp[j - 1] * dp[i - j];
         return dp[n];
     }
-
 }
