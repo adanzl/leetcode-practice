@@ -9,6 +9,7 @@ import com.leo.utils.TreeNode;
  * 链接：https://leetcode-cn.com/problems/path-sum/
  */
 public class Q112 {
+
     public static void main(String[] args) {
         new Q112().TestOJ();
     }

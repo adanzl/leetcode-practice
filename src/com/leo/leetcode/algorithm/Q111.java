@@ -4,6 +4,7 @@ import com.leo.utils.LCUtil;
 import com.leo.utils.TreeNode;
 
 public class Q111 {
+
     public static void main(String[] args) {
         new Q111().TestOJ();
     }
@@ -12,7 +13,6 @@ public class Q111 {
         System.out.println(minDepth(LCUtil.stringToTreeNode("[1,2]"))); // 2
         System.out.println(minDepth(LCUtil.stringToTreeNode("[]"))); // 0
     }
-
 
     public int minDepth(TreeNode root) {
         if (root == null) return 0;
