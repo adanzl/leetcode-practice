@@ -45,16 +45,22 @@ public class Q87 {
 
     public boolean isScramble(String s1, String s2) {
         if (s1.length() != s2.length()) return false;
-        return isScramble(s1.toCharArray(), 0, s1.length(), s2.toCharArray(), 0, s2.length());
+        int[][][] marks = new int[s1.length()][s2.length()][s1.length()];
+        return isScramble(s1.toCharArray(), 0, s1.length(), s2.toCharArray(), 0, s2.length(), marks);
     }
 
-    boolean isScramble(char[] str1, int l1, int r1, char[] str2, int l2, int r2) {
-        if (r1 - l1 == 1) return str1[l1] == str2[l2];
+    boolean isScramble(char[] str1, int l1, int r1, char[] str2, int l2, int r2, int[][][] marks) {
+        int len = r1 - l1;
+        if (len == 1) return str1[l1] == str2[l2];
+        if (marks[l1][l2][len - 1] != 0) return marks[l1][l2][len - 1] == 1;
         for (int i = 1; i < r1 - l1; i++) {
-            if ((isScramble(str1, l1, l1 + i, str2, l2, l2 + i) && isScramble(str1, l1 + i, r1, str2, l2 + i, r2))
-                    || isScramble(str1, l1, l1 + i, str2, r2 - i, r2) && isScramble(str1, l1 + i, r1, str2, l2, r2 - i))
+            if ((isScramble(str1, l1, l1 + i, str2, l2, l2 + i, marks) && isScramble(str1, l1 + i, r1, str2, l2 + i, r2, marks))
+                    || isScramble(str1, l1, l1 + i, str2, r2 - i, r2, marks) && isScramble(str1, l1 + i, r1, str2, l2, r2 - i, marks)) {
+                marks[l1][l2][len - 1] = 1;
                 return true;
+            }
         }
+        marks[l1][l2][len - 1] = 2;
         return false;
     }
 }
