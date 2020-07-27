@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <projectDescription>
   <name>leetcode</name>
   <comment />
-  <projects>&#xD;
-    </projects>
+  <projects>&#xD;</projects>
   <buildSpec>
     <buildCommand>
       <name>org.eclipse.jdt.core.javabuilder</name>
-      <arguments>&#xD;
-            </arguments>
+      <arguments>&#xD;</arguments>
     </buildCommand>
   </buildSpec>
   <natures>
