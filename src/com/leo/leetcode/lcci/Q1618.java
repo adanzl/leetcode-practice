@@ -2,6 +2,7 @@ package com.leo.leetcode.lcci;
 
 /**
  * 你有两个字符串，即pattern和value。 pattern字符串由字母"a"和"b"组成，用于描述字符串中的模式。
+ * // cSpell:disable
  * 例如，字符串"catcatgocatgo"匹配模式"aabab"（其中"cat"是"a"，"go"是"b"），该字符串也匹配像"a"、"ab"和"b"这样的模式。
  * 但需注意"a"和"b"不能同时表示相同的字符串。编写一个方法判断value字符串是否匹配pattern字符串。
  * 链接：https://leetcode-cn.com/problems/pattern-matching-lcci
@@ -9,6 +10,7 @@ package com.leo.leetcode.lcci;
 public class Q1618 {
 
     public static void main(String[] args) {
+        // cSpell:disable
         System.out.println(new Q1618().patternMatching("abba", "dogcatcatdog")); // true
         System.out.println(new Q1618().patternMatching("abba", "dogcatcatfish")); // false
         System.out.println(new Q1618().patternMatching("aaaa", "dogcatcatdog")); // false
@@ -19,14 +21,15 @@ public class Q1618 {
         int count_a = 0, count_b = 0;
         for (char ch : pattern.toCharArray()) {
             if (ch == 'a') ++count_a;
-            else ++count_b;
+            else++count_b;
         }
         if (count_a < count_b) {
             int temp = count_a;
             count_a = count_b;
             count_b = temp;
             char[] array = pattern.toCharArray();
-            for (int i = 0; i < array.length; i++) array[i] = array[i] == 'a' ? 'b' : 'a';
+            for (int i = 0; i < array.length; i++)
+                array[i] = array[i] == 'a' ? 'b' : 'a';
             pattern = new String(array);
         }
         if (value.length() == 0) return count_b == 0;
@@ -64,5 +67,4 @@ public class Q1618 {
         }
         return false;
     }
-
 }
