@@ -40,4 +40,5 @@
         "creator.d.ts"
     ],
     "java.dependency.packagePresentation": "hierarchical",
+    "search.collapseResults": "auto",
 }
