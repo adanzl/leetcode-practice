@@ -33,9 +33,7 @@ public class Q1713 {
             CNode node = root;
             for (int i = str.length() - 1; i >= 0; i--) {
                 char c = str.charAt(i);
-                if (node.next[c - 'a'] == null) {
-                    node.next[c - 'a'] = new CNode(c);
-                }
+                if (node.next[c - 'a'] == null) node.next[c - 'a'] = new CNode(c);
                 node = node.next[c - 'a'];
             }
             node.end = true; // EOW
