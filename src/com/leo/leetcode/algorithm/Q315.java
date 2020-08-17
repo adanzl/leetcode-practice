@@ -8,16 +8,21 @@ import java.util.List;
  * 链接：https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self
  */
 public class Q315 {
+
     public static void main(String[] args) {
-        System.out.println(new Q315().countSmaller(new int[]{5, 2, 6, 1})); // [2,1,1,0]
-        System.out.println(new Q315().countSmaller(new int[]{5, 2, 6, 1})); // [2,1,1,0]
-        System.out.println(new Q315().countSmaller(new int[]{-1, -1})); // [0,0]
+        System.out.println(new Q315().countSmaller(new int[] { 5, 2, 6, 1 })); // [2,1,1,0]
+        System.out.println(new Q315().countSmaller(new int[] { 5, 2, 6, 1 })); // [2,1,1,0]
+        System.out.println(new Q315().countSmaller(new int[] { -1, -1 })); // [0,0]
     }
 
-    static class TreeNode {
+    private static class TreeNode {
+
         int val;
+
         TreeNode left;
+
         TreeNode right;
+
         int leftCount = 0;
 
         TreeNode(int val) {
@@ -29,7 +34,8 @@ public class Q315 {
         Integer[] out = new Integer[nums.length];
         Arrays.fill(out, 0);
         TreeNode root = null;
-        for (int i = nums.length - 1; i >= 0; i--) root = insertTree(root, new TreeNode(nums[i]), out, i);
+        for (int i = nums.length - 1; i >= 0; i--)
+            root = insertTree(root, new TreeNode(nums[i]), out, i);
         return Arrays.asList(out);
     }
 
