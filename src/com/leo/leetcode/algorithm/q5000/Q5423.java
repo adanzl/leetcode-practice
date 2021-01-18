@@ -1,4 +1,4 @@
-package com.leo.leetcode.algorithm.q1500;
+package com.leo.leetcode.algorithm.q5000;
 
 /**
  * 给你一个整数数组 arr 和一个整数值 target 。
