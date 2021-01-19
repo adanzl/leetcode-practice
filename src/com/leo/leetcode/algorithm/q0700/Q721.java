@@ -12,6 +12,10 @@ import static com.leo.utils.LCUtil.stringToListListString;
  * 一个人最初可以拥有任意数量的账户，但其所有账户都具有相同的名称。
  * 合并账户后，按以下格式返回账户：每个账户的第一个元素是名称，其余元素是按顺序排列的邮箱地址。
  * 账户本身可以以任意顺序返回。
+ * 提示：
+ * 1、accounts的长度将在[1，1000]的范围内。
+ * 2、accounts[i]的长度将在[1，10]的范围内。
+ * 3、accounts[i][j]的长度将在[1，30]的范围内。
  * <p>
  * 链接：https://leetcode-cn.com/problems/accounts-merge
  */
