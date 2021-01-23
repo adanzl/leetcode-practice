@@ -31,7 +31,7 @@ public class Q435 {
 
     public int eraseOverlapIntervals(int[][] intervals) {
         if (intervals.length == 0) return 0;
-        // Arrays.sort(intervals, (a, b) -> a[0] - b[0]); 用这个会从3ms优化到1ms
+        // Arrays.sort(intervals, (a, b) -> a[0] - b[0]); // 用这个会从3ms优化到1ms
         Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));
         int ret = 0, r = intervals[0][1];
         for (int i = 1; i < intervals.length; i++) {
