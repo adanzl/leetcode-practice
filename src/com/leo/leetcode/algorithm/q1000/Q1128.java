@@ -26,17 +26,11 @@ public class Q1128 {
 
     public int numEquivDominoPairs(int[][] dominoes) {
         int ret = 0;
-        int[][] map = new int[9][9];
+        int[] map = new int[81];
         for (int[] domino : dominoes) {
             int x = domino[0] - 1, y = domino[1] - 1;
-            ++map[x][y];
-            if (x != y) ++map[y][x];
-        }
-        for (int i = 0; i < map.length; i++) {
-            for (int j = i; j < 9; j++) {
-                int v = map[i][j];
-                if (v != 0) ret += v * (v - 1) / 2;
-            }
+            ret += map[x * 9 + y]++;
+            if (x != y) ++map[y * 9 + x];
         }
         return ret;
     }
