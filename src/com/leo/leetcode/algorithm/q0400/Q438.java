@@ -4,10 +4,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 给定一个字符串 s 和一个非空字符串 p，找到 s 中所有是 p 的字母异位词的子串，返回这些子串的起始索引。
+ * 字符串只包含小写英文字母，并且字符串 s 和 p 的长度都不超过 20100。
+ * <p>
+ * 说明：
+ * 1、字母异位词指字母相同，但排列不同的字符串。
+ * 2、不考虑答案输出的顺序。
+ * <p>
+ * 链接：https://leetcode-cn.com/problems/find-all-anagrams-in-a-string
+ */
 public class Q438 {
-    public void TestOJ() {
-        System.out.println(findAnagrams("cbaebabac", "bac")); // [0, 6]
-        System.out.println(findAnagrams("abab", "ab")); // [0, 1, 2]
+
+    public static void main(String[] args) {
+        System.out.println(new Q438().findAnagrams("cbaebabac", "bac")); // [0, 6]
+        System.out.println(new Q438().findAnagrams("abab", "ab")); // [0, 1, 2]
     }
 
     public List<Integer> findAnagrams(String s, String p) {
