@@ -28,7 +28,7 @@ public class Q485 {
         int ret = 0, l = -1, r = 0;
         while (r < nums.length) {
             if (nums[r] != 1) l = r;
-            ret = Math.max(ret, r - l);
+            else ret = Math.max(ret, r - l);
             r++;
         }
         return Math.max(ret, r - l - 1);
