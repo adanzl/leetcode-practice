@@ -4,12 +4,19 @@ import java.util.Arrays;
 
 /**
  * 给定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。
+ * <p>
+ * 注意:
+ * 给定数字的范围是 [0, 108]
+ * <p>
+ * 链接：https://leetcode-cn.com/problems/maximum-swap/
  */
 public class Q670 {
 
-    public void TestOJ() {
-        System.out.println(maximumSwap(2736)); // 7236
-        System.out.println(maximumSwap(9973)); // 9973
+    public static void main(String[] args) {
+        // 7236
+        System.out.println(new Q670().maximumSwap(2736));
+        // 9973
+        System.out.println(new Q670().maximumSwap(9973));
     }
 
     public int maximumSwap(int num) {
@@ -24,9 +31,7 @@ public class Q670 {
         int[] flag = new int[10];
         Arrays.fill(flag, -1);
         for (int j = 0; j < i; j++) {
-            if (flag[arr[j]] == -1) {
-                flag[arr[j]] = j;
-            }
+            if (flag[arr[j]] == -1) flag[arr[j]] = j;
         }
         int l = 0, r = 0;
         loop:
@@ -41,7 +46,6 @@ public class Q670 {
                 }
             }
         }
-
         swap(arr, l, r);
         for (int j = i - 1; j > 0; j--) {
             out += arr[j];
