@@ -1,7 +1,5 @@
 package com.leo.leetcode.algorithm.q0100;
 
-import java.util.Arrays;
-
 import static com.leo.utils.LCUtil.stringToIntegerArray;
 
 /**
@@ -28,12 +26,12 @@ public class Q135 {
         System.out.println(new Q135().candy(stringToIntegerArray("[1,2,2]")));
     }
 
-    public int candy(int[] ratings) {
+    public int candy2(int[] ratings) {
         if (ratings.length == 0) return 0;
         int ret = 1, pre = 1;
         int[] candy = new int[ratings.length];
-        Arrays.fill(candy, 1);
         for (int i = 1; i < ratings.length; i++) {
+            candy[i] = 1;
             if (ratings[i] > ratings[i - 1]) {
                 pre++;
             } else {
@@ -49,7 +47,24 @@ public class Q135 {
             }
             candy[i] = pre;
             ret += pre;
+        }
+        return ret;
+    }
 
+    public int candy(int[] ratings) {
+        int ret = 0, pre, len = ratings.length;
+        int[] candy = new int[len];
+        candy[0] = 1;
+        for (int i = 1; i < len; i++) {
+            if (ratings[i] > ratings[i - 1]) candy[i] = candy[i - 1] + 1;
+            else candy[i] = 1;
+        }
+        pre = candy[len - 1];
+        ret += pre;
+        for (int i = len - 2; i >= 0; i--) {
+            if (ratings[i] > ratings[i + 1]) pre++;
+            else pre = 1;
+            ret += Math.max(pre, candy[i]);
         }
         return ret;
     }
