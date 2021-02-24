@@ -14,7 +14,7 @@ public class TestCase {
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader(path));
-            System.out.println("Reading the file using readLine() method: [" + path + "]");
+            System.out.println("Reading : [" + path + "]");
             String contentLine;
             while ((contentLine = br.readLine()) != null) {
                 data.add(contentLine);
