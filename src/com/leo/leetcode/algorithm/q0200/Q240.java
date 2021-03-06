@@ -2,8 +2,24 @@ package com.leo.leetcode.algorithm.q0200;
 
 import com.leo.utils.LCUtil;
 
+/**
+ * 编写一个高效的算法来搜索  m  x  n  矩阵 matrix 中的一个目标值 target 。该矩阵具有以下特性：
+ * 1、每行的元素从左到右升序排列。
+ * 2、每列的元素从上到下升序排列。
+ * <p>
+ * 提示：
+ * 1、m == matrix.length
+ * 2、n == matrix[i].length
+ * 3、1 <= n, m <= 300
+ * 4、-10^9  <= matrix[i][j] <= 10^9
+ * 5、每行的所有元素从左到右升序排列
+ * 6、每列的所有元素从上到下升序排列
+ * 7、-10^9  <= target <= 10^9
+ * <p>
+ * 链接：https://leetcode-cn.com/problems/search-a-2d-matrix-ii
+ */
 public class Q240 {
-    public void TestOJ() {
+    public static void main(String[] args) {
         int[][] matrix = LCUtil.stringToInt2dArray("["
                 + "[ 1,  4,  7, 11, 15],"
                 + "[ 2,  5,  8, 12, 19],"
@@ -12,8 +28,11 @@ public class Q240 {
                 + "[18, 21, 23, 26, 30]"
                 + "]"
         );
-        System.out.println(searchMatrix(matrix, 5)); // t
-        System.out.println(searchMatrix(matrix, 20)); // f
+
+        // true
+        System.out.println(new Q240().searchMatrix(matrix, 5));
+        // false
+        System.out.println(new Q240().searchMatrix(matrix, 20));
     }
 
 
