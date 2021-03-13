@@ -40,12 +40,12 @@ public class Q705 {
         }
 
         public void add(int key) {
-            int n = key / 32, i = key % 32;
+            int n = key >> 5, i = key & 0x1f;
             marks[n] |= 1 << i;
         }
 
         public void remove(int key) {
-            int n = key / 32, i = key % 32;
+            int n = key >> 5, i = key & 0x1f;
             marks[n] &= ~(1 << i);
         }
 
@@ -53,7 +53,7 @@ public class Q705 {
          * Returns true if this set contains the specified element
          */
         public boolean contains(int key) {
-            int n = key / 32, i = key % 32;
+            int n = key >> 5, i = key & 0x1f;
             return (marks[n] & 1 << i) != 0;
         }
     }
