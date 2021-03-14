@@ -5,10 +5,21 @@ import com.leo.utils.LCUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 给你一个 m 行 n 列的矩阵 matrix ，请按照 顺时针螺旋顺序 ，返回矩阵中的所有元素。
+ * <p>
+ * 提示：
+ * 1、m == matrix.length
+ * 2、n == matrix[i].length
+ * 3、1 <= m, n <= 10
+ * 4、-100 <= matrix[i][j] <= 100
+ * <p>
+ * 链接：https://leetcode-cn.com/problems/spiral-matrix
+ */
 public class Q54 {
 
-    public void TestOJ() {
-        System.out.println(spiralOrder(LCUtil.stringToInt2dArray("[[1,2,3],[4,5,6],[7,8,9]]"))); // [1,2,3,6,9,8,7,4,5]
+    public static void main(String[] args) {
+        System.out.println(new Q54().spiralOrder(LCUtil.stringToInt2dArray("[[1,2,3],[4,5,6],[7,8,9]]"))); // [1,2,3,6,9,8,7,4,5]
     }
 
     public List<Integer> spiralOrder(int[][] matrix) {
