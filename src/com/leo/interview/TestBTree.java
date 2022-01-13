@@ -16,24 +16,24 @@ public class TestBTree {
 
     static void rOrderVisit(TreeNode root) {
         System.out.print("rOrder: ");
+        TreeNode[] nStack = new TreeNode[100];
+        int[] fStack = new int[100];
+        int top = -1;
         TreeNode p = root;
-        TreeNode[] stack = new TreeNode[100];
-        int[] sf = new int[100];
-        int sTop = -1, flag;
-        while (p != null || sTop != -1) {
+        while (top != -1 || p != null) {
             if (p != null) {
-                stack[++sTop] = p;
-                sf[sTop] = 0;
+                nStack[++top] = p;
+                fStack[top] = 0;
                 p = p.left;
             } else {
-                flag = sf[sTop];
-                p = stack[sTop--];
+                int flag = fStack[top];
+                p = nStack[top--];
                 if (flag == 0) {
-                    sf[++sTop] = 1;
-                    stack[sTop] = p;
+                    nStack[++top] = p;
+                    fStack[top] = 1;
                     p = p.right;
                 } else {
-                    System.out.print(p.val + "-");
+                    System.out.print("[" + p.val + " " + (top + 2) + "]-");
                     p = null;
                 }
             }
