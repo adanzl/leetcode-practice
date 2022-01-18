@@ -11,7 +11,7 @@ import java.util.Set;
  * <p>
  * 提示：
  * 1、1 <= nums.length <= 10^5
- * 2、-109 <= nums[i] <= 10^9
+ * 2、-10^9 <= nums[i] <= 10^9
  * 3、0 <= k <= 10^5
  * <p>
  * 链接：https://leetcode-cn.com/problems/contains-duplicate-ii
@@ -19,12 +19,12 @@ import java.util.Set;
 public class Q219 {
 
     public static void main(String[] args) {
-        // true
-        System.out.println(new Q219().containsNearbyDuplicate(LCUtil.stringToIntegerArray("[1,0,1,1]"), 1));
         // false
         System.out.println(new Q219().containsNearbyDuplicate(LCUtil.stringToIntegerArray("[1,2,3,1,2,3]"), 2));
         // true
         System.out.println(new Q219().containsNearbyDuplicate(LCUtil.stringToIntegerArray("[1,2,3,1]"), 3));
+        // true
+        System.out.println(new Q219().containsNearbyDuplicate(LCUtil.stringToIntegerArray("[1,0,1,1]"), 1));
         // false
         System.out.println(new Q219().containsNearbyDuplicate(LCUtil.stringToIntegerArray("[1]"), 1));
         // false
