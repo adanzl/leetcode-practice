@@ -7,7 +7,7 @@ import static com.leo.utils.LCUtil.stringToInt2dArray;
  * 机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。
  * 现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？
  * 网格中的障碍物和空位置分别用 1 和 0 来表示。
- * 说明：m 和 n 的值均不超过 100。
+ * 说明：m 和 n 的值均不超过 100。
  * 链接：https://leetcode-cn.com/problems/unique-paths-ii
  */
 public class Q63 {

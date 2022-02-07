@@ -11,9 +11,9 @@ import com.leo.utils.LCUtil;
  * 你可以自由地在房间之间来回走动。
  * 如果能进入每个房间返回 true，否则返回 false。
  * 提示：
- *      1 <= rooms.length <= 1000
+ *      1 <= rooms.length <= 1000
  *      0 <= rooms[i].length <= 1000
- *      所有房间中的钥匙数量总计不超过 3000。
+ *      所有房间中的钥匙数量总计不超过 3000。
  * 链接：https://leetcode-cn.com/problems/keys-and-rooms
  */
 public class Q841 {
