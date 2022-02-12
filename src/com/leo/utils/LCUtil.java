@@ -348,4 +348,41 @@ public class LCUtil {
             writeArray(currNode.right, rowIndex + 2, columnIndex + gap * 2, res, treeDepth);
         }
     }
+
+    /**
+     * 通过String构建树
+     *
+     * @param input 输入字符，用null分割
+     * @return 树的根节点
+     */
+    public static Node stringToNodeTree(String input) {
+        input = input.trim();
+        input = input.substring(1, input.length() - 1);
+        if (input.length() == 0) return null;
+
+        String[] parts = input.split(",");
+        String item = parts[0];
+        Node root = new Node(Integer.parseInt(item));
+        Queue<Node> nodeQueue = new LinkedList<>();
+        nodeQueue.add(root);
+
+        int index = 2;
+        while (!nodeQueue.isEmpty()) {
+            Node node = nodeQueue.poll();
+            if (index == parts.length)
+                break;
+            item = parts[index++].trim();
+            while (!item.equals("null")) {
+                int val = Integer.parseInt(item);
+                if (node.children == null) node.children = new ArrayList<>();
+                Node childNode = new Node(val);
+                node.children.add(childNode);
+                nodeQueue.add(childNode);
+                if (index == parts.length)
+                    break;
+                item = parts[index++].trim();
+            }
+        }
+        return root;
+    }
 }
