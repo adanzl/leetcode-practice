@@ -3,6 +3,8 @@ package com.leo.utils;
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonArray;
 
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public class LCUtil {
@@ -384,5 +386,85 @@ public class LCUtil {
             }
         }
         return root;
+    }
+
+    /**
+     * 使用python画出2d数组图像
+     * 需要python3安装在环境变量中，同时安装了numpy和matplotlib依赖
+     *
+     * @param array 2dArray
+     */
+    public static void drawInt2dArray(int[][] array) {
+        StringBuilder code = new StringBuilder();
+        if (array.length == 0) return;
+        int width = 10, fontSize = 20;
+        int row = array.length, col = array[0].length;
+        // 画格子
+        for (int i = 0; i < row + 1; i++) {
+            String lineCode = "[[0, " + i * width + "],[" + col * width + "," + i * width + "]]";
+            code.append("    area = ").append(lineCode).append("\n");
+            code.append("    draw_points_list(area, marker='o-',  b_ring=False)\n");
+            // 刻度
+            code.append(String.format("    plt.text(%f, %f, s='%s', size=10)\n", -0.2 * width, (i + 0.5) * width, i));
+        }
+        for (int i = 0; i < col + 1; i++) {
+            String lineCode = "[[" + i * width + ", 0],[" + i * width + "," + row * width + "]]";
+            code.append("    area = ").append(lineCode).append("\n");
+            code.append("    draw_points_list(area, marker='o-',  b_ring=False)\n");
+            // 刻度
+            code.append(String.format("    plt.text(%f, %f, s='%s', size=10)\n", (i + 0.5) * width, -0.1 * width, i));
+        }
+        // 描点
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                double x = (0.5 + i) * width, y = (0.5 + j) * width;
+                code.append(String.format("    plt.text(%f, %f, s='%s', size=%d)\n", x, y, array[i][j], fontSize));
+            }
+        }
+
+        Thread t = new Thread(() -> {
+            try {
+                String script = "import matplotlib.pyplot as plt" + "\n" +
+                        "import numpy as np" + "\n" +
+                        "from matplotlib.ticker import MultipleLocator, FormatStrFormatter\n" +
+                        "def draw_points_list(points, marker='x',  b_ring=True):" + "\n" +
+                        "    pt = points.copy()\n" +
+                        "    if  b_ring:\n" +
+                        "        pt.append(pt[0])" + "\n" +
+                        "    pt = np.array(pt)" + "\n" +
+                        "    plt.plot(pt[:, 0], pt[:, 1], marker)" + "\n" +
+//                        "    for label, pos in enumerate(pt[:-1]):" + "\n" +
+//                        "        plt.text(pos[0], pos[1], label)" + "\n" +
+                        "\n" +
+                        "if __name__ == '__main__':\n" +
+                        "    plt.figure(figsize=(8,8))\n" +
+                        "    plt.axis('equal')\n" +
+                        "    ax = plt.gca()\n" +
+                        "    ax.xaxis.set_ticks_position('top') " + "\n" +
+                        "    ax.invert_yaxis() " + "\n" +
+                        code +
+                        "    plt.show()" + "\n";
+                String scriptName = "debug.py";
+                OutputStream pyFile = new FileOutputStream(scriptName);
+                pyFile.write(script.getBytes(StandardCharsets.UTF_8));
+                pyFile.close();
+                String[] cmd = new String[]{"python3", scriptName};
+                Process process = Runtime.getRuntime().exec(cmd);
+                InputStreamReader isr = new InputStreamReader(process.getInputStream());
+                BufferedReader br = new BufferedReader(isr);
+                String line;
+                while ((line = br.readLine()) != null) {
+                    System.out.println(line);
+                }
+                isr = new InputStreamReader(process.getErrorStream());
+                br = new BufferedReader(isr);
+                while ((line = br.readLine()) != null) {
+                    System.out.println(line);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        t.start();
     }
 }

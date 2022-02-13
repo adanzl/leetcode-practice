@@ -2,3 +2,4 @@ out/
 .vscode/launch.json
 .idea/
 .project
+/debug.py
