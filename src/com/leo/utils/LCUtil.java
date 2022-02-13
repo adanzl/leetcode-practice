@@ -433,12 +433,11 @@ public class LCUtil {
                         "        pt.append(pt[0])" + "\n" +
                         "    pt = np.array(pt)" + "\n" +
                         "    plt.plot(pt[:, 0], pt[:, 1], marker)" + "\n" +
-//                        "    for label, pos in enumerate(pt[:-1]):" + "\n" +
-//                        "        plt.text(pos[0], pos[1], label)" + "\n" +
                         "\n" +
                         "if __name__ == '__main__':\n" +
                         "    plt.figure(figsize=(8,8))\n" +
                         "    plt.axis('equal')\n" +
+                        "    plt.axis('off')\n" +
                         "    ax = plt.gca()\n" +
                         "    ax.xaxis.set_ticks_position('top') " + "\n" +
                         "    ax.invert_yaxis() " + "\n" +
