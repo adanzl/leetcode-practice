@@ -4,7 +4,6 @@ package com.leo.leetcode.algorithm.q0200;
  * 在二维平面上计算出两个由直线构成的矩形重叠后形成的总面积。
  * 每个矩形由其左下顶点和右上顶点坐标表示，如图所示。
  * 说明: 假设矩形面积不会超出 int 的范围。
- * <p>
  * 链接：https://leetcode-cn.com/problems/rectangle-area/
  */
 public class Q223 {

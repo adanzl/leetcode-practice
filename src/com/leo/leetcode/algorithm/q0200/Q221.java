@@ -4,13 +4,11 @@ import java.util.Arrays;
 
 /**
  * 在一个由 '0' 和 '1' 组成的二维矩阵内，找到只包含 '1' 的最大正方形，并返回其面积。
- * <p>
  * 提示：
  * 1、m == matrix.length
  * 2、n == matrix[i].length
  * 3、1 <= m, n <= 300
  * 4、matrix[i][j] 为 '0' 或 '1'
- * <p>
  * 链接：https://leetcode-cn.com/problems/maximal-square
  */
 public class Q221 {

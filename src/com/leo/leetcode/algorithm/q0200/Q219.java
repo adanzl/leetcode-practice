@@ -8,12 +8,10 @@ import java.util.Set;
 /**
  * 给你一个整数数组 nums 和一个整数 k ，判断数组中是否存在两个 不同的索引 i 和 j ，满足 nums[i] == nums[j] 且 abs(i - j) <= k 。
  * 如果存在，返回 true ；否则，返回 false 。
- * <p>
  * 提示：
  * 1、1 <= nums.length <= 10^5
  * 2、-10^9 <= nums[i] <= 10^9
  * 3、0 <= k <= 10^5
- * <p>
  * 链接：https://leetcode-cn.com/problems/contains-duplicate-ii
  */
 public class Q219 {

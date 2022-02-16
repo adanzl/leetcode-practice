@@ -17,7 +17,6 @@ import static com.leo.utils.LCUtil.stringToIntegerArray;
  * 2、-2^31 <= nums[i] <= 2^31 - 1
  * 3、nums 中的所有值都 互不相同
  * 4、nums 按升序排列
- * <p>
  * 链接：https://leetcode-cn.com/problems/summary-ranges
  */
 public class Q228 {

@@ -2,9 +2,7 @@ package com.leo.leetcode.algorithm.q0200;
 
 /**
  * 将非负整数 num 转换为其对应的英文表示。
- * <p>
  * 提示：0 <= num <= 2^31 - 1
- * <p>
  * 链接：https://leetcode-cn.com/problems/integer-to-english-words/
  */
 public class Q273 {

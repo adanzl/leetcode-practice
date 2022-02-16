@@ -4,12 +4,10 @@ import java.util.Stack;
 
 /**
  * 实现一个基本的计算器来计算一个简单的字符串表达式 s 的值。
- * <p>
  * 提示：
  * 1、1 <= s.length <= 3 * 10^5
  * 2、s 由数字、'+'、'-'、'('、')'、和 ' ' 组成
  * 3、s 表示一个有效的表达式
- * <p>
  * 链接：https://leetcode-cn.com/problems/basic-calculator/
  */
 public class Q224 {

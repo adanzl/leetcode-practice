@@ -6,7 +6,6 @@ package com.leo.leetcode.algorithm.q0200;
  * 你可以假设字符串只包含小写字母。
  * 进阶:
  * 如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
- * <p>
  * 链接：https://leetcode-cn.com/problems/valid-anagram/
  */
 public class Q242 {

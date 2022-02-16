@@ -3,7 +3,6 @@ package com.leo.leetcode.algorithm.q0200;
 /**
  * 给定一个整数 n，计算所有小于等于 n 的非负整数中数字 1 出现的个数。
  * 提示： 0 <= n <= 2 * 10^9
- * <p>
  * 链接：https://leetcode-cn.com/problems/number-of-digit-one/
  */
 public class Q233 {
