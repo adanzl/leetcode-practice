@@ -6,14 +6,26 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+/**
+ * 给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。
+ * 你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。
+ * 返回 滑动窗口中的最大值 。
+ * 提示：
+ * 1、1 <= nums.length <= 10^5
+ * 2、-10^4 <= nums[i] <= 10^4
+ * 3、1 <= k <= nums.length
+ * 链接：https://leetcode-cn.com/problems/sliding-window-maximum
+ */
 public class Q239 {
     public static void main(String[] args) {
         new Q239().TestOJ();
     }
 
     public void TestOJ() {
-        System.out.println(Arrays.toString(maxSlidingWindow(LCUtil.stringToIntegerArray(" [1,3,-1,-3,5,3,6,7]"), 3))); // [3,3,5,5,6,7]
-        System.out.println(Arrays.toString(maxSlidingWindow1(LCUtil.stringToIntegerArray(" [1,3,-1,-3,5,3,6,7]"), 3))); // [3,3,5,5,6,7]
+        // [3,3,5,5,6,7]
+        System.out.println(Arrays.toString(maxSlidingWindow(LCUtil.stringToIntegerArray(" [1,3,-1,-3,5,3,6,7]"), 3)));
+        // [3,3,5,5,6,7]
+        System.out.println(Arrays.toString(maxSlidingWindow1(LCUtil.stringToIntegerArray(" [1,3,-1,-3,5,3,6,7]"), 3)));
     }
 
     public int[] maxSlidingWindow(int[] nums, int k) {
