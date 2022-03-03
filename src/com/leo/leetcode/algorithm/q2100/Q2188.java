@@ -1,4 +1,4 @@
-package com.leo.leetcode.algorithm.q2000;
+package com.leo.leetcode.algorithm.q2100;
 
 import java.util.Arrays;
 
