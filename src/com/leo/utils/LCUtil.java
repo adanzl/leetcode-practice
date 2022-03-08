@@ -144,7 +144,7 @@ public class LCUtil {
             nodeQueue.add(node.left);
             nodeQueue.add(node.right);
         }
-        return "[" + output.substring(0, output.length() - 2) + "]";
+        return ("[" + output.substring(0, output.length() - 2) + "]").replaceAll("((, null)+(?=]))", "");
     }
 
     public static String listNodeToString(ListNode node) {
