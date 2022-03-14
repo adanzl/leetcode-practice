@@ -1,4 +1,4 @@
-package com.leo.leetcode.algorithm.q5000;
+package com.leo.leetcode.algorithm.q2200;
 
 import java.util.Arrays;
 
@@ -16,37 +16,37 @@ import static com.leo.utils.LCUtil.stringToIntegerArray;
  * 2、0 <= nums[i], k <= 10^9
  * 链接：https://leetcode-cn.com/problems/maximize-the-topmost-element-after-k-moves
  */
-public class Q5227 {
+public class Q2202 {
     public static void main(String[] args) {
         // 2
-        System.out.println(new Q5227().maximumTop(stringToIntegerArray("[0,1,2]"), 2));
+        System.out.println(new Q2202().maximumTop(stringToIntegerArray("[0,1,2]"), 2));
         // 94
-        System.out.println(new Q5227().maximumTop(stringToIntegerArray("[35,43,23,86,23,45,84,2,18,83,79,28,54,81,12,94,14,0,0,29,94,12,13,1,48,85,22,95,24,5,73,10,96,97,72,41,52,1,91,3,20,22,41,98,70,20,52,48,91,84,16,30,27,35,69,33,67,18,4,53,86,78,26,83,13,96,29,15,34,80,16,49]")
+        System.out.println(new Q2202().maximumTop(stringToIntegerArray("[35,43,23,86,23,45,84,2,18,83,79,28,54,81,12,94,14,0,0,29,94,12,13,1,48,85,22,95,24,5,73,10,96,97,72,41,52,1,91,3,20,22,41,98,70,20,52,48,91,84,16,30,27,35,69,33,67,18,4,53,86,78,26,83,13,96,29,15,34,80,16,49]")
                 , 15));
         // 1
-        System.out.println(new Q5227().maximumTop(stringToIntegerArray("[0,1,2]"), 3));
+        System.out.println(new Q2202().maximumTop(stringToIntegerArray("[0,1,2]"), 3));
         // -1
-        System.out.println(new Q5227().maximumTop(stringToIntegerArray("[2]"), 1));
+        System.out.println(new Q2202().maximumTop(stringToIntegerArray("[2]"), 1));
         // 0
-        System.out.println(new Q5227().maximumTop(stringToIntegerArray("[0]"), 100000));
+        System.out.println(new Q2202().maximumTop(stringToIntegerArray("[0]"), 100000));
         // 3
-        System.out.println(new Q5227().maximumTop(stringToIntegerArray("[3]"), 0));
+        System.out.println(new Q2202().maximumTop(stringToIntegerArray("[3]"), 0));
         // 76
-        System.out.println(new Q5227().maximumTop(stringToIntegerArray("[68,76,53,73,85,87,58,24,48,59,38,80,38,65,90,38,45,22,3,28,11]")
+        System.out.println(new Q2202().maximumTop(stringToIntegerArray("[68,76,53,73,85,87,58,24,48,59,38,80,38,65,90,38,45,22,3,28,11]")
                 , 1));
         // 96
-        System.out.println(new Q5227().maximumTop(stringToIntegerArray("[73,63,62,16,95,92,93,52,89,36,75,79,67,60,42,93,93,74,94,73,35,86,96]")
+        System.out.println(new Q2202().maximumTop(stringToIntegerArray("[73,63,62,16,95,92,93,52,89,36,75,79,67,60,42,93,93,74,94,73,35,86,96]")
                 , 59));
         // 92
-        System.out.println(new Q5227().maximumTop(stringToIntegerArray("[31,15,92,84,19,92,55]"), 4));
+        System.out.println(new Q2202().maximumTop(stringToIntegerArray("[31,15,92,84,19,92,55]"), 4));
         // 96
-        System.out.println(new Q5227().maximumTop(stringToIntegerArray("[73,63,62,16,95,92,93,52,89,36,75,79,67,60,42,93,93,74,94,73,35,86,96]"), 59));
+        System.out.println(new Q2202().maximumTop(stringToIntegerArray("[73,63,62,16,95,92,93,52,89,36,75,79,67,60,42,93,93,74,94,73,35,86,96]"), 59));
         // 95
-        System.out.println(new Q5227().maximumTop(stringToIntegerArray("[9,95,68,24,99]"), 5));
+        System.out.println(new Q2202().maximumTop(stringToIntegerArray("[9,95,68,24,99]"), 5));
         // 99
-        System.out.println(new Q5227().maximumTop(stringToIntegerArray("[99,95,68,24,18]"), 69));
+        System.out.println(new Q2202().maximumTop(stringToIntegerArray("[99,95,68,24,18]"), 69));
         // 5
-        System.out.println(new Q5227().maximumTop(stringToIntegerArray("[5,2,2,4,0,6]"), 4));
+        System.out.println(new Q2202().maximumTop(stringToIntegerArray("[5,2,2,4,0,6]"), 4));
 
     }
 

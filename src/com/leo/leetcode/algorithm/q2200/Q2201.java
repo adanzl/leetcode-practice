@@ -1,4 +1,4 @@
-package com.leo.leetcode.algorithm.q5000;
+package com.leo.leetcode.algorithm.q2200;
 
 import static com.leo.utils.LCUtil.stringToInt2dArray;
 
@@ -26,18 +26,18 @@ import static com.leo.utils.LCUtil.stringToInt2dArray;
  * 10、dig 中的元素互不相同
  * 链接：https://leetcode-cn.com/problems/count-artifacts-that-can-be-extracted
  */
-public class Q5203 {
+public class Q2201 {
 
     public static void main(String[] args) {
         // 0
-        System.out.println(new Q5203().digArtifacts(
+        System.out.println(new Q2201().digArtifacts(
                 6,
                 stringToInt2dArray("[[0,2,0,5],[0,1,1,1],[3,0,3,3],[4,4,4,4],[2,1,2,4]]"),
                 stringToInt2dArray("[[0,2],[0,3],[0,4],[2,0],[2,1],[2,2],[2,5],[3,0],[3,1],[3,3],[3,4],[4,0],[4,3],[4,5],[5,0],[5,1],[5,2],[5,4],[5,5]]")));
         // 1
-        System.out.println(new Q5203().digArtifacts(2, stringToInt2dArray("[[0,0,0,0],[0,1,1,1]]"), stringToInt2dArray("[[0,0],[0,1]]")));
+        System.out.println(new Q2201().digArtifacts(2, stringToInt2dArray("[[0,0,0,0],[0,1,1,1]]"), stringToInt2dArray("[[0,0],[0,1]]")));
         // 2
-        System.out.println(new Q5203().digArtifacts(2, stringToInt2dArray("[[0,0,0,0],[0,1,1,1]]"), stringToInt2dArray("[[0,0],[0,1],[1,1]]")));
+        System.out.println(new Q2201().digArtifacts(2, stringToInt2dArray("[[0,0,0,0],[0,1,1,1]]"), stringToInt2dArray("[[0,0],[0,1],[1,1]]")));
     }
 
     public int digArtifacts(int n, int[][] artifacts, int[][] dig) {
