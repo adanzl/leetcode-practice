@@ -19,24 +19,18 @@ public class QSort {
         return arr;
     }
 
-    int walk(int[] arr, int start, int end) {
+    void sort(int[] arr, int start, int end) {
         int l = start, r = end - 1;
-        if (l >= r) return l;
-        int v = arr[start];
+        if (l >= r) return;
+        int v = arr[l];
         while (l < r) {
             while (l < r && arr[r] >= v) r--;
             while (l < r && arr[l] <= v) l++;
             swap(arr, l, r);
         }
         swap(arr, start, l);
-        return l;
-    }
-
-    void sort(int[] arr, int l, int r) {
-        if (l >= r) return;
-        int m = walk(arr, l, r);
-        sort(arr, l, m);
-        sort(arr, m + 1, r);
+        sort(arr, start, l);
+        sort(arr, l + 1, end);
     }
 
     void swap(int[] arr, int l, int r) {
