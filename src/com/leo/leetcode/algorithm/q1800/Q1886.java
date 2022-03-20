@@ -1,4 +1,4 @@
-package com.leo.leetcode.algorithm.Q1800;
+package com.leo.leetcode.algorithm.q1800;
 
 import static com.leo.utils.LCUtil.stringToInt2dArray;
 

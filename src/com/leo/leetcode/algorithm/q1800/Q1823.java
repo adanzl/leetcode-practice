@@ -1,4 +1,4 @@
-package com.leo.leetcode.algorithm.Q1800;
+package com.leo.leetcode.algorithm.q1800;
 
 /**
  * 共有 n 名小伙伴一起做游戏。小伙伴们围成一圈，按 顺时针顺序 从 1 到 n 编号。
