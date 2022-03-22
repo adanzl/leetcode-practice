@@ -1,4 +1,4 @@
-package com.leo.leetcode.algorithm.q5000;
+package com.leo.leetcode.algorithm.q1400;
 
 /**
  * 给你一个整数数组 arr 和一个整数值 target 。
@@ -6,18 +6,18 @@ package com.leo.leetcode.algorithm.q5000;
  * 请返回满足要求的最小长度和，如果无法找到这样的两个子数组，请返回 -1 。
  * 链接：https://leetcode-cn.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum
  */
-public class Q5423 {
+public class Q1477 {
 
     public static void main(String[] args) {
-        System.out.println(new Q5423().minSumOfLengths(new int[]{24, 1, 21, 1, 4, 3, 27, 7, 5, 1, 12, 1, 1, 43, 2, 5, 4, 54, 34}, 54)); // 5
-        System.out.println(new Q5423().minSumOfLengths(new int[]{31, 1, 1, 18, 15, 3, 15, 14}, 33)); // 5
-        System.out.println(new Q5423().minSumOfLengths(new int[]{47, 17, 4, 8, 8, 2, 1, 1, 8, 35, 30, 1, 11, 1, 1, 1, 44, 1, 3, 27, 2, 8}, 88)); // 16
-        System.out.println(new Q5423().minSumOfLengths(new int[]{7, 3, 4, 7}, 7)); // 2
-        System.out.println(new Q5423().minSumOfLengths(new int[]{1, 6, 1}, 7)); // -1
-        System.out.println(new Q5423().minSumOfLengths(new int[]{4, 3, 2, 6, 2, 3, 4}, 6)); // -1
-        System.out.println(new Q5423().minSumOfLengths(new int[]{3, 1, 1, 1, 5, 1, 2, 1}, 3)); // 3
-        System.out.println(new Q5423().minSumOfLengths(new int[]{3, 2, 2, 4, 3}, 3)); // 2
-        System.out.println(new Q5423().minSumOfLengths(new int[]{5, 5, 4, 4, 5}, 3)); // -1
+        System.out.println(new Q1477().minSumOfLengths(new int[]{24, 1, 21, 1, 4, 3, 27, 7, 5, 1, 12, 1, 1, 43, 2, 5, 4, 54, 34}, 54)); // 5
+        System.out.println(new Q1477().minSumOfLengths(new int[]{31, 1, 1, 18, 15, 3, 15, 14}, 33)); // 5
+        System.out.println(new Q1477().minSumOfLengths(new int[]{47, 17, 4, 8, 8, 2, 1, 1, 8, 35, 30, 1, 11, 1, 1, 1, 44, 1, 3, 27, 2, 8}, 88)); // 16
+        System.out.println(new Q1477().minSumOfLengths(new int[]{7, 3, 4, 7}, 7)); // 2
+        System.out.println(new Q1477().minSumOfLengths(new int[]{1, 6, 1}, 7)); // -1
+        System.out.println(new Q1477().minSumOfLengths(new int[]{4, 3, 2, 6, 2, 3, 4}, 6)); // -1
+        System.out.println(new Q1477().minSumOfLengths(new int[]{3, 1, 1, 1, 5, 1, 2, 1}, 3)); // 3
+        System.out.println(new Q1477().minSumOfLengths(new int[]{3, 2, 2, 4, 3}, 3)); // 2
+        System.out.println(new Q1477().minSumOfLengths(new int[]{5, 5, 4, 4, 5}, 3)); // -1
     }
 
     public int minSumOfLengths(int[] arr, int target) {
