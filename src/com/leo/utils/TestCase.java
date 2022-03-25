@@ -14,7 +14,6 @@ public class TestCase {
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader(path));
-            System.out.println("Reading : [" + path + "]");
             String contentLine;
             while ((contentLine = br.readLine()) != null) {
                 data.add(contentLine);
@@ -38,5 +37,13 @@ public class TestCase {
             return "";
         }
         return this.data.get(lenNum);
+    }
+
+    public int getDataInt(int lenNum) {
+        if (lenNum > data.size()) {
+            System.out.println("No data for num: " + lenNum);
+            return 0;
+        }
+        return Integer.parseInt(this.data.get(lenNum));
     }
 }
