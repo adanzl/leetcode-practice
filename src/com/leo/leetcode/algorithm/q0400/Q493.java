@@ -41,15 +41,16 @@ public class Q493 {
             ret += mid - l;
             r++;
         }
-
         int i0 = s, i1 = mid, idx = 0;
-        for (; i0 < mid && i1 < e; idx++) {
-            if (nums[i0] < nums[i1]) tmp[idx] = nums[i0++];
-            else tmp[idx] = nums[i1++];
+        if (nums[mid - 1] > nums[mid]) {
+            for (; i0 < mid && i1 < e; idx++) {
+                if (nums[i0] <= nums[i1]) tmp[idx] = nums[i0++];
+                else tmp[idx] = nums[i1++];
+            }
+            while (i0 < mid) tmp[idx++] = nums[i0++];
+            while (i1 < e) tmp[idx++] = nums[i1++];
+            System.arraycopy(tmp, 0, nums, s, e - s);
         }
-        while (i0 < mid) tmp[idx++] = nums[i0++];
-        while (i1 < e) tmp[idx++] = nums[i1++];
-        System.arraycopy(tmp, 0, nums, s, e - s);
         return ret;
     }
 
