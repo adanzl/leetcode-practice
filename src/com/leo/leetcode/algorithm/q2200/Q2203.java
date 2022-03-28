@@ -75,7 +75,6 @@ public class Q2203 {
         q.offer(new long[]{src, 0});
         while (!q.isEmpty()) {
             long[] cur = q.poll();
-            assert cur != null;
             long minNext = cur[1];
             int maxIdx = (int) cur[0];
             if (vis[maxIdx]) continue;
@@ -83,7 +82,7 @@ public class Q2203 {
                 int nextIdx = m[0];
                 if (m[1] + minNext < dist[nextIdx]) {
                     dist[nextIdx] = m[1] + minNext;
-                    q.offer(new long[]{m[0], dist[m[0]]});
+                    q.offer(new long[]{m[0], dist[nextIdx]});
                 }
             }
             vis[maxIdx] = true;
