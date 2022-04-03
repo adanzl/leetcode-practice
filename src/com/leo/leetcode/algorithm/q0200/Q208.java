@@ -5,18 +5,15 @@ import java.util.Map;
 
 /**
  * 实现一个 Trie (前缀树)，包含 insert, search, 和 startsWith 这三个操作。
- * <p>
  * 说明:
  * 1、你可以假设所有的输入都是由小写字母 a-z 构成的。
  * 2、保证所有输入均为非空字符串。
- * <p>
  * 链接：https://leetcode-cn.com/problems/implement-trie-prefix-tree/
  */
 public class Q208 {
 
     public static void main(String[] args) {
         Trie trie = new Trie();
-
         trie.insert("apple");
         System.out.println(trie.search("apple"));   // 返回 true
         System.out.println(trie.search("app"));     // 返回 false
@@ -74,9 +71,7 @@ public class Q208 {
             TNode p = this.head;
             for (char c : word.toCharArray()) {
                 TNode f = p.findChild(c);
-                if (f == null) {
-                    return false;
-                }
+                if (f == null) return false;
                 p = f;
             }
             return p.children.get('\n') != null;
@@ -89,9 +84,7 @@ public class Q208 {
             TNode p = this.head;
             for (char c : prefix.toCharArray()) {
                 TNode f = p.findChild(c);
-                if (f == null) {
-                    return false;
-                }
+                if (f == null) return false;
                 p = f;
             }
             return true;
