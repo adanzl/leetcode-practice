@@ -2,7 +2,6 @@ package com.leo.leetcode.algorithm.q1800;
 
 import java.util.Arrays;
 
-import static com.leo.utils.LCUtil.char2dToString;
 import static com.leo.utils.LCUtil.stringToIntegerArray;
 
 /**

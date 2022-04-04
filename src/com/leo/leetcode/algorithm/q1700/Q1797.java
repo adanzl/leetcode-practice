@@ -36,31 +36,30 @@ public class Q1797 {
         System.out.println("=========================");
     }
 
-}
+    static class AuthenticationManager {
+        private final int timeToLive;
+        private final Map<String, Integer> expireMap = new HashMap<>();
 
-class AuthenticationManager {
-    private final int timeToLive;
-    private final Map<String, Integer> expireMap = new HashMap<>();
-
-    public AuthenticationManager(int timeToLive) {
-        this.timeToLive = timeToLive;
-    }
-
-    public void generate(String tokenId, int currentTime) {
-        expireMap.put(tokenId, currentTime + timeToLive);
-    }
-
-    public void renew(String tokenId, int currentTime) {
-        Integer expTime = expireMap.get(tokenId);
-        if (null == expTime || expTime <= currentTime) return;
-        expireMap.put(tokenId, currentTime + timeToLive);
-    }
-
-    public int countUnexpiredTokens(int currentTime) {
-        int ret = 0;
-        for (int expireTime : expireMap.values()) {
-            if (expireTime > currentTime) ret++;
+        public AuthenticationManager(int timeToLive) {
+            this.timeToLive = timeToLive;
         }
-        return ret;
+
+        public void generate(String tokenId, int currentTime) {
+            expireMap.put(tokenId, currentTime + timeToLive);
+        }
+
+        public void renew(String tokenId, int currentTime) {
+            Integer expTime = expireMap.get(tokenId);
+            if (null == expTime || expTime <= currentTime) return;
+            expireMap.put(tokenId, currentTime + timeToLive);
+        }
+
+        public int countUnexpiredTokens(int currentTime) {
+            int ret = 0;
+            for (int expireTime : expireMap.values()) {
+                if (expireTime > currentTime) ret++;
+            }
+            return ret;
+        }
     }
 }
