@@ -34,45 +34,46 @@ public class Q622 {
         System.out.println(circularQueue.Rear());  // 返回 4
 
     }
+
+    static class MyCircularQueue {
+
+        int[] arr;
+        int front = 0, rear = 0;
+
+        public MyCircularQueue(int k) {
+            arr = new int[k + 1];
+        }
+
+        public boolean enQueue(int value) {
+            if (isFull()) return false;
+            arr[rear] = value;
+            rear = (rear + 1) % arr.length;
+            return true;
+        }
+
+        public boolean deQueue() {
+            if (isEmpty()) return false;
+            front = (front + 1) % arr.length;
+            return true;
+        }
+
+        public int Front() {
+            if (isEmpty()) return -1;
+            return arr[front];
+        }
+
+        public int Rear() {
+            if (isEmpty()) return -1;
+            return arr[(rear - 1 + arr.length) % arr.length];
+        }
+
+        public boolean isEmpty() {
+            return front == rear;
+        }
+
+        public boolean isFull() {
+            return front == (rear + 1) % arr.length;
+        }
+    }
 }
 
-class MyCircularQueue {
-
-    int[] arr;
-    int front = 0, rear = 0;
-
-    public MyCircularQueue(int k) {
-        arr = new int[k + 1];
-    }
-
-    public boolean enQueue(int value) {
-        if (isFull()) return false;
-        arr[rear] = value;
-        rear = (rear + 1) % arr.length;
-        return true;
-    }
-
-    public boolean deQueue() {
-        if (isEmpty()) return false;
-        front = (front + 1) % arr.length;
-        return true;
-    }
-
-    public int Front() {
-        if (isEmpty()) return -1;
-        return arr[front];
-    }
-
-    public int Rear() {
-        if (isEmpty()) return -1;
-        return arr[(rear - 1 + arr.length) % arr.length];
-    }
-
-    public boolean isEmpty() {
-        return front == rear;
-    }
-
-    public boolean isFull() {
-        return front == (rear + 1) % arr.length;
-    }
-}
