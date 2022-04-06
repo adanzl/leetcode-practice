@@ -47,56 +47,58 @@ public class Q307 {
         numArray.update(1, 2);   // nums = [1,2,5]
         System.out.println(numArray.sumRange(0, 2)); // 返回 1 + 2 + 5 = 8
     }
-}
 
-class NumArray {
+    static class NumArray {
 
-    private final int[][] bArr;
-    private final int[] nums;
+        private final int[][] bArr;
+        private final int[] nums;
 
-    public NumArray(int[] nums) {
-        bArr = new int[nums.length << 2][4]; // l-r-v-d
-        this.nums = nums;
-        // build tree
-        this.buildTree(0, 0, nums.length - 1);
-    }
-
-    private int buildTree(int root, int l, int r) {
-        bArr[root][0] = l;
-        bArr[root][1] = r;
-        if (l == r) return bArr[root][2] = nums[l];
-        int mid = (l + r) >> 1, sl = (root << 1) + 1, sr = sl + 1;
-        int lv = buildTree(sl, l, mid);
-        int rv = buildTree(sr, mid + 1, r);
-        return bArr[root][2] = lv + rv;
-    }
-
-    public void update(int index, int val) {
-        set(0, index, val);
-    }
-
-    private void set(int root, int idx, int val) {
-        int[] rn = bArr[root];
-        if (rn[0] == rn[1]) {
-            rn[2] = val;
-            return;
+        public NumArray(int[] nums) {
+            bArr = new int[nums.length << 2][4]; // l-r-v-d
+            this.nums = nums;
+            // build tree
+            this.buildTree(0, 0, nums.length - 1);
         }
-        int mid = (rn[0] + rn[1]) >> 1, sl = (root << 1) + 1, sr = sl + 1;
-        if (idx > mid) set(sr, idx, val);
-        else set(sl, idx, val);
-        rn[2] = bArr[sl][2] + bArr[sr][2];
-    }
 
-    public int sumRange(int left, int right) {
-        return query(0, left, right);
-    }
+        private int buildTree(int root, int l, int r) {
+            bArr[root][0] = l;
+            bArr[root][1] = r;
+            if (l == r) return bArr[root][2] = nums[l];
+            int mid = (l + r) >> 1, sl = (root << 1) + 1, sr = sl + 1;
+            int lv = buildTree(sl, l, mid);
+            int rv = buildTree(sr, mid + 1, r);
+            return bArr[root][2] = lv + rv;
+        }
 
-    private int query(int root, int l, int r) {
-        int[] rn = bArr[root];
-        if (rn[0] == l && rn[1] == r) return rn[2];
-        int mid = (rn[0] + rn[1]) >> 1, sl = (root << 1) + 1, sr = sl + 1;
-        if (r <= mid) return query(sl, l, r);
-        if (l >= mid + 1) return query(sr, l, r);
-        return query(sl, l, mid) + query(sr, mid + 1, r);
+        public void update(int index, int val) {
+            set(0, index, val);
+        }
+
+        private void set(int root, int idx, int val) {
+            int[] rn = bArr[root];
+            if (rn[0] == rn[1]) {
+                rn[2] = val;
+                return;
+            }
+            int mid = (rn[0] + rn[1]) >> 1, sl = (root << 1) + 1, sr = sl + 1;
+            if (idx > mid) set(sr, idx, val);
+            else set(sl, idx, val);
+            rn[2] = bArr[sl][2] + bArr[sr][2];
+        }
+
+        public int sumRange(int left, int right) {
+            return query(0, left, right);
+        }
+
+        private int query(int root, int l, int r) {
+            int[] rn = bArr[root];
+            if (rn[0] == l && rn[1] == r) return rn[2];
+            int mid = (rn[0] + rn[1]) >> 1, sl = (root << 1) + 1, sr = sl + 1;
+            if (r <= mid) return query(sl, l, r);
+            if (l >= mid + 1) return query(sr, l, r);
+            return query(sl, l, mid) + query(sr, mid + 1, r);
+        }
     }
 }
+
+
