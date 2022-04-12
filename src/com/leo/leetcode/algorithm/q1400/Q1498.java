@@ -29,29 +29,20 @@ public class Q1498 {
     }
 
     public int numSubSeq(int[] nums, int target) {
-        int mod = 1000000007, n = nums.length;
+        int mod = 1_000_000_007, n = nums.length;
         long ret = 0;
+        int[] pow2 = new int[n];
+        pow2[0] = 1;
+        for (int i = 1; i < pow2.length; i++) pow2[i] = (pow2[i - 1] << 1) % mod;
         Arrays.sort(nums);
-        for (int i = 0; i < n; i++) {
-            int l = i, r = n - 1, ans = -1;
-            while (l <= r) {
-                int mid = (l + r) / 2;
-                if (nums[mid] + nums[i] > target) r = mid - 1;
-                else {
-                    l = mid + 1;
-                    ans = mid;
-                }
+        int l = 0, r = nums.length - 1;
+        while (l <= r) {
+            if (nums[l] + nums[r] > target) r--;
+            else {
+                ret = (ret + pow2[r - l]) % mod;
+                l++;
             }
-            if (ans < 0) break;
-            ret = (ret + pow2(ans - i, mod)) % mod;
         }
         return (int) ret;
-    }
-
-    long pow2(long a, long mod) {
-        if (a == 0) return 1;
-        long num = pow2(a >> 1, mod);
-        if ((a & 1) == 1) return num * num * 2 % mod;
-        return num * num % mod;
     }
 }
