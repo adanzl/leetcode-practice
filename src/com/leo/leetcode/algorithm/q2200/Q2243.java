@@ -1,4 +1,4 @@
-package com.leo.leetcode.algorithm.q6000;
+package com.leo.leetcode.algorithm.q2200;
 
 /**
  * 给你一个由若干数字（0 - 9）组成的字符串 s ，和一个整数。
