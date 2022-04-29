@@ -1,4 +1,4 @@
-package com.leo.leetcode.algorithm.q2000;
+package com.leo.leetcode.algorithm.q2200;
 
 import java.util.ArrayList;
 import java.util.HashMap;

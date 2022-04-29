@@ -361,7 +361,6 @@ public class LCUtil {
         input = input.trim();
         input = input.substring(1, input.length() - 1);
         if (input.length() == 0) return null;
-
         String[] parts = input.split(",");
         String item = parts[0];
         Node root = new Node(Integer.parseInt(item));

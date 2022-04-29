@@ -1,4 +1,4 @@
-package com.leo.leetcode.algorithm.q2000;
+package com.leo.leetcode.algorithm.q2200;
 
 /**
  * 给你两个字符串 current 和 correct ，表示两个 24 小时制时间 。
