@@ -1,4 +1,4 @@
-package com.leo.leetcode.algorithm.q6000;
+package com.leo.leetcode.algorithm.q2200;
 
 /**
  * 给你一个表示某个正整数的字符串 number 和一个字符 digit 。
