@@ -1,5 +1,7 @@
 package com.leo.leetcode.algorithm.q2200;
 
+import java.util.*;
+
 /**
  * 给你区间的 空 集，请你设计并实现满足要求的数据结构：
  * 1、新增：添加一个区间到这个区间集合中。
@@ -19,6 +21,12 @@ public class Q2276 {
 
     public static void main(String[] args) {
         CountIntervals countIntervals;
+        // =====================================
+        countIntervals = new CountIntervals();
+        countIntervals.add(365, 897);
+        countIntervals.add(261, 627);
+        countIntervals.add(781, 884);
+        System.out.println(countIntervals.count()); // 637
         // =====================================
         countIntervals = new CountIntervals();
         countIntervals.add(5, 10);
@@ -41,9 +49,14 @@ public class Q2276 {
         System.out.println(countIntervals.count()); // 6
         countIntervals.add(5, 8);  // 将 [5, 8] 添加到区间集合中
         System.out.println(countIntervals.count()); // 8
+        // =====================================
+        CountIntervals1 countIntervals1 = new CountIntervals1();
+        countIntervals1.add(2, 3);
+        System.out.println(countIntervals1.count());
     }
 
-    static class CountIntervals {
+    // 动态开点 线段树
+    static class CountIntervals1 {
 
         Node head = new Node(0, 1_000_000_001);
 
@@ -94,4 +107,30 @@ public class Q2276 {
         }
     }
 
+    // 珂朵莉树
+    static class CountIntervals {
+
+        TreeMap<Integer, Integer> treeMap = new TreeMap<>();
+
+        private int count = 0;
+
+        public void add(int left, int right) {
+            // 遍历所有被 [left,right] 覆盖到的区间（部分覆盖也算）
+            Map.Entry<Integer, Integer> e = treeMap.ceilingEntry(left);
+            while (e != null && e.getValue() <= right) {
+                int l = e.getValue(), r = e.getKey();
+                left = Math.min(left, l);   // 合并后的新区间，其左端点为所有被覆盖的区间的左端点的最小值
+                right = Math.max(right, r); // 合并后的新区间，其右端点为所有被覆盖的区间的右端点的最大值
+                count -= r - l + 1;
+                treeMap.remove(r);
+                e = treeMap.ceilingEntry(left);
+            }
+            count += right - left + 1;
+            treeMap.put(right, left); // 所有被覆盖到的区间与 [left,right] 合并成一个新区间
+        }
+
+        public int count() {
+            return this.count;
+        }
+    }
 }
