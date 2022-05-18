@@ -1,15 +1,16 @@
 package com.leo.leetcode.algorithm.q0100;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 import static com.leo.utils.LCUtil.stringToIntegerArray;
 
 /**
  * 给定一组非负整数 nums，重新排列它们每个数字的顺序（每个数字不可拆分）使之组成一个最大的整数。
  * 注意：输出结果可能非常大，所以你需要返回一个字符串而不是整数。
- * <p>
  * 提示：
  * 1、1 <= nums.length <= 100
  * 2、0 <= nums[i] <= 10^9
- * <p>
  * 链接：https://leetcode-cn.com/problems/largest-number
  */
 public class Q179 {
@@ -26,7 +27,7 @@ public class Q179 {
         // 1
         System.out.println(new Q179().largestNumber(stringToIntegerArray("[1]")));
         // 10
-        System.out.println(new Q179().largestNumber(stringToIntegerArray("[10]")));
+        System.out.println(new Q179().largestNumber1(stringToIntegerArray("[10]")));
     }
 
     public String largestNumber(int[] nums) {
@@ -74,5 +75,27 @@ public class Q179 {
             k++;
         }
         return len1 - len2;
+    }
+
+    // 迷之简写
+    public String largestNumber1(int[] nums) {
+        int n = nums.length;
+        String[] strArr = new String[n];
+        for (int i = 0; i < n; i++) {
+            strArr[i] = String.valueOf(nums[i]);
+        }
+        Arrays.sort(strArr, (o1, o2) -> {
+            Long l1 = Long.parseLong(o2 + o1), l2 = Long.parseLong(o1 + o2);
+            return l1.compareTo(l2);
+        });
+        StringBuilder ret = new StringBuilder();
+        boolean bZ = true;
+        for (int i = 0; i < n; i++) {
+            if (bZ && Objects.equals(strArr[i], "0")) continue;
+            bZ = false;
+            ret.append(strArr[i]);
+        }
+        if (bZ) return "0";
+        return ret.toString();
     }
 }
