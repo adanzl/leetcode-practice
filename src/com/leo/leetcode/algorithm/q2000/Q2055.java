@@ -31,7 +31,7 @@ public class Q2055 {
         // [0]
         System.out.println(Arrays.toString(new Q2055().platesBetweenCandles("***", stringToInt2dArray("[[2,2]]"))));
         //
-        TestCase tc = new TestCase("resources/Q2055/Case002.txt");
+        TestCase tc = new TestCase("resources/algorithm/q2000/Q2055/Case002.txt");
         System.out.println(Arrays.toString(new Q2055().platesBetweenCandles(tc.getData(0), stringToInt2dArray(tc.getData(1)))));
         // [0,0,0,9,0]
         System.out.println(Arrays.toString(new Q2055().platesBetweenCandles("***|**|*****|**||**|*", stringToInt2dArray("[[4,5],[14,17],[5,11],[1,17],[15,16]]"))));

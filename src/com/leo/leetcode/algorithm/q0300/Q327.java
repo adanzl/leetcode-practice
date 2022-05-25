@@ -23,13 +23,13 @@ public class Q327 {
         System.out.println(new Q327().countRangeSum(stringToIntegerArray("[-2,0,2147483647, 2147483647]"), -2, 100000));
         // 1
         System.out.println(new Q327().countRangeSum(stringToIntegerArray("[0]"), 0, 0));
-        TestCase tc = new TestCase("resources/Q327/Case002.txt");
+        TestCase tc = new TestCase("resources/algorithm/q0300/Q327/Case002.txt");
         // 385647
         System.out.println(new Q327().countRangeSum(stringToIntegerArray(tc.getData(0)), tc.getDataInt(1), tc.getDataInt(2)));
-        tc = new TestCase("resources/Q327/Case001.txt");
+        tc = new TestCase("resources/algorithm/q0300/Q327/Case001.txt");
         // 289392
         System.out.println(new Q327().countRangeSum(stringToIntegerArray(tc.getData(0)), tc.getDataInt(1), tc.getDataInt(2)));
-        tc = new TestCase("resources/Q327/Case003.txt");
+        tc = new TestCase("resources/algorithm/q0300/Q327/Case003.txt");
         // 202935140
         System.out.println(new Q327().countRangeSum(stringToIntegerArray(tc.getData(0)), tc.getDataInt(1), tc.getDataInt(2)));
     }

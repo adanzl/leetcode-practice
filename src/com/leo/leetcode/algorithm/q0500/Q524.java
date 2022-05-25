@@ -20,7 +20,7 @@ public class Q524 {
 
     public static void main(String[] args) {
         // ntgcykxhdfescxxypyew
-        TestCase tc = new TestCase("resources/Q524/Case001.txt");
+        TestCase tc = new TestCase("resources/algorithm/q0500/Q524/Case001.txt");
         System.out.println(new Q524().findLongestWord(tc.getData(0), stringToStringList(tc.getData(1))));
         // apple
         System.out.println(new Q524().findLongestWord("abpcple", stringToStringList("[\"ale\",\"apple\",\"monkey\",\"plea\"]")));

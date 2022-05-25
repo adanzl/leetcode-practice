@@ -8,14 +8,14 @@ import java.util.Arrays;
  * 提示：nums.length <= 30000
  * 链接：https://leetcode.cn/problems/missing-two-lcci/
  */
-public class Q1719 {
+public class Q17_19 {
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(new Q1719().missingTwo(new int[]{1, 2, 3, 4, 6, 7, 9, 10}))); // 5,8
-        System.out.println(Arrays.toString(new Q1719().missingTwo(new int[]{1}))); // 2,3
-        System.out.println(Arrays.toString(new Q1719().missingTwo(new int[]{3}))); // 1,2
-        System.out.println(Arrays.toString(new Q1719().missingTwo(new int[]{2, 3}))); // 1,4
-        System.out.println(Arrays.toString(new Q1719().missingTwo(new int[]{}))); // 1,2
+        System.out.println(Arrays.toString(new Q17_19().missingTwo(new int[]{1, 2, 3, 4, 6, 7, 9, 10}))); // 5,8
+        System.out.println(Arrays.toString(new Q17_19().missingTwo(new int[]{1}))); // 2,3
+        System.out.println(Arrays.toString(new Q17_19().missingTwo(new int[]{3}))); // 1,2
+        System.out.println(Arrays.toString(new Q17_19().missingTwo(new int[]{2, 3}))); // 1,4
+        System.out.println(Arrays.toString(new Q17_19().missingTwo(new int[]{}))); // 1,2
     }
 
     public int[] missingTwo(int[] nums) {

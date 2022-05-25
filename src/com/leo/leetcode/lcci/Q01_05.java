@@ -4,13 +4,13 @@ package com.leo.leetcode.lcci;
  * 字符串有三种编辑操作:插入一个字符、删除一个字符或者替换一个字符。 给定两个字符串，编写一个函数判定它们是否只需要一次(或者零次)编辑。
  * 链接：https://leetcode.cn/problems/one-away-lcci/
  */
-public class Q0105 {
+public class Q01_05 {
 
     public static void main(String[] args) {
-        System.out.println(new Q0105().oneEditAway("dine", "ne")); // false
-        System.out.println(new Q0105().oneEditAway("dinitrophenylhydrazine", "phenylhydrazine")); // false
-        System.out.println(new Q0105().oneEditAway("pales", "pla")); // false
-        System.out.println(new Q0105().oneEditAway("pale", "ple")); // true
+        System.out.println(new Q01_05().oneEditAway("dine", "ne")); // false
+        System.out.println(new Q01_05().oneEditAway("dinitrophenylhydrazine", "phenylhydrazine")); // false
+        System.out.println(new Q01_05().oneEditAway("pales", "pla")); // false
+        System.out.println(new Q01_05().oneEditAway("pale", "ple")); // true
     }
 
     public boolean oneEditAway(String first, String second) {

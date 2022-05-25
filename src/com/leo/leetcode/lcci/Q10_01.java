@@ -10,11 +10,11 @@ import java.util.Arrays;
  * 说明: A.length == n + m
  * 链接：https://leetcode.cn/problems/sorted-merge-lcci/
  */
-public class Q1001 {
+public class Q10_01 {
 
     public static void main(String[] args) {
         int[] A = LCUtil.stringToIntegerArray("[1,2,3,0,0,0]");
-        new Q1001().merge(A, 3, new int[]{2, 5, 6}, 3);
+        new Q10_01().merge(A, 3, new int[]{2, 5, 6}, 3);
         System.out.println(Arrays.toString(A)); // [1,2,2,3,5,6]
     }
 

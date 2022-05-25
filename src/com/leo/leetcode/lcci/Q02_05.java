@@ -11,16 +11,16 @@ import static com.leo.utils.LCUtil.listNodeToString;
  * 编写函数对这两个整数求和，并用链表形式返回结果。
  * 链接：https://leetcode-cn.com/problems/sum-lists-lcci/
  */
-public class Q0205 {
+public class Q02_05 {
     public static void main(String[] args) {
         // [0,0,0]
-        System.out.println(listNodeToString(new Q0205().addTwoNumbers(stringToListNode("[0,0,0]"), stringToListNode("[0,0,0]"))));
+        System.out.println(listNodeToString(new Q02_05().addTwoNumbers(stringToListNode("[0,0,0]"), stringToListNode("[0,0,0]"))));
         // [7,0,8]
-        System.out.println(listNodeToString(new Q0205().addTwoNumbers(stringToListNode("[2,4,3]"), stringToListNode("[5,6,4]"))));
+        System.out.println(listNodeToString(new Q02_05().addTwoNumbers(stringToListNode("[2,4,3]"), stringToListNode("[5,6,4]"))));
         // [2,1,9]
-        System.out.println(listNodeToString(new Q0205().addTwoNumbers(stringToListNode("[7,1,6]"), stringToListNode("[5,9,2]"))));
+        System.out.println(listNodeToString(new Q02_05().addTwoNumbers(stringToListNode("[7,1,6]"), stringToListNode("[5,9,2]"))));
         // [8,0,3,1]
-        System.out.println(listNodeToString(new Q0205().addTwoNumbers(stringToListNode("[6,1,7]"), stringToListNode("[2,9,5]"))));
+        System.out.println(listNodeToString(new Q02_05().addTwoNumbers(stringToListNode("[6,1,7]"), stringToListNode("[2,9,5]"))));
     }
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {

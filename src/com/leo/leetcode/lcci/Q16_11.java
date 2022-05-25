@@ -10,11 +10,11 @@ import java.util.Arrays;
  * 2、0 <= k <= 100000
  * 链接：https://leetcode-cn.com/problems/diving-board-lcci
  */
-public class Q1611 {
+public class Q16_11 {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(new Q1611().divingBoard(1, 2, 3))); // [3,4,5,6]
-        System.out.println(Arrays.toString(new Q1611().divingBoard(1, 2, 0))); // []
-        System.out.println(Arrays.toString(new Q1611().divingBoard(1, 2, 100000))); // []
+        System.out.println(Arrays.toString(new Q16_11().divingBoard(1, 2, 3))); // [3,4,5,6]
+        System.out.println(Arrays.toString(new Q16_11().divingBoard(1, 2, 0))); // []
+        System.out.println(Arrays.toString(new Q16_11().divingBoard(1, 2, 100000))); // []
     }
 
     public int[] divingBoard(int shorter, int longer, int k) {

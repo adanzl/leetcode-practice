@@ -25,7 +25,7 @@ public class Q1162 {
         System.out.println(new Q1162().maxDistance(stringToInt2dArray("[[0,0,0],[0,0,0],[0,0,0]]")));
         // -1
         System.out.println(new Q1162().maxDistance(stringToInt2dArray("[[1,1,1],[1,1,1],[1,1,1]]")));
-        TestCase tc = new TestCase("resources/Q1162/Case001.txt");
+        TestCase tc = new TestCase("resources/algorithm/q1100/Q1162/Case001.txt");
         // 161
         System.out.println(new Q1162().maxDistance(stringToInt2dArray(tc.getData(0))));
         // 2

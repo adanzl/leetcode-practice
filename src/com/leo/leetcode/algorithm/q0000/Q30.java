@@ -12,7 +12,6 @@ import static com.leo.utils.LCUtil.stringToStringArray;
 /**
  * 给定一个字符串 s 和一些长度相同的单词 words。找出 s 中恰好可以由 words 中所有单词串联形成的子串的起始位置。
  * 注意子串要与 words 中的单词完全匹配，中间不能有其他字符，但不需要考虑 words 中单词串联的顺序。
- * <p>
  * 链接：https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words
  */
 public class Q30 {
@@ -22,19 +21,19 @@ public class Q30 {
         // [0]
         System.out.println(new Q30().findSubstring("a", stringToStringArray("[\"a\"]")));
         // [8]
-        tc1 = new TestCase("resources/Q30/Case005");
+        tc1 = new TestCase("resources/algorithm/q0000/Q30/Case005");
         System.out.println(new Q30().findSubstring(tc1.getData(0), stringToStringArray(tc1.getData(1))));
         // [0,9]
-        tc1 = new TestCase("resources/Q30/Case001");
+        tc1 = new TestCase("resources/algorithm/q0000/Q30/Case001");
         System.out.println(new Q30().findSubstring(tc1.getData(0), stringToStringArray(tc1.getData(1))));
         // []
-        tc1 = new TestCase("resources/Q30/Case002");
+        tc1 = new TestCase("resources/algorithm/q0000/Q30/Case002");
         System.out.println(new Q30().findSubstring(tc1.getData(0), stringToStringArray(tc1.getData(1))));
         // []
-        tc1 = new TestCase("resources/Q30/Case003");
+        tc1 = new TestCase("resources/algorithm/q0000/Q30/Case003");
         System.out.println(new Q30().findSubstring(tc1.getData(0), stringToStringArray(tc1.getData(1))));
         // [6,9,12]
-        tc1 = new TestCase("resources/Q30/Case004");
+        tc1 = new TestCase("resources/algorithm/q0000/Q30/Case004");
         System.out.println(new Q30().findSubstring(tc1.getData(0), stringToStringArray(tc1.getData(1))));
     }
 

@@ -16,14 +16,13 @@ import static com.leo.utils.LCUtil.stringToIntegerArray;
  * 3、parents[0] == -1
  * 4、对于 i != 0 ，有 0 <= parents[i] <= n - 1
  * 5、parents 表示一棵二叉树。
- * <p>
  * 链接：https://leetcode-cn.com/problems/count-nodes-with-the-highest-score
  */
 public class Q2049 {
 
     public static void main(String[] args) {
         // 1
-        TestCase tc = new TestCase("resources/Q2049/Case001.txt");
+        TestCase tc = new TestCase("resources/algorithm/q2000/Q2049/Case001.txt");
         System.out.println(new Q2049().countHighestScoreNodes(stringToIntegerArray(tc.getData(0))));
         // 3
         System.out.println(new Q2049().countHighestScoreNodes(stringToIntegerArray("[-1,2,0,2,0]")));

@@ -22,7 +22,7 @@ public class Q493 {
         // 3
         System.out.println(new Q493().reversePairs(stringToIntegerArray("[2,4,3,5,1]")));
         // 624975000
-        TestCase tc = new TestCase("resources/Q493/Case001.txt");
+        TestCase tc = new TestCase("resources/algorithm/q0400/Q493/Case001.txt");
         System.out.println(new Q493().reversePairs(stringToIntegerArray(tc.getData(0))));
     }
 

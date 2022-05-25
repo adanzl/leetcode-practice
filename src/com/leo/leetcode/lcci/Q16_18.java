@@ -10,14 +10,14 @@ package com.leo.leetcode.lcci;
  * 3、你可以假设pattern只包含字母"a"和"b"，value仅包含小写字母。
  * 链接：https://leetcode-cn.com/problems/pattern-matching-lcci
  */
-public class Q1618 {
+public class Q16_18 {
 
     public static void main(String[] args) {
         // cSpell:disable
-        System.out.println(new Q1618().patternMatching("abba", "dogcatcatdog")); // true
-        System.out.println(new Q1618().patternMatching("abba", "dogcatcatfish")); // false
-        System.out.println(new Q1618().patternMatching("aaaa", "dogcatcatdog")); // false
-        System.out.println(new Q1618().patternMatching("abba", "dogdogdogdog")); // true
+        System.out.println(new Q16_18().patternMatching("abba", "dogcatcatdog")); // true
+        System.out.println(new Q16_18().patternMatching("abba", "dogcatcatfish")); // false
+        System.out.println(new Q16_18().patternMatching("aaaa", "dogcatcatdog")); // false
+        System.out.println(new Q16_18().patternMatching("abba", "dogdogdogdog")); // true
     }
 
     public boolean patternMatching(String pattern, String value) {

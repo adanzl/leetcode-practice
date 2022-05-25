@@ -25,7 +25,7 @@ public class Q1818 {
 
     public static void main(String[] args) {
         // 999979264
-        TestCase tc = new TestCase("resources/Q1818/Case001.txt");
+        TestCase tc = new TestCase("resources/algorithm/q1800/Q1818/Case001.txt");
         System.out.println(new Q1818().minAbsoluteSumDiff(
                 stringToIntegerArray(tc.getData(0)),
                 stringToIntegerArray(tc.getData(1))));

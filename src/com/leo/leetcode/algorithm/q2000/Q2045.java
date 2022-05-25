@@ -27,7 +27,6 @@ import static com.leo.utils.LCUtil.stringToInt2dArray;
  * 6、不含重复边
  * 7、每个节点都可以从其他节点直接或者间接到达
  * 8、1 <= time, change <= 10^3
- * <p>
  * 链接：https://leetcode-cn.com/problems/second-minimum-time-to-reach-destination
  */
 
@@ -35,14 +34,14 @@ public class Q2045 {
     public static void main(String[] args) {
         TestCase tc;
         // 19983000
-        tc = new TestCase("resources/Q2045/Case003.txt");
+        tc = new TestCase("resources/algorithm/q2000/Q2045/Case003.txt");
         System.out.println(new Q2045().secondMinimum(
                 Integer.parseInt(tc.getData(0)),
                 stringToInt2dArray(tc.getData(1)),
                 Integer.parseInt(tc.getData(2)),
                 Integer.parseInt(tc.getData(3))));
         // 12829
-        tc = new TestCase("resources/Q2045/Case002.txt");
+        tc = new TestCase("resources/algorithm/q2000/Q2045/Case002.txt");
         System.out.println(new Q2045().secondMinimum(
                 Integer.parseInt(tc.getData(0)),
                 stringToInt2dArray(tc.getData(1)),
@@ -55,7 +54,7 @@ public class Q2045 {
         // 13
         System.out.println(new Q2045().secondMinimum(5, stringToInt2dArray("[[1,2],[1,3],[1,4],[3,4],[4,5]]"), 3, 5));
         // 3142
-        tc = new TestCase("resources/Q2045/Case001.txt");
+        tc = new TestCase("resources/algorithm/q2000/Q2045/Case001.txt");
         System.out.println(new Q2045().secondMinimum(
                 Integer.parseInt(tc.getData(0)),
                 stringToInt2dArray(tc.getData(1)),

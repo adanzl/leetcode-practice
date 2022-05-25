@@ -25,7 +25,7 @@ public class Q918 {
         // 3
         System.out.println(new Q918().maxSubarraySumCircular(stringToIntegerArray("[1,-2,3,-2]")));
         // 3516893
-        TestCase tc = new TestCase("resources/Q918/Case001.txt");
+        TestCase tc = new TestCase("resources/algorithm/q0900/Q918/Case001.txt");
         System.out.println(new Q918().maxSubarraySumCircular(stringToIntegerArray(tc.getData(0))));
         // 10
         System.out.println(new Q918().maxSubarraySumCircular(stringToIntegerArray("[5,-3,5]")));

@@ -15,15 +15,15 @@ import com.leo.utils.TestCase;
  * 3、你可以认为dictionary和sentence中只包含小写字母。
  * 链接：https://leetcode-cn.com/problems/re-space-lcci
  */
-public class Q1713 {
+public class Q17_13 {
 
     public static void main(String[] args) {
-        final TestCase tc1 = new TestCase("resources/Q1713/Case003");
-        System.out.println(new Q1713().reSpace(LCUtil.stringToStringArray(tc1.getData(0)), tc1.getData(1))); // 7
-        final TestCase tc2 = new TestCase("resources/Q1713/Case002");
-        System.out.println(new Q1713().reSpace(LCUtil.stringToStringArray(tc2.getData(0)), tc2.getData(1))); // 31
-        final TestCase tc3 = new TestCase("resources/Q1713/Case003");
-        System.out.println(new Q1713().reSpace(LCUtil.stringToStringArray(tc3.getData(0)), tc3.getData(1))); // 7
+        final TestCase tc1 = new TestCase("resources/lcci/Q1713/Case003");
+        System.out.println(new Q17_13().reSpace(LCUtil.stringToStringArray(tc1.getData(0)), tc1.getData(1))); // 7
+        final TestCase tc2 = new TestCase("resources/lcci/Q1713/Case002");
+        System.out.println(new Q17_13().reSpace(LCUtil.stringToStringArray(tc2.getData(0)), tc2.getData(1))); // 31
+        final TestCase tc3 = new TestCase("resources/lcci/Q1713/Case003");
+        System.out.println(new Q17_13().reSpace(LCUtil.stringToStringArray(tc3.getData(0)), tc3.getData(1))); // 7
     }
 
     public int reSpace(String[] dictionary, String sentence) {

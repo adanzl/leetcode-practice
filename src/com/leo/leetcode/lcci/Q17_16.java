@@ -6,12 +6,12 @@ package com.leo.leetcode.lcci;
  * 注意：本题相对原题稍作改动
  * 链接：https://leetcode.cn/problems/the-masseuse-lcci
  */
-public class Q1716 {
+public class Q17_16 {
 
     public static void main(String[] args) {
-        System.out.println(new Q1716().massage(new int[]{1, 2, 3, 1})); // 4
-        System.out.println(new Q1716().massage(new int[]{2, 7, 9, 3, 1})); // 12
-        System.out.println(new Q1716().massage(new int[]{2, 1, 4, 5, 3, 1, 1, 3})); // 12
+        System.out.println(new Q17_16().massage(new int[]{1, 2, 3, 1})); // 4
+        System.out.println(new Q17_16().massage(new int[]{2, 7, 9, 3, 1})); // 12
+        System.out.println(new Q17_16().massage(new int[]{2, 1, 4, 5, 3, 1, 1, 3})); // 12
     }
 
     public int massage(int[] nums) {

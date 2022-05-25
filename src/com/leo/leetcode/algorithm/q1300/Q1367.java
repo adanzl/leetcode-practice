@@ -24,7 +24,7 @@ public class Q1367 {
         // true
         System.out.println(new Q1367().isSubPath(stringToListNode("[4,2,8]"), stringToTreeNode("[1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3]")));
         // false
-        TestCase tc = new TestCase("resources/Q1367/Case001.txt");
+        TestCase tc = new TestCase("resources/algorithm/q1300/Q1367/Case001.txt");
         System.out.println(new Q1367().isSubPath(stringToListNode(tc.getData(0)), stringToTreeNode(tc.getData(1))));
         // true
         System.out.println(new Q1367().isSubPath(stringToListNode("[2,2,1]"), stringToTreeNode("[2,null,2,null,2,null,1]")));

@@ -17,7 +17,7 @@ import static com.leo.utils.LCUtil.stringToTreeNode;
 public class Q968 {
 
     public static void main(String[] args) {
-        TestCase tc = new TestCase("resources/Q968/Case001.txt");
+        TestCase tc = new TestCase("resources/algorithm/q0900/Q968/Case001.txt");
         // 360
         System.out.println(new Q968().minCameraCover(stringToTreeNode(tc.getData(0))));
         // 1

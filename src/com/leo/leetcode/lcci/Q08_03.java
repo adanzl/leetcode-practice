@@ -8,11 +8,11 @@ package com.leo.leetcode.lcci;
  * 提示: nums长度在[1, 1000000]之间
  * 链接：https://leetcode-cn.com/problems/magic-index-lcci
  */
-public class Q0803 {
+public class Q08_03 {
 
     public static void main(String[] args) {
-        System.out.println(new Q0803().findMagicIndex(new int[] { 0, 2, 3, 4, 5 })); // 0
-        System.out.println(new Q0803().findMagicIndex(new int[] { 1, 1, 1, 1 })); // 1
+        System.out.println(new Q08_03().findMagicIndex(new int[] { 0, 2, 3, 4, 5 })); // 0
+        System.out.println(new Q08_03().findMagicIndex(new int[] { 1, 1, 1, 1 })); // 1
     }
 
     public int findMagicIndex(int[] nums) {

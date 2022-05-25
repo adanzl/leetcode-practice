@@ -8,11 +8,11 @@ package com.leo.leetcode.lcci;
  * 2、0 <= k <= 100000
  * 链接：https://leetcode.cn/problems/coin-lcci/
  */
-public class Q0811 {
+public class Q08_11 {
 
     public static void main(String[] args) {
-        System.out.println(new Q0811().waysToChange(10)); // 4
-        System.out.println(new Q0811().waysToChange(5)); // 2
+        System.out.println(new Q08_11().waysToChange(10)); // 4
+        System.out.println(new Q08_11().waysToChange(5)); // 2
     }
 
     public int waysToChange(int n) {

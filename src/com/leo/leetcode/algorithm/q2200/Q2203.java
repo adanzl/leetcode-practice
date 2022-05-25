@@ -26,7 +26,7 @@ public class Q2203 {
 
     public static void main(String[] args) {
         // 9999900000
-        TestCase tc = new TestCase("resources/Q2203/Case001.txt");
+        TestCase tc = new TestCase("resources/algorithm/q2200/Q2203/Case001.txt");
         System.out.println(new Q2203().minimumWeight(
                 Integer.parseInt(tc.getData(0)), stringToInt2dArray(tc.getData(1)),
                 Integer.parseInt(tc.getData(2)), Integer.parseInt(tc.getData(3)), Integer.parseInt(tc.getData(4))));

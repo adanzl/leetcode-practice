@@ -12,17 +12,17 @@ import static com.leo.utils.LCUtil.stringToListNode;
  * 进阶：你是否可以不用额外空间解决此题？
  * 链接：https://leetcode-cn.com/problems/linked-list-cycle-lcci
  */
-public class Q0208 {
+public class Q02_08 {
 
     public static void main(String[] args) {
         // 0
-        System.out.println(new Q0208().detectCycle(stringToListNode("[0,1]"), 0));
+        System.out.println(new Q02_08().detectCycle(stringToListNode("[0,1]"), 0));
         // 6
-        System.out.println(new Q0208().detectCycle(stringToListNode("[0,1,2,3,4,5,6,7,8,9]"), 6));
+        System.out.println(new Q02_08().detectCycle(stringToListNode("[0,1,2,3,4,5,6,7,8,9]"), 6));
         // 1
-        System.out.println(new Q0208().detectCycle(stringToListNode("[0,1,2,3]"), 1));
+        System.out.println(new Q02_08().detectCycle(stringToListNode("[0,1,2,3]"), 1));
         // null
-        System.out.println(new Q0208().detectCycle(stringToListNode("[0]"), -1));
+        System.out.println(new Q02_08().detectCycle(stringToListNode("[0]"), -1));
     }
 
     public ListNode detectCycle(ListNode head, int pos) {

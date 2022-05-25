@@ -18,7 +18,7 @@ import com.leo.utils.TestCase;
  */
 public class Q785 {
     public static void main(String[] args) {
-        final TestCase tc1 = new TestCase("resources/Q785/Case88235646");
+        final TestCase tc1 = new TestCase("resources/algorithm/q0700/Q785/Case88235646");
         System.out.println(new Q785().isBipartite(LCUtil.stringToInt2dArray(tc1.getData(0)))); // true
         System.out.println(new Q785().isBipartite(LCUtil.stringToInt2dArray("[[],[2,4,6],[1,4,8,9],[7,8],[1,2,8,9],[6,9],[1,5,7,8,9],[3,6,9],[2,3,4,6,9],[2,4,5,6,7,8]]"))); // false
         System.out.println(new Q785().isBipartite(LCUtil.stringToInt2dArray("[[1,3], [0,2], [1,3], [0,2]]"))); // true
