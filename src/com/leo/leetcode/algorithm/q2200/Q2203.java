@@ -65,7 +65,7 @@ public class Q2203 {
         }
         return ret;
     }
-
+    // 迪克斯特拉
     long[] dijkstra(int n, int src, List<List<int[]>> nextVertex) {
         long[] dist = new long[n];
         boolean[] vis = new boolean[n];

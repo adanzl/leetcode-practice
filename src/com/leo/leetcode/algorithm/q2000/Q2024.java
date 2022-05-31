@@ -1,4 +1,4 @@
-package com.leo.leetcode.algorithm.q2200;
+package com.leo.leetcode.algorithm.q2000;
 
 /**
  * 一位老师正在出一场由 n 道判断题构成的考试，每道题的答案为 true （用 'T' 表示）或者 false （用 'F' 表示）。
