@@ -31,7 +31,7 @@ public class Q699 {
         // [100, 100]
         System.out.println(new Q699().fallingSquares(stringToInt2dArray("[[100, 100], [200, 100]]")));
     }
-
+    // 线段树
     public List<Integer> fallingSquares(int[][] positions) {
         Node head = new Node(0, 1_000_000_000);
         List<Integer> ret = new ArrayList<>();

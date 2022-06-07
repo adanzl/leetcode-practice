@@ -1,5 +1,7 @@
 package com.leo.leetcode.algorithm.q2200;
 
+import java.util.Stack;
+
 /**
  * 请你设计一个带光标的文本编辑器，它可以实现以下功能：
  * 1、添加：在光标所在处添加文本。
@@ -157,6 +159,41 @@ public class Q2296 {
 
             String str;
             Node pre, next;
+        }
+    }
+
+    // 对顶栈、巧妙
+    static class TextEditor1 {
+        Stack<Character> sLeft = new Stack<>(), sRight = new Stack<>();
+
+        public void addText(String text) {
+            for (char c : text.toCharArray()) sLeft.add(c);
+        }
+
+        public int deleteText(int k) {
+            int cnt = 0;
+            while (k-- > 0 && !sLeft.isEmpty()) {
+                sLeft.pop();
+                cnt++;
+            }
+            return cnt;
+        }
+
+        public String cursorLeft(int k) {
+            while (k-- > 0 && !sLeft.isEmpty()) sRight.push(sLeft.pop());
+            return getString();
+        }
+
+        public String cursorRight(int k) {
+            while (k-- > 0 && !sRight.isEmpty()) sLeft.push(sRight.pop());
+            return getString();
+        }
+
+        String getString() {
+            StringBuilder ret = new StringBuilder();
+            int lLen = sLeft.size();
+            for (int i = Math.min(10, lLen) - 1; i >= 0; i--) ret.append(sLeft.get(lLen - 1 - i));
+            return ret.toString();
         }
     }
 }
