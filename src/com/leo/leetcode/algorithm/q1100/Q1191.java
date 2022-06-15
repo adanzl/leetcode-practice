@@ -49,7 +49,7 @@ public class Q1191 {
         return (int) (ret % MOD);
     }
 
-    // Kadane 求子数组最大和
+    // Kadane 求子数组最大和 https://hackernoon.com/kadanes-algorithm-explained-50316f4fd8a6
     long maxSubArray(int[] nums) {
         int n = nums.length;
         long[] dp = new long[n];
