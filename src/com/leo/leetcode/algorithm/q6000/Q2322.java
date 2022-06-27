@@ -34,7 +34,7 @@ public class Q2322 {
         // 1
         System.out.println(new Q2322().minimumScore(stringToIntegerArray("[15,15,16,25,28,27,27,15,3,15,17,13,20]"), stringToInt2dArray("[[9,3],[3,6],[8,9],[8,7],[11,3],[1,8],[12,8],[10,9],[4,3],[2,11],[5,12],[0,1]]")));
         // 173292
-        TestCase tc = new TestCase("resources/Case001.txt");
+        TestCase tc = new TestCase("resources/algorithm/q2300/Q2322/Case001.txt");
         System.out.println(new Q2322().minimumScore(stringToIntegerArray(tc.getData(0)), stringToInt2dArray(tc.getData(1))));
         // 9
         System.out.println(new Q2322().minimumScore(stringToIntegerArray("[1,5,5,4,11]"), stringToInt2dArray("[[0,1],[1,2],[1,3],[3,4]]")));
