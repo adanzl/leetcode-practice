@@ -1,4 +1,4 @@
-package com.leo.leetcode.algorithm.q6000;
+package com.leo.leetcode.algorithm.q2300;
 
 /**
  * 给你一个整数 n 。你需要掷一个 6 面的骰子 n 次。请你在满足以下要求的前提下，求出 不同 骰子序列的数目：
