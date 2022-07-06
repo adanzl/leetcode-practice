@@ -13,6 +13,7 @@ import java.util.Arrays;
  * Output
  * Print the remainder when dividing by 10^9+7 the number of ways to restore the array.
  * 链接：https://codeforces.com/contest/1105/problem/C
+ * 链接：https://www.luogu.com.cn/problem/CF1105C
  */
 public class CF1105C {
 
