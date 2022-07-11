@@ -25,7 +25,7 @@ public class Q2337 {
         System.out.println(new Q2337().canChange(tc1.getData(0), tc1.getData(1)));
         TestCase tc2 = new TestCase("resources/algorithm/q2300/Q2337/Case2.txt");
         // true
-        System.out.println(new Q2337().canChange(tc1.getData(0), tc1.getData(1)));
+        System.out.println(new Q2337().canChange(tc2.getData(0), tc2.getData(1)));
         // false
         System.out.println(new Q2337().canChange("____", "R_RR"));
         // false
