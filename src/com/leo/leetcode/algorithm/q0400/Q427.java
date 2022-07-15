@@ -1,8 +1,8 @@
 package com.leo.leetcode.algorithm.q0400;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import com.leo.utils.Node4;
 
+import static com.leo.utils.LCUtil.node4ToString;
 import static com.leo.utils.LCUtil.stringToInt2dArray;
 
 /**
@@ -12,14 +12,6 @@ import static com.leo.utils.LCUtil.stringToInt2dArray;
  * 四叉树数据结构中，每个内部节点只有四个子节点。此外，每个节点都有两个属性：
  * 1、val：储存叶子结点所代表的区域的值。1 对应 True，0 对应 False；
  * 2、isLeaf: 当这个节点是一个叶子结点时为 True，如果它有 4 个子节点则为 False 。
- * class Node {
- * public boolean val;
- * public boolean isLeaf;
- * public Node topLeft;
- * public Node topRight;
- * public Node bottomLeft;
- * public Node bottomRight;
- * }
  * 我们可以按以下步骤为二维区域构建四叉树：
  * 1、如果当前网格的值相同（即，全为 0 或者全为 1），将 isLeaf 设为 True ，将 val 设为网格相应的值，并将四个子节点都设为 Null 然后停止。
  * 2、如果当前网格的值不同，将 isLeaf 设为 False， 将 val 设为任意值，然后如下图所示，将当前网格划分为四个子网格。
@@ -38,17 +30,17 @@ public class Q427 {
 
     public static void main(String[] args) {
         // [[0,1],[0,1],[0,1],[0,1],[0,1],[1,1],[1,1],[1,0],[1,0],[1,0],[1,0],[1,1],[1,1],[1,1],[1,1],[1,0],[1,0],[1,0],[1,0],[1,1],[1,1]]
-        System.out.println(nodeToString(new Q427().construct(stringToInt2dArray("[[1,1,0,0],[0,0,1,1],[1,1,0,0],[0,0,1,1]]"))));
+        System.out.println(node4ToString(new Q427().construct(stringToInt2dArray("[[1,1,0,0],[0,0,1,1],[1,1,0,0],[0,0,1,1]]"))));
         // [[0,1],[1,1],[0,1],[1,1],[1,0],null,null,null,null,[1,0],[1,0],[1,1],[1,1]]
-        System.out.println(nodeToString(new Q427().construct(stringToInt2dArray("[[1,1,1,1,0,0,0,0],[1,1,1,1,0,0,0,0],[1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1],[1,1,1,1,0,0,0,0],[1,1,1,1,0,0,0,0],[1,1,1,1,0,0,0,0],[1,1,1,1,0,0,0,0]]"))));
+        System.out.println(node4ToString(new Q427().construct(stringToInt2dArray("[[1,1,1,1,0,0,0,0],[1,1,1,1,0,0,0,0],[1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1],[1,1,1,1,0,0,0,0],[1,1,1,1,0,0,0,0],[1,1,1,1,0,0,0,0],[1,1,1,1,0,0,0,0]]"))));
         // [[0,1],[1,0],[1,1],[1,1],[1,0]]
-        System.out.println(nodeToString(new Q427().construct(stringToInt2dArray("[[0,1],[1,0]]"))));
+        System.out.println(node4ToString(new Q427().construct(stringToInt2dArray("[[0,1],[1,0]]"))));
         // [[1,1]]
-        System.out.println(nodeToString(new Q427().construct(stringToInt2dArray("[[1,1],[1,1]]"))));
+        System.out.println(node4ToString(new Q427().construct(stringToInt2dArray("[[1,1],[1,1]]"))));
         // [[1,0]]
-        System.out.println(nodeToString(new Q427().construct(stringToInt2dArray("[[0]]"))));
+        System.out.println(node4ToString(new Q427().construct(stringToInt2dArray("[[0]]"))));
         // [[0,1],[1,1],[1,0],[1,0],[1,1]]
-        System.out.println(nodeToString(new Q427().construct(stringToInt2dArray("[[1,1,0,0],[1,1,0,0],[0,0,1,1],[0,0,1,1]]"))));
+        System.out.println(node4ToString(new Q427().construct(stringToInt2dArray("[[1,1,0,0],[1,1,0,0],[0,0,1,1],[0,0,1,1]]"))));
     }
 
     public Node construct(int[][] grid) {
@@ -65,61 +57,21 @@ public class Q427 {
         Node bottomRight = build4Tree(grid, (r0 + r1) / 2 + 1, r1, (c0 + c1) / 2 + 1, c1);
         if (topLeft.val == topRight.val && topRight.val == bottomLeft.val && bottomLeft.val == bottomRight.val &&
                 topLeft.isLeaf && topRight.isLeaf && bottomLeft.isLeaf && bottomRight.isLeaf) {
-            ret = new Node(topLeft.val, true);
+            ret = new Node(true, topLeft.val);
         } else {
-            ret = new Node(true, false, topLeft, topRight, bottomLeft, bottomRight);
+            ret = new Node(false, true, topLeft, topRight, bottomLeft, bottomRight);
         }
         return ret;
     }
 
-    static class Node {
-        public boolean val;
-        public boolean isLeaf;
-        public Node topLeft;
-        public Node topRight;
-        public Node bottomLeft;
-        public Node bottomRight;
-
-
-        public Node(boolean val, boolean isLeaf) {
-            this.val = val;
-            this.isLeaf = isLeaf;
-            this.topLeft = null;
-            this.topRight = null;
-            this.bottomLeft = null;
-            this.bottomRight = null;
+    static class Node extends Node4 {
+        public Node(boolean isLeaf, boolean val) {
+            super(isLeaf, val);
         }
 
-        public Node(boolean val, boolean isLeaf, Node topLeft, Node topRight, Node bottomLeft, Node bottomRight) {
-            this.val = val;
-            this.isLeaf = isLeaf;
-            this.topLeft = topLeft;
-            this.topRight = topRight;
-            this.bottomLeft = bottomLeft;
-            this.bottomRight = bottomRight;
+        public Node(boolean isLeaf, boolean val, Object topLeft, Object topRight, Object bottomLeft, Object bottomRight) {
+            super(isLeaf, val, (Node4) topLeft, (Node4) topRight, (Node4) bottomLeft, (Node4) bottomRight);
         }
     }
 
-    static String nodeToString(Node node) {
-        if (node == null) return "[]";
-        Queue<Node> q = new LinkedList<>();
-        q.add(node);
-        StringBuilder sb = new StringBuilder();
-        int nullCount = 0;
-        while (!q.isEmpty()) {
-            Node cur = q.poll();
-            if (cur == null) {
-                sb.append("null,");
-                nullCount++;
-                continue;
-            }
-            nullCount = 0;
-            sb.append("[").append(cur.isLeaf ? "1" : "0").append(",").append(cur.val ? "1" : "0").append("],");
-            q.add(cur.topLeft);
-            q.add(cur.topRight);
-            q.add(cur.bottomLeft);
-            q.add(cur.bottomRight);
-        }
-        return "[" + sb.substring(0, sb.length() - 1 - nullCount * 5) + "]";
-    }
 }
