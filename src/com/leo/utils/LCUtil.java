@@ -280,12 +280,18 @@ public class LCUtil {
         return out;
     }
 
+    /**
+     * 计算运行时间
+     */
     public static void calcRun(Runnable r) {
         long start_time = System.currentTimeMillis();
         r.run();
         System.out.println("[Running time]: " + (System.currentTimeMillis() - start_time));
     }
 
+    /**
+     * 命令行显示二叉树结构
+     */
     public static void showBTree(TreeNode root) {
         if (root == null) System.out.println("EMPTY!");
         // 得到树的深度
@@ -385,6 +391,72 @@ public class LCUtil {
             }
         }
         return root;
+    }
+
+    /**
+     * 通过String构建4叉树
+     *
+     * @param input 输入字符，用null分割
+     * @return 树的根节点
+     */
+    public static Node4 stringToNode4Tree(String input) {
+        if (input.length() == 0) return null;
+        JsonArray jsonArray = Json.parse(input).asArray();
+        JsonArray rootItem = jsonArray.get(0).asArray();
+        Node4 root = new Node4(1 == rootItem.get(0).asInt(), 1 == rootItem.get(1).asInt());
+        Queue<Node4> nodeQueue = new LinkedList<>();
+        nodeQueue.add(root);
+        int index = 1;
+        while (!nodeQueue.isEmpty()) {
+            Node4 node = nodeQueue.poll();
+            if (index == jsonArray.size()) break;
+            if (node.isLeaf) {
+                index += 4;
+                continue;
+            }
+            JsonArray values = jsonArray.get(index++).asArray();
+            node.topLeft = new Node4(1 == values.get(0).asInt(), 1 == values.get(1).asInt());
+            nodeQueue.add(node.topLeft);
+            values = jsonArray.get(index++).asArray();
+            node.topRight = new Node4(1 == values.get(0).asInt(), 1 == values.get(1).asInt());
+            nodeQueue.add(node.topRight);
+            values = jsonArray.get(index++).asArray();
+            node.bottomLeft = new Node4(1 == values.get(0).asInt(), 1 == values.get(1).asInt());
+            nodeQueue.add(node.bottomLeft);
+            values = jsonArray.get(index++).asArray();
+            node.bottomRight = new Node4(1 == values.get(0).asInt(), 1 == values.get(1).asInt());
+            nodeQueue.add(node.bottomRight);
+            if (index == jsonArray.size())
+                break;
+        }
+        return root;
+    }
+
+    /**
+     * 4叉树输出字符串
+     */
+    public static String node4ToString(Object value) {
+        if (value == null) return "[]";
+        Node4 node = (Node4) value;
+        Queue<Node4> q = new LinkedList<>();
+        q.add(node);
+        StringBuilder sb = new StringBuilder();
+        int nullCount = 0;
+        while (!q.isEmpty()) {
+            Node4 cur = q.poll();
+            if (cur == null) {
+                sb.append("null,");
+                nullCount++;
+                continue;
+            }
+            nullCount = 0;
+            sb.append("[").append(cur.isLeaf ? "1" : "0").append(",").append(cur.val ? "1" : "0").append("],");
+            q.add(cur.topLeft);
+            q.add(cur.topRight);
+            q.add(cur.bottomLeft);
+            q.add(cur.bottomRight);
+        }
+        return "[" + sb.substring(0, sb.length() - 1 - nullCount * 5) + "]";
     }
 
     /**
