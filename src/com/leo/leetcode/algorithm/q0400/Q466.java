@@ -16,6 +16,8 @@ package com.leo.leetcode.algorithm.q0400;
 public class Q466 {
 
     public static void main(String[] args) {
+        // 7
+        System.out.println(new Q466().getMaxRepetitions("baba", 11, "baab", 1));
         // 9
         System.out.println(new Q466().getMaxRepetitions("aaa", 3, "a", 1));
         // 4
@@ -45,7 +47,7 @@ public class Q466 {
         return ret / n2;
     }
 
-    // DP 状态优化
+    // DP 状态优化 引入循环
     public int getMaxRepetitions(String s1, int n1, String s2, int n2) {
         char[] str1 = s1.toCharArray(), str2 = s2.toCharArray();
         int ret = 0, count = 0, offset = 0;
@@ -69,9 +71,14 @@ public class Q466 {
                 dp[offset] = new int[]{count1, i1};
             }
             int[] cur = dp[offset];
-            count += cur[0];
+            if (offset == 0 && ret != 0) {
+                ret = ret * (n1 / count) + 1;
+                count = n1 - n1 % count;
+            } else {
+                count += cur[0];
+                ret++;
+            }
             offset = cur[1];
-            ret++;
         }
         if (offset != 0) ret--;
         return ret / n2;
