@@ -5,6 +5,8 @@ import com.eclipsesource.json.JsonArray;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class LCUtil {
@@ -201,6 +203,15 @@ public class LCUtil {
         List<String> ret = new ArrayList<>();
         for (int i = 0; i < jsonArray.size(); i++) {
             ret.add(jsonArray.get(i).asString());
+        }
+        return ret;
+    }
+
+    public static List<Integer> stringToIntegerList(String input) {
+        JsonArray jsonArray = Json.parse(input).asArray();
+        List<Integer> ret = new ArrayList<>();
+        for (int i = 0; i < jsonArray.size(); i++) {
+            ret.add(jsonArray.get(i).asInt());
         }
         return ret;
     }
@@ -460,8 +471,8 @@ public class LCUtil {
     }
 
     /**
-     * 使用python画出2d数组图像
-     * 需要python3安装在环境变量中，同时安装了numpy和matplotlib依赖
+     * 使用 python 画出 2d 数组图像
+     * 需要 python3安装在环境变量中，同时安装了 numpy 和 matplotlib 依赖
      *
      * @param array 2dArray
      */
@@ -515,7 +526,7 @@ public class LCUtil {
                         code +
                         "    plt.show()" + "\n";
                 String scriptName = "debug.py";
-                OutputStream pyFile = new FileOutputStream(scriptName);
+                OutputStream pyFile = Files.newOutputStream(Paths.get(scriptName));
                 pyFile.write(script.getBytes(StandardCharsets.UTF_8));
                 pyFile.close();
                 String[] cmd = new String[]{"python3", scriptName};
