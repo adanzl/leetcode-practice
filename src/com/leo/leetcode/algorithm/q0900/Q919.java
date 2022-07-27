@@ -1,5 +1,6 @@
 package com.leo.leetcode.algorithm.q0900;
 
+import com.leo.utils.Executor;
 import com.leo.utils.TreeNode;
 
 import java.util.ArrayDeque;
@@ -30,6 +31,9 @@ public class Q919 {
         cBTInserter.insert(3);  // 返回 1
         cBTInserter.insert(4);  // 返回 2
         System.out.println(treeNodeToString(cBTInserter.get_root())); // 返回 [1, 2, 3, 4]
+        new Executor(Q919.class).execute(
+                "[\"CBTInserter\", \"insert\", \"insert\", \"get_root\"]",
+                "[[[1, 2]], [3], [4], []]");
     }
 
     static class CBTInserter {

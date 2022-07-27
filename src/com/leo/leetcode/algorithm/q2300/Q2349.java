@@ -1,5 +1,7 @@
 package com.leo.leetcode.algorithm.q2300;
 
+import com.leo.utils.Executor;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeSet;
@@ -32,6 +34,10 @@ public class Q2349 {
         nc.change(1, 20); // 容器中下标为 1 处填入数字 20 。注意，下标 1 处之前为 10 ，现在被替换为 20 。
         // 2
         System.out.println(nc.find(10)); // 数字 10 所在下标为 2 ，3 和 5 。最小下标为 2 ，所以返回 2 。
+
+        new Executor(Q2349.class).execute(
+                "[\"NumberContainers\",\"find\",\"change\",\"change\",\"change\",\"change\",\"find\",\"change\",\"find\"]",
+                "[[],[10],[2,10],[1,10],[3,10],[5,10],[10],[1,20],[10]]");
     }
 
     static class NumberContainers {
