@@ -1,4 +1,4 @@
-package com.leo.leetcode.algorithm.q6000;
+package com.leo.leetcode.algorithm.q2300;
 
 /**
  * 给你一个由小写英文字母组成的字符串 s ，请你找出并返回第一个出现 两次 的字母。
