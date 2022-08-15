@@ -6,7 +6,9 @@ import com.eclipsesource.json.JsonValue;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static com.leo.utils.LCUtil.*;
 
@@ -34,6 +36,7 @@ public class Executor {
             System.out.println("No class:" + methods[0]);
             return;
         }
+        List<Object> ret = new ArrayList<>();
         Object obj = null;
         for (Constructor<?> c : classObj.getDeclaredConstructors()) {
             int pCount = c.getParameterCount();
@@ -43,6 +46,7 @@ public class Executor {
                 Object[] params = buildParams(c.getParameterTypes(), cParamArray);
                 c.setAccessible(true);
                 obj = c.newInstance(params);
+                ret.add(null);
                 break;
             } catch (Exception ignored) {
             }
@@ -61,13 +65,13 @@ public class Executor {
                         method.setAccessible(true);
                         Class<?> returnType = method.getReturnType();
                         Object result = method.invoke(obj, params);
-                        if (returnType == int[].class) System.out.println(Arrays.toString((int[]) result));
-                        else if (returnType == double[].class) System.out.println(Arrays.toString((double[]) result));
-                        else if (returnType == String[].class) System.out.println(Arrays.toString((String[]) result));
-                        else if (returnType == boolean[].class) System.out.println(Arrays.toString((boolean[]) result));
-                        else if (returnType == TreeNode.class) System.out.println(treeNodeToString((TreeNode) result));
-                        else if (returnType == ListNode.class) System.out.println(listNodeToString((ListNode) result));
-                        else if (returnType != void.class) System.out.println(result);
+                        if (returnType == int[].class) ret.add(Arrays.toString((int[]) result));
+                        else if (returnType == double[].class) ret.add(Arrays.toString((double[]) result));
+                        else if (returnType == String[].class) ret.add(Arrays.toString((String[]) result));
+                        else if (returnType == boolean[].class) ret.add(Arrays.toString((boolean[]) result));
+                        else if (returnType == TreeNode.class) ret.add(treeNodeToString((TreeNode) result));
+                        else if (returnType == ListNode.class) ret.add(listNodeToString((ListNode) result));
+                        else if (returnType != void.class) ret.add(result);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -75,6 +79,7 @@ public class Executor {
                 }
             }
         }
+        System.out.println(ret);
     }
 
     private Object[] buildParams(Class<?>[] types, JsonArray paramArray) {
