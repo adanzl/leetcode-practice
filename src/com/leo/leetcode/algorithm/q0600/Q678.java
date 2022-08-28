@@ -1,6 +1,7 @@
 package com.leo.leetcode.algorithm.q0600;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * 给定一个只包含三种字符的字符串：（ ，） 和 *，写一个函数来检验这个字符串是否为有效字符串。有效字符串具有如下规则：
@@ -24,7 +25,7 @@ public class Q678 {
     }
 
     public boolean checkValidString(String s) {
-        Stack<Integer> starStack = new Stack<>(), lStack = new Stack<>();
+        Deque<Integer> starStack = new LinkedList<>(), lStack = new LinkedList<>();
         int n = s.length();
         for (int i = 0; i < n; i++) {
             char c = s.charAt(i);
