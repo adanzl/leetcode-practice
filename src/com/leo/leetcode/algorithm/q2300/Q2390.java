@@ -1,4 +1,4 @@
-package com.leo.leetcode.algorithm.q6000;
+package com.leo.leetcode.algorithm.q2300;
 
 /**
  * 给你一个包含若干星号 * 的字符串 s 。
