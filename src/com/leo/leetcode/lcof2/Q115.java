@@ -56,8 +56,8 @@ public class Q115 {
         return count >= n-1;
     }
 
-    int find(int v) {
-        return parent[v] == v ? v : find(parent[v]);
+    int find(int x) {
+        return parent[x] == x ? parent[x] : (parent[x] = find(parent[x]));
     }
 
     boolean merge(int v1, int v2) {

@@ -65,8 +65,7 @@ public class Q721 {
         if (r_0 != r_1) parent[r_1] = r_0;
     }
 
-    int find(int index) {
-        if (parent[index] != index) parent[index] = find(parent[index]);
-        return parent[index];
+    int find(int x) {
+        return parent[x] == x ? x : (parent[x] = find(parent[x]));
     }
 }

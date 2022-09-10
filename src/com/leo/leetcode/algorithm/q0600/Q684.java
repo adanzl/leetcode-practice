@@ -45,7 +45,6 @@ public class Q684 {
     }
 
     int find(int x) {
-        if (parent[x] != x) parent[x] = find(parent[x]);
-        return parent[x];
+        return parent[x] == x ? x : (parent[x] = find(parent[x]));
     }
 }

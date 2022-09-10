@@ -37,7 +37,7 @@ public class Q565 {
     }
 
     int find(int x) {
-        return parents[x] == x ? x : find(parents[x]);
+        return parents[x] == x ? x : (parents[x] = find(parents[x]));
     }
 
     void merge(int x1, int x2) {
