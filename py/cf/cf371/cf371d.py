@@ -1,3 +1,8 @@
+'''
+链接：https://codeforces.com/problemset/problem/371/D
+链接：https://www.luogu.com.cn/problem/CF371D
+'''
+
 
 class Solution:
 
