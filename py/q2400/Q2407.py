@@ -1,23 +1,23 @@
 from typing import *
-'''
-给你一个整数数组 nums 和一个整数 k 。
-找到 nums 中满足以下要求的最长子序列：
-1、子序列 严格递增
-2、子序列中相邻元素的差值 不超过 k 。
-请你返回满足上述要求的 最长子序列 的长度。
-子序列 是从一个数组中删除部分元素后，剩余元素不改变顺序得到的数组。
-提示：
-1、1 <= nums.length <= 10^5
-2、1 <= nums[i], k <= 10^5
-链接：https://leetcode.cn/problems/longest-increasing-subsequence-ii
-'''
+"""
+ * 给你一个整数数组 nums 和一个整数 k 。
+ * 找到 nums 中满足以下要求的最长子序列：
+ * 1、子序列 严格递增
+ * 2、子序列中相邻元素的差值 不超过 k 。
+ * 请你返回满足上述要求的 最长子序列 的长度。
+ * 子序列 是从一个数组中删除部分元素后，剩余元素不改变顺序得到的数组。
+ * 提示：
+ * 1、1 <= nums.length <= 10^5
+ * 2、1 <= nums[i], k <= 10^5
+ * 链接：https://leetcode.cn/problems/longest-increasing-subsequence-ii
+"""
 
 
 class Node:
 
     def __init__(self, l: int, r: int):
-        self. l = l
-        self. r = r
+        self.l = l
+        self.r = r
         self.dirty = self.max = self.v = 0
         self.left = None
         self.right = None
@@ -31,7 +31,7 @@ class SegTree:
     def addNode(self, l: int, r: int, v):
         self._addNode(self.head, l, r, v)
 
-    def _addNode(self, root: Node,  l,  r,  v):
+    def _addNode(self, root: Node, l, r, v):
         mid = (root.l + root.r) >> 1
         if root.left is None:
             root.left = Node(root.l, mid)
@@ -57,7 +57,7 @@ class SegTree:
     def query(self, l: int, r: int):
         return self._query(self.head, l, r)
 
-    def _query(self,  root: Node,  l: int,  r: int):
+    def _query(self, root: Node, l: int, r: int):
         if root is None:
             return 0
         if root.l == l and root.r == r:
@@ -68,7 +68,8 @@ class SegTree:
             return self._query(root.left, l, r)
         if l >= mid + 1:
             return self._query(root.right, l, r)
-        return max(self._query(root.left, l, mid), self._query(root.right, mid + 1, r))
+        return max(self._query(root.left, l, mid),
+                   self._query(root.right, mid + 1, r))
 
     def pushDown(self, root: Node):
         if root.dirty == 0:
@@ -79,6 +80,7 @@ class SegTree:
 
 
 class Solution:
+
     def lengthOfLIS(self, nums: List[int], k: int) -> int:
         segTree = SegTree(0, 200_001)
         for num in nums:

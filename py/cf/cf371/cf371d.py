@@ -1,13 +1,13 @@
-'''
-链接：https://codeforces.com/problemset/problem/371/D
-链接：https://www.luogu.com.cn/problem/CF371D
-'''
+"""
+* 链接：https://codeforces.com/problemset/problem/371/D
+* 链接：https://www.luogu.com.cn/problem/CF371D
+"""
 
 
 class Solution:
 
     def __init__(self, n, capacities):
-        self.w = [0] * (n+1)
+        self.w = [0] * (n + 1)
         self.parent = list(range(n + 1))
         self.next = list(range(1, n + 2))
         self.capacities = capacities
