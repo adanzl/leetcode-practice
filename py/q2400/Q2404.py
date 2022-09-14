@@ -15,8 +15,7 @@ class Solution:
         arr = Counter([num for num in nums if num % 2 == 0])
         if len(arr) == 0:
             return -1
-        return sorted([[k, v] for k, v in arr.items()],
-                      key=lambda x: (-x[1], x[0]))[0][0]
+        return sorted([[k, v] for k, v in arr.items()], key=lambda x: (-x[1], x[0]))[0][0]
 
 
 if __name__ == '__main__':
