@@ -1,10 +1,9 @@
 package com.leo.leetcode.algorithm.q0600;
 
-import com.leo.utils.LCUtil;
-import com.leo.utils.TreeNode;
-
 import static com.leo.utils.LCUtil.stringToTreeNode;
 import static com.leo.utils.LCUtil.treeNodeToString;
+
+import com.leo.utils.TreeNode;
 
 
 /**

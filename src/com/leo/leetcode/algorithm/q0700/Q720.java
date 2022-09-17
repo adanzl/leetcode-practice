@@ -1,7 +1,5 @@
 package com.leo.leetcode.algorithm.q0700;
 
-import com.sun.org.apache.xml.internal.utils.StringComparable;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +27,8 @@ public class Q720 {
         // wor
         System.out.println(new Q720().longestWord(stringToStringArray("[\"w\",\"wo\",\"wor\", \"world\"]")));
         // apple
-        System.out.println(new Q720().longestWord(stringToStringArray("[\"a\", \"banana\", \"app\", \"appl\", \"ap\", \"apply\", \"apple\"]")));
+        System.out.println(new Q720().longestWord(
+                stringToStringArray("[\"a\", \"banana\", \"app\", \"appl\", \"ap\", \"apply\", \"apple\"]")));
     }
 
     public String longestWord(String[] words) {
@@ -37,7 +36,8 @@ public class Q720 {
         CharNode root = new CharNode(' ');
         String ret = "";
         for (String word : words) {
-            if (putCharNode(root, word) && word.length() > ret.length()) ret = word;
+            if (putCharNode(root, word) && word.length() > ret.length())
+                ret = word;
         }
         return ret;
     }
@@ -47,7 +47,8 @@ public class Q720 {
         int len = word.length() - 1;
         for (int i = 0; i < len; i++) {
             p = p.next.get(word.charAt(i));
-            if (p == null) return false;
+            if (p == null)
+                return false;
         }
         p.next.put(word.charAt(len), new CharNode(word.charAt(len)));
         return true;

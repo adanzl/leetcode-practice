@@ -65,7 +65,6 @@ public class LCP13 {
             }
         }
         int nb = buttons.size();
-        int ns = stones.size();
         int[][] startDist = bfs(sx, sy, maze);
 
         // 边界情况：没有机关

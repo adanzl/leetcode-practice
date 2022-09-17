@@ -1,9 +1,7 @@
 package com.leo.leetcode.algorithm.q0500;
 
-import java.util.Arrays;
-
-import static com.leo.utils.LCUtil.stringToInt2dArray;
 import static com.leo.utils.LCUtil.int2dArrayToString;
+import static com.leo.utils.LCUtil.stringToInt2dArray;
 
 /**
  * 在MATLAB中，有一个非常有用的函数 reshape，它可以将一个矩阵重塑为另一个大小不同的新矩阵，但保留其原始数据。
@@ -27,7 +25,8 @@ public class Q566 {
     }
 
     public int[][] matrixReshape(int[][] nums, int r, int c) {
-        if (nums.length * nums[0].length != r * c) return nums;
+        if (nums.length * nums[0].length != r * c)
+            return nums;
         int[][] ret = new int[r][c];
         for (int i = 0, idx = 0; i < nums.length; i++) {
             for (int j = 0; j < nums[i].length; j++, idx++) {

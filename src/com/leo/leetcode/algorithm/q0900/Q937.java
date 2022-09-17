@@ -1,11 +1,10 @@
 package com.leo.leetcode.algorithm.q0900;
 
+import static com.leo.utils.LCUtil.stringToStringArray;
+
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
-
-import static com.leo.utils.LCUtil.stringToStringArray;
 
 /**
  * 给你一个日志数组 logs。每条日志都是以空格分隔的字串，其第一个字为字母与数字混合的 标识符 。

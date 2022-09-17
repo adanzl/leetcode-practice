@@ -1,11 +1,10 @@
 package com.leo.leetcode.algorithm.q1900;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Queue;
-
 import static com.leo.utils.LCUtil.stringToChar2dArray;
 import static com.leo.utils.LCUtil.stringToIntegerArray;
+
+import java.util.ArrayDeque;
+import java.util.Queue;
 
 /**
  * 给你一个 m x n 的迷宫矩阵 maze （下标从 0 开始），矩阵中有空格子（用 '.' 表示）和墙（用 '+' 表示）。

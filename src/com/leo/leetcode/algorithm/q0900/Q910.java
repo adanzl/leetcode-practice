@@ -1,8 +1,8 @@
 package com.leo.leetcode.algorithm.q0900;
 
-import java.util.Arrays;
-
 import static com.leo.utils.LCUtil.stringToIntegerArray;
+
+import java.util.Arrays;
 
 /**
  * 给你一个整数数组 nums，和一个整数 k 。
