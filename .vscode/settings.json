@@ -20,8 +20,10 @@
     "vsicons.projectDetection.autoReload": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "cSpell.words": [
+        "codeforces",
         "leetcode",
-        "nums"
+        "nums",
+        "popleft"
     ],
     "cSpell.ignorePaths": [
         "**/package-lock.json",
