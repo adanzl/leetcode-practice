@@ -4,3 +4,4 @@ out/
 .project
 /debug.py
 .DS_Store
+**/__pycache__/
