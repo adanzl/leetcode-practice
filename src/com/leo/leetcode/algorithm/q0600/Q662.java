@@ -1,10 +1,9 @@
 package com.leo.leetcode.algorithm.q0600;
 
 import com.leo.utils.TreeNode;
-import javafx.util.Pair;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.leo.utils.LCUtil.stringToTreeNode;
 
@@ -34,25 +33,20 @@ public class Q662 {
         System.out.println(new Q662().widthOfBinaryTree(stringToTreeNode("[1,3,2,5]")));
     }
 
+    Map<Integer, Integer> map = new HashMap<>();
+    int ans;
+
     public int widthOfBinaryTree(TreeNode root) {
-        int res = 1;
-        List<Pair<TreeNode, Integer>> arr = new ArrayList<>();
-        arr.add(new Pair<>(root, 1));
-        while (!arr.isEmpty()) {
-            List<Pair<TreeNode, Integer>> tmp = new ArrayList<>();
-            for (Pair<TreeNode, Integer> pair : arr) {
-                TreeNode node = pair.getKey();
-                int index = pair.getValue();
-                if (node.left != null) {
-                    tmp.add(new Pair<>(node.left, index * 2));
-                }
-                if (node.right != null) {
-                    tmp.add(new Pair<>(node.right, index * 2 + 1));
-                }
-            }
-            res = Math.max(res, arr.get(arr.size() - 1).getValue() - arr.get(0).getValue() + 1);
-            arr = tmp;
-        }
-        return res;
+        dfs(root, 1, 0);
+        return ans;
+    }
+
+    void dfs(TreeNode root, int u, int depth) {
+        if (root == null) return;
+        if (!map.containsKey(depth)) map.put(depth, u);
+        ans = Math.max(ans, u - map.get(depth) + 1);
+        u = u - map.get(depth) + 1;
+        dfs(root.left, u << 1, depth + 1);
+        dfs(root.right, u << 1 | 1, depth + 1);
     }
 }
