@@ -23,7 +23,8 @@
         "codeforces",
         "leetcode",
         "nums",
-        "popleft"
+        "popleft",
+        "subarray"
     ],
     "cSpell.ignorePaths": [
         "**/package-lock.json",
