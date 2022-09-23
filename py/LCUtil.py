@@ -56,7 +56,12 @@ def treeNodeToString(root: TreeNode) -> str:
         ret.append(str(node.val))
         q.append(node.left)
         q.append(node.right)
-    for i in range(len(ret)-1, -1, -1):
+    for i in range(len(ret) - 1, -1, -1):
         if ret[i] == "null":
             del ret[i]
+        else : break
     return str(ret)
+
+
+def treeNodeListToString(treeNodeList: List[TreeNode]) -> str:
+    return "[" + ",".join([treeNodeToString(node) for node in treeNodeList]) + "]"

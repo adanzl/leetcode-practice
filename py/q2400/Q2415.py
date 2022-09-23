@@ -13,6 +13,9 @@
 
 from typing import *
 from collections import *
+
+import sys
+sys.path.append(sys.path[0] + "/../")
 from LCUtil import *
 
 
