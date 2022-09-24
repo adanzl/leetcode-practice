@@ -19,6 +19,7 @@
 		"scope": "python,py",
 		"body": [
 			"\"\"\"",
+			"",
 			"\"\"\"",
 			"from typing import *",
 			"from math import *",
@@ -27,7 +28,8 @@
 			"",
 			"class Solution:",
 			"    def func():",
-			"        pass",
+			"        ans = 0",
+			"        return ans",
 			"",
 			"",
 			"if __name__ == '__main__':",
