@@ -38,5 +38,23 @@
 		],
 		"prefix": "lc_template",
 		"description": "Python leetcode template"
+	},
+	"Import typing": {
+		"scope": "python,py",
+		"body": [
+			"\"\"\"",
+			" * 链接：",
+			"\"\"\"",
+			"from typing import *",
+			"",
+			"",
+			"",
+			"",
+			"if __name__ == '__main__':",
+			"    # ",
+			"    print(Solution().func())",
+		],
+		"prefix": "im_type",
+		"description": "Python import"
 	}
 }
