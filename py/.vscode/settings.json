@@ -3,6 +3,7 @@
         "mincost",
         "popleft",
         "subarray",
-        "Subarrays"
+        "Subarrays",
+        "Subseq"
     ]
 }
