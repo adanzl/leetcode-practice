@@ -4,6 +4,7 @@
         "popleft",
         "subarray",
         "Subarrays",
-        "Subseq"
+        "Subseq",
+        "Superstring"
     ]
 }
