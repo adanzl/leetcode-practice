@@ -22,7 +22,7 @@ class Solution:
         ans = []
 
         def dfs(out, root, target):
-            if root is None or target < root.val: return
+            if root is None: return
             if target == root.val and root.left is None and root.right is None:
                 ans.append(out + [target])
             dfs(out + [root.val], root.left, target - root.val)
