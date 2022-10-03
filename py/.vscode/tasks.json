@@ -10,9 +10,11 @@
             "args": [
                 "-g",
                 "-Os",
+                "-stdlib=libc++",
+                "-std=c++20",
                 "${file}",
                 "-o",
-                "${fileDirname}\\out\\${fileBasenameNoExtension}"
+                "${fileDirname}/out/${fileBasenameNoExtension}"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -22,7 +24,7 @@
             ],
             "group": {
                 "kind": "build",
-                "isDefault": true
+                "isDefault": true,
             }
         }
     ]
