@@ -56,5 +56,15 @@
 		],
 		"prefix": "im_type",
 		"description": "Python import"
+	},
+	"Import LCUTIL": {
+		"scope": "python,py",
+		"body": [
+			"import sys, os",
+			"sys.path.append(os.path.dirname(__file__) + '/../')",
+			"from LCUtil import *",
+		],
+		"prefix": "im_util",
+		"description": "Python import"
 	}
 }

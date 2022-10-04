@@ -49,6 +49,7 @@ def arrayToTreeNode(_input: list[str]) -> TreeNode:
 
 def stringToTreeNode(_input: str) -> TreeNode:
     _input = _input[1:-1]
+    if not _input: return None
     return arrayToTreeNode(_input.split(','))
 
 
