@@ -11,9 +11,9 @@ int main(int argc, char **argv) {
   s.emplace_back("a");
   s.emplace_back("b");
   s.emplace_back("c");
-  s.push_back("d");
+  s.emplace_back("d");
 
-  cout << s.size() << endl;
+  std::cout << s.size() << endl;
   std::cout << s[0] << std::endl;
   std::cout << "Hello World~~~" << std::endl;
   return 0;
