@@ -13,7 +13,7 @@
             "cwd": "${workspaceFolder}",
             "relativePathBase": "${workspaceFolder}",
             "terminal": "integrated",
-            "preLaunchTask": "gcc build dev"
+            "preLaunchTask": "gcc build dev",
         }
     ]
 }

@@ -1,0 +1,10 @@
+Language: Cpp
+BasedOnStyle: LLVM
+# 允许函数参数在一行
+AllowAllArgumentsOnNextLine: true
+# tab宽度
+TabWidth: 4
+# 缩进宽度
+IndentWidth: 4
+# 每行字符的限制，0表示没有限制
+ColumnLimit:     200
