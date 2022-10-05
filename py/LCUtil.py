@@ -9,6 +9,9 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+        
+    def __str__(self):
+        return treeNodeToString(self)
 
 
 class ListNode:
@@ -71,7 +74,7 @@ def treeNodeToString(root: TreeNode) -> str:
             del ret[i]
         else:
             break
-    return str(ret)
+    return '[' + ','.join(ret) + ']'
 
 
 def treeNodeListToString(treeNodeList: List[TreeNode]) -> str:
