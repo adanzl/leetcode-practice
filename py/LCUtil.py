@@ -1,5 +1,4 @@
-from typing import *
-from collections import *
+from typing import Deque, List, Optional
 import json
 
 
@@ -9,7 +8,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-        
+
     def __str__(self):
         return treeNodeToString(self)
 
@@ -22,11 +21,11 @@ class ListNode:
         self.next = next
 
 
-def arrayToTreeNode(_input: list[str]) -> TreeNode:
+def arrayToTreeNode(_input: list[str]) -> Optional[TreeNode]:
     if not _input: return None
 
     root: TreeNode = TreeNode(int(_input[0]))
-    q = deque()
+    q = Deque()
     q.append(root)
 
     index: int = 1
@@ -50,7 +49,7 @@ def arrayToTreeNode(_input: list[str]) -> TreeNode:
     return root
 
 
-def stringToTreeNode(_input: str) -> TreeNode:
+def stringToTreeNode(_input: str) -> Optional[TreeNode]:
     _input = _input[1:-1]
     if not _input: return None
     return arrayToTreeNode(_input.split(','))
@@ -59,7 +58,7 @@ def stringToTreeNode(_input: str) -> TreeNode:
 def treeNodeToString(root: TreeNode) -> str:
     if root is None: return "[]"
     ret = []
-    q = deque()
+    q = Deque()
     q.append(root)
     while q:
         node: TreeNode = q.popleft()
@@ -81,22 +80,21 @@ def treeNodeListToString(treeNodeList: List[TreeNode]) -> str:
     return "[" + ",".join([treeNodeToString(node) for node in treeNodeList]) + "]"
 
 
-def stringToListNode(_input: str):
+def stringToListNode(_input: str) -> Optional[ListNode]:
     nodeValues = _input[1:-1].split(",")
     dummyRoot = ListNode(0)
     ptr = dummyRoot
     for item in nodeValues:
-        ptr.next = ListNode(item)
+        ptr.next = ListNode(int(item))
         ptr = ptr.next
     return dummyRoot.next
 
 
-def listNodeToString(node: ListNode):
+def listNodeToString(node: Optional[ListNode]) -> str:
     if node is None:
         return "[]"
     ans = []
     while node is not None:
-        # output.append(node).append("->")
         ans.append(node.val)
         node = node.next
 
