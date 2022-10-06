@@ -9,4 +9,5 @@
     "Subseq",
     "Superstring"
   ],
+  "python.analysis.typeCheckingMode": "basic",
 }
