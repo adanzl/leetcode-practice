@@ -45,7 +45,7 @@
 			"\"\"\"",
 			" * 链接：",
 			"\"\"\"",
-			"from typing import *",
+			"from typing import List",
 			"",
 			"",
 			"",
