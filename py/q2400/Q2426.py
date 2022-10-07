@@ -10,8 +10,8 @@
  * 4、-10^4 <= diff <= 10^4
  * 链接：https://leetcode.cn/problems/number-of-pairs-satisfying-inequality/
 """
-from typing import *
-from bisect import *
+from typing import Optional, List
+from bisect import insort, bisect_right
 
 
 class Node:
@@ -19,9 +19,9 @@ class Node:
     def __init__(self, l: int, r: int):
         self.l = l
         self.r = r
-        self.dirty = self.sum = self.v = 0
-        self.left = None
-        self.right = None
+        self.dirty = self.sum = self.v = 0  # point
+        self.left: Optional[Node] = None
+        self.right: Optional[Node] = None
 
 
 class SegTree:
@@ -39,9 +39,9 @@ class SegTree:
         if root.right is None:
             root.right = Node(mid + 1, root.r)
         if root.l == l and r == root.r:
-            root.dirty = 1
-            root.v += v
-            root.sum += v
+            root.dirty += v  # point
+            root.v += v  # point
+            root.sum += v  # point
             return
 
         self.pushDown(root)
@@ -58,7 +58,7 @@ class SegTree:
     def query(self, l: int, r: int):
         return self._query(self.head, l, r)
 
-    def _query(self, root: Node, l: int, r: int):
+    def _query(self, root: Optional[Node], l: int, r: int):
         if root is None:
             return 0
         if root.l == l and root.r == r:
@@ -69,13 +69,16 @@ class SegTree:
             return self._query(root.left, l, r)
         if l >= mid + 1:
             return self._query(root.right, l, r)
+        # point
         return self._query(root.left, l, mid) + self._query(root.right, mid + 1, r)
 
     def pushDown(self, root: Node):
         if root.dirty == 0:
             return
-        self._addNode(root.left, root.left.l, root.left.r, root.left.v)
-        self._addNode(root.right, root.right.l, root.right.r, root.right.v)
+        if root.left is not None:
+            self._addNode(root.left, root.left.l, root.left.r, root.dirty)
+        if root.right is not None:
+            self._addNode(root.right, root.right.l, root.right.r, root.dirty)
         root.dirty = 0
 
 

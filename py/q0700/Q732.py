@@ -1,16 +1,15 @@
 """
- * 给你一个整数数组 nums 和一个整数 k 。
- * 找到 nums 中满足以下要求的最长子序列：
- * 1、子序列 严格递增
- * 2、子序列中相邻元素的差值 不超过 k 。
- * 请你返回满足上述要求的 最长子序列 的长度。
- * 子序列 是从一个数组中删除部分元素后，剩余元素不改变顺序得到的数组。
+ * 当 k 个日程安排有一些时间上的交叉时（例如 k 个日程安排都在同一时间内），就会产生 k 次预订。
+ * 给你一些日程安排 [start, end) ，请你在每个日程安排添加后，返回一个整数 k ，表示所有先前日程安排会产生的最大 k 次预订。
+ * 实现一个 MyCalendarThree 类来存放你的日程安排，你可以一直添加新的日程安排。
+ * 1、MyCalendarThree() 初始化对象。
+ * 2、int book(int start, int end) 返回一个整数 k ，表示日历中存在的 k 次预订的最大值。
  * 提示：
- * 1、1 <= nums.length <= 10^5
- * 2、1 <= nums[i], k <= 10^5
- * 链接：https://leetcode.cn/problems/longest-increasing-subsequence-ii
+ * 1、0 <= start < end <= 10^9
+ * 2、每个测试用例，调用 book 函数最多不超过 400次
+ * 链接：https://leetcode.cn/problems/my-calendar-iii
 """
-from typing import Optional, List
+from typing import Optional
 
 
 class Node:
@@ -24,11 +23,11 @@ class Node:
 
 
 class SegTree:
-    # 动态开点线段树模板，取最大值
+
     def __init__(self, l: int, r: int):
         self.head = Node(l, r)
 
-    def addNode(self, l: int, r: int, v):
+    def addNode(self, l: int, r: int, v: int):
         self._addNode(self.head, l, r, v)
 
     def _addNode(self, root: Optional[Node], l, r, v):
@@ -39,9 +38,9 @@ class SegTree:
         if root.right is None:
             root.right = Node(mid + 1, root.r)
         if root.l == l and r == root.r:
-            root.dirty = v  # point
-            root.v = v  # point
-            root.max = v  # point
+            root.dirty += v
+            root.v += v
+            root.max += v
             return
 
         self.pushDown(root)
@@ -53,7 +52,6 @@ class SegTree:
             self._addNode(root.left, l, mid, v)
             self._addNode(root.right, mid + 1, r, v)
 
-        # point
         root.max = max(root.left.max, root.right.max)
 
     def query(self, l: int, r: int):
@@ -70,7 +68,6 @@ class SegTree:
             return self._query(root.left, l, r)
         if l >= mid + 1:
             return self._query(root.right, l, r)
-        # point
         return max(self._query(root.left, l, mid), self._query(root.right, mid + 1, r))
 
     def pushDown(self, root: Node):
@@ -83,20 +80,21 @@ class SegTree:
         root.dirty = 0
 
 
-class Solution:
+class MyCalendarThree:
 
-    def lengthOfLIS(self, nums: List[int], k: int) -> int:
-        segTree = SegTree(0, 200_001)
-        for num in nums:
-            mx = segTree.query(num - k, num - 1)
-            segTree.addNode(num, num, mx + 1)
-        return segTree.head.max
+    def __init__(self):
+        self.segTree = SegTree(0, 10**9)
+
+    def book(self, start: int, end: int) -> int:
+        self.segTree.addNode(start, end - 1, 1)
+        return self.segTree.head.max
 
 
 if __name__ == '__main__':
-    # 5
-    print(Solution().lengthOfLIS([4, 2, 1, 4, 3, 4, 5, 8, 15], 3))
-    # 4
-    print(Solution().lengthOfLIS([7, 4, 5, 1, 8, 12, 4, 7], 5))
-    # 1
-    print(Solution().lengthOfLIS([1, 5], 1))
+    myCalendarThree = MyCalendarThree()
+    print(myCalendarThree.book(10, 20))  #  返回 1 ，第一个日程安排可以预订并且不存在相交，所以最大 k 次预订是 1 次预订。
+    print(myCalendarThree.book(50, 60))  #  返回 1 ，第二个日程安排可以预订并且不存在相交，所以最大 k 次预订是 1 次预订。
+    print(myCalendarThree.book(10, 40))  #  返回 2 ，第三个日程安排 [10, 40) 与第一个日程安排相交，所以最大 k 次预订是 2 次预订。
+    print(myCalendarThree.book(5, 15))  #  返回 3 ，剩下的日程安排的最大 k 次预订是 3 次预订。
+    print(myCalendarThree.book(5, 10))  #  返回 3
+    print(myCalendarThree.book(25, 55))  #  返回 3
