@@ -10,4 +10,5 @@
     "Superstring"
   ],
   "python.analysis.typeCheckingMode": "basic",
+  "svn.ignoreMissingSvnWarning": true,
 }
