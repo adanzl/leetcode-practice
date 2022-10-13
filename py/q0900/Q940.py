@@ -7,7 +7,6 @@
  * 2、s 仅由小写英文字母组成
  * 链接：https://leetcode.cn/problems/distinct-subsequences-ii/
 """
-from typing import *
 
 
 class Solution:
@@ -15,9 +14,13 @@ class Solution:
     def distinctSubseqII(self, s: str) -> int:
         MOD = 10**9 + 7
         dp = [0] * 26
+        sm = 0
         for c in s:
-            dp[ord(c) - ord('a')] = sum(dp, 1) % MOD
-        return sum(dp) % MOD
+            i = ord(c) - ord('a')
+            pre = dp[i]
+            dp[i] = sm + 1
+            sm = sm - pre + dp[i]
+        return sm % MOD
 
 
 if __name__ == '__main__':
