@@ -10,13 +10,13 @@
  * 6、1 <= n <= 10^9
  * 链接：https://leetcode.cn/problems/numbers-at-most-n-given-digit-set/
 """
-from typing import *
-from functools import *
+from typing import List
+from functools import cache
 
 
 class Solution:
 
-    def atMostNGivenDigitSet(self, digits: List[str], n: int) -> int:
+    def atMostNGivenDigitSet1(self, digits: List[str], n: int) -> int:
         s = str(n)
         l = len(digits)
         NUMS = [1] + [l**(i + 1) for i in range(len(s))]
@@ -40,8 +40,25 @@ class Solution:
 
         return sum(NUMS[1:-1]) + func(0)
 
+    # 数位DP变种
+    def atMostNGivenDigitSet(self, digits: List[str], n: int) -> int:
+        s = str(n)
+
+        @cache
+        def f(idx, is_limit, is_num):
+            if idx == len(s): return is_num
+            ret = 0 if is_num else f(idx + 1, False, False)
+            for d in digits:
+                if is_limit and d > s[idx]: break
+                ret += f(idx + 1, d == s[idx] and is_limit, True)
+            return ret
+
+        return f(0, True, False)
+
 
 if __name__ == '__main__':
+    # 79
+    print(Solution().atMostNGivenDigitSet(["1", "2", "3", "6", "7", "8"], 211))
     # 1
     print(Solution().atMostNGivenDigitSet(["3", "5"], 4))
     # 1
