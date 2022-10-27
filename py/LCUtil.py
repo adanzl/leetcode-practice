@@ -20,6 +20,9 @@ class ListNode:
         self.val = val
         self.next = next
 
+    def __str__(self):
+        return listNodeToString(self)
+
 
 def arrayToTreeNode(_input: list[str]) -> Optional[TreeNode]:
     if not _input: return None
@@ -95,7 +98,7 @@ def listNodeToString(node: Optional[ListNode]) -> str:
         return "[]"
     ans = []
     while node is not None:
-        ans.append(node.val)
+        ans.append(str(node.val))
         node = node.next
 
     return "[" + ",".join(ans) + "]"
