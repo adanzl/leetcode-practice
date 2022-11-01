@@ -8,7 +8,8 @@
     "subarray",
     "Subarrays",
     "Subseq",
-    "Superstring"
+    "Superstring",
+    "Toeplitz"
   ],
   "python.analysis.typeCheckingMode": "basic",
   "svn.ignoreMissingSvnWarning": true,
