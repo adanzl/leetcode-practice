@@ -32,10 +32,7 @@ class Solution:
             return ret
 
         for i in range(1, n):  # comma
-            arr1, arr2 = [], []
-            arr1.extend(f(0, i - 1))
-            arr2.extend(f(i, n - 1))
-            for v1, v2 in product(arr1, arr2):
+            for v1, v2 in product(f(0, i - 1), f(i, n - 1)):
                 ans.append('(' + v1 + ', ' + v2 + ')')
         return ans
 
