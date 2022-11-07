@@ -3,6 +3,7 @@
     "appendleft",
     "Floyed",
     "irange",
+    "MCMF",
     "mincost",
     "popleft",
     "sortedcontainers",
