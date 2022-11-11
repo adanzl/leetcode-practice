@@ -19,36 +19,34 @@
 """
 from collections import defaultdict
 from typing import List
-from heapq import heappush, heappop
+from heapq import heapify, heappush, heappop
 
 INF = int(1E15)
 
 
 class Solution:
 
-    def minCost1(self, maxTime: int, edges: List[List[int]], passingFees: List[int]) -> int:
-        # 分层图
+    def minCost(self, maxTime: int, edges: List[List[int]], passingFees: List[int]) -> int:
+        # 类似分层图概念，在visited标记中加入了对实际限制的判断，当松弛限制要素的时候，获得更优解
         nv = len(passingFees)
-        g = [[] for _ in range(nv)]
-        costs, vis = defaultdict(lambda: INF), set()
-        for s, e, t in edges:
-            g[s].append([e, t])
-            g[e].append([s, t])
-        q = [[passingFees[0], maxTime, 0]]  # fee-time_remain-idx
+        g = defaultdict(dict)
+        for s, e, t in edges:  # 筛选最短边
+            g[s][e] = min(g[s].get(e, INF), t)
+            g[e][s] = min(g[e].get(s, INF), t)
+        costs = {0: maxTime}  # 到达城市的剩余时间，此处为visited数组，dis数组被省略了
+        q = [[passingFees[0], maxTime, 0]]  # fee-time-idx 考虑遍历最小费用
         while q:
             f, t, idx = heappop(q)
-            if (idx, t) in vis: continue
-            vis.add((idx, t))
-            for nx_i, nx_t in g[idx]:
-                if t < nx_t: continue
-                nf = f + passingFees[nx_i]
-                if nx_i == nv - 1: return nf
-                if costs[(nx_i, t - nx_t)] > nf:
-                    costs[(nx_i, t - nx_t)] = nf
-                    heappush(q, [nf, t - nx_t, nx_i])
+            if idx == nv - 1: return f
+            for nx_i, nx_t in g[idx].items():
+                if nx_t > t: continue
+                # 如果同一个城市出现更多费用，但是可以获得更多时间的时候，仍然加入堆，松弛费用
+                if nx_i not in costs or t - nx_t > costs[nx_i]:
+                    costs[nx_i] = t - nx_t
+                    heappush(q, [f + passingFees[nx_i], t - nx_t, nx_i])
         return -1
 
-    def minCost(self, maxTime: int, edges: List[List[int]], passingFees: List[int]) -> int:
+    def minCost1(self, maxTime: int, edges: List[List[int]], passingFees: List[int]) -> int:
         # 动态规划
         nv = len(passingFees)
         dp = [[INF] * nv for _ in range(maxTime + 1)]  # dp[t][i] time t reach i min cost
