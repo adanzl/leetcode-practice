@@ -1,11 +1,13 @@
 {
   "cSpell.words": [
+    "appendleft",
     "Floyed",
     "irange",
     "MCMF",
     "mincost",
     "popleft",
     "sortedcontainers",
+    "spfa",
     "Squareful",
     "subarray",
     "Subarrays",

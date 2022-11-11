@@ -16,7 +16,7 @@
 
 class Solution:
 
-    def parseBoolExpr(self, expression: str) -> bool:
+    def parseBoolExpr1(self, expression: str) -> bool:
 
         def f(idx):
             e = expression[idx]
@@ -37,6 +37,21 @@ class Solution:
             return ret, idx + 1
 
         return f(0)[0]
+
+    def parseBoolExpr(self, expression):
+
+        def my_or(*xs):
+            return any(xs)
+
+        def my_and(*xs):
+            return all(xs)
+
+        e = expression.replace('t', '1')
+        e = e.replace('f', '0')
+        e = e.replace('|', 'my_or')
+        e = e.replace('&', 'my_and')
+        e = e.replace('!', 'not ')
+        return bool(eval(e))
 
 
 if __name__ == '__main__':
