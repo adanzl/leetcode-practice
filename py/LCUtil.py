@@ -1,5 +1,5 @@
-from typing import Deque, List, Optional
 import json
+from typing import Deque, List, Optional
 
 
 class TreeNode:
@@ -35,14 +35,14 @@ def arrayToTreeNode(_input: list[str]) -> Optional[TreeNode]:
     while q:
         node: TreeNode = q.popleft()
         if index == len(_input): break
-        item: str = _input[index]
+        item: str = _input[index].strip()
         index += 1
         if "null" != item:
             left_num: int = int(item)
             node.left = TreeNode(left_num)
             q.append(node.left)
         if index == len(_input): break
-        item: str = _input[index]
+        item: str = _input[index].strip()
         index += 1
         if "null" != item:
             right_num: int = int(item)
