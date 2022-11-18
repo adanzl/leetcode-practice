@@ -25,7 +25,7 @@ class Node:
 
 
 class SegTree:
-    # 动态开点线段树模板，累加，取和
+    # 动态开点线段树模板，累加，取和 v > 0
     def __init__(self, l: int, r: int):
         self.head = Node(l, r)
 

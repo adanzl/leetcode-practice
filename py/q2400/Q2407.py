@@ -12,13 +12,15 @@
 """
 from typing import Optional, List
 
+INF = int(10**10)
+
 
 class Node:
 
     def __init__(self, l: int, r: int, left=None, right=None):
         self.l = l
         self.r = r
-        self.dirty = self.max = self.v = 0
+        self.dirty = self.max = self.v = -INF
         self.left: Optional[Node] = left
         self.right: Optional[Node] = right
 
@@ -74,13 +76,10 @@ class SegTree:
         return max(self._query(root.left, l, mid), self._query(root.right, mid + 1, r))
 
     def pushDown(self, root: Node):
-        if root.dirty == 0:
-            return
-        if root.left is not None:
-            self._addNode(root.left, root.left.l, root.left.r, root.dirty)
-        if root.right is not None:
-            self._addNode(root.right, root.right.l, root.right.r, root.dirty)
-        root.dirty = 0
+        if root.dirty == -INF: return
+        if root.left is not None: self._addNode(root.left, root.left.l, root.left.r, root.dirty)
+        if root.right is not None: self._addNode(root.right, root.right.l, root.right.r, root.dirty)
+        root.dirty = -INF
 
 
 class Solution:
