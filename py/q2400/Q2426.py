@@ -11,7 +11,7 @@
  * 链接：https://leetcode.cn/problems/number-of-pairs-satisfying-inequality/
 """
 from typing import Optional, List
-from bisect import insort, bisect_right
+from bisect import bisect_left, insort, bisect_right
 
 
 class Node:
@@ -82,6 +82,25 @@ class SegTree:
         root.dirty = 0
 
 
+# 树状数组 下标从 1 开始，求和
+class BIT:
+
+    def __init__(self, n):
+        self.tree = [0] * n
+
+    def add(self, i, val):
+        while i < len(self.tree):
+            self.tree[i] += val
+            i += i & -i  # low_bit
+
+    def query(self, i):
+        res = 0
+        while i > 0:
+            res += self.tree[i]
+            i &= i - 1
+        return res
+
+
 class Solution:
 
     def numberOfPairs1(self, nums1: List[int], nums2: List[int], diff: int) -> int:
@@ -94,7 +113,7 @@ class Solution:
             segTree.addNode(num, num, 1)
         return ans
 
-    def numberOfPairs(self, nums1: List[int], nums2: List[int], diff: int) -> int:
+    def numberOfPairs2(self, nums1: List[int], nums2: List[int], diff: int) -> int:
         arr = [v1 - v2 for v1, v2 in zip(nums1, nums2)]
         s = []
         ans = 0
@@ -102,6 +121,19 @@ class Solution:
             v = bisect_right(s, num + diff)
             ans += v
             insort(s, num)
+        return ans
+
+    def numberOfPairs(self, nums1: List[int], nums2: List[int], diff: int) -> int:
+        # 树状数组
+        a = [v1 - v2 for v1, v2 in zip(nums1, nums2)]
+        b = a[:]
+        b.sort()
+        ans = 0
+        t = BIT(len(a) + 1)
+        for x in a:
+            i = bisect_right(b, x + diff)  # 离散化数据
+            ans += t.query(i)
+            t.add(bisect_left(b, x) + 1, 1)
         return ans
 
 
