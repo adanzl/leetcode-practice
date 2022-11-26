@@ -34,6 +34,15 @@ class Solution:
             ans = max(ans, v)
         return ans
 
+    def jobScheduling1(self, startTime: List[int], endTime: List[int], profit: List[int]) -> int:
+        # 直接按照结束时间排序，统计安排了i个任务之后的最大时间
+        arr = sorted(zip(endTime, startTime, profit))
+        dp = [0] * (len(arr) + 1)
+        for i, (e, s, p) in enumerate(arr):
+            idx = bisect_right(arr, s, key=lambda x: x[0])
+            dp[i + 1] = max(dp[i], dp[idx] + p)
+        return dp[-1]
+
 
 if __name__ == '__main__':
     # 20
