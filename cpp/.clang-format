@@ -7,4 +7,4 @@ TabWidth: 4
 # 缩进宽度
 IndentWidth: 4
 # 每行字符的限制，0表示没有限制
-ColumnLimit:     200
+ColumnLimit: 200
