@@ -13,7 +13,7 @@
  * 链接：https://leetcode.cn/contest/season/2022-fall/problems/D9PW8w/
 """
 from collections import defaultdict
-from typing import *
+from typing import List
 
 
 class Solution:
