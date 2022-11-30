@@ -17,23 +17,21 @@ from collections import Counter, defaultdict
 class FreqStack:
 
     def __init__(self):
-        self.data = []
         self.ids = defaultdict(list)
         self.cnt = Counter()
         self.top = -1
 
     def push(self, val: int) -> None:
         self.cnt[val] += 1
-        self.ids[self.cnt[val]].append(len(self.data))
-        self.data.append(val)
+        self.ids[self.cnt[val]].append(val)
         self.top = max(self.top, self.cnt[val])
 
     def pop(self) -> int:
-        id = self.ids[self.top].pop()
-        self.cnt[self.data[id]] -= 1
+        val = self.ids[self.top].pop()
+        self.cnt[val] -= 1
         while self.top >= 0 and len(self.ids[self.top]) == 0:
             self.top -= 1
-        return self.data[id]
+        return val
 
 
 if __name__ == '__main__':

@@ -9,7 +9,7 @@
  * 4、grid[i][j] 为 0 或 1
  * 链接：https://leetcode.cn/problems/making-a-large-island/
 """
-from typing import *
+from typing import List
 
 
 class Solution:
