@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "aaron-bond.better-comments",
+        "streetsidesoftware.code-spell-checker",
+        "ms-python.isort",
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "donjayamanne.python-environment-manager",
+        "kevinrose.vsc-python-indent",
+        "gruntfuggly.todo-tree",
+        "vscode-icons-team.vscode-icons",
+        "tabnine.tabnine-vscode"
+    ]
+}
