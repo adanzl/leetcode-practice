@@ -2,9 +2,10 @@ package com.leo.leetcode;
 
 import java.util.*;
 
+import static com.leo.utils.LCUtil.stringToInt2dArray;
 import static com.leo.utils.LCUtil.stringToIntegerArray;
 
-class Solution {
+class Q2503 {
     public int[] maxPoints(int[][] grid, int[] queries) {
         int m = grid.length, n = grid[0].length;
         int nn = queries.length;
@@ -16,6 +17,7 @@ class Solution {
         int[][] qq = new int[nn][];
         for (int i = 0; i < nn; i++)
             qq[i] = new int[]{queries[i], i};
+        Arrays.sort(qq, Comparator.comparing(o -> o[0]));
         List<int[]> Q = new ArrayList<>();
         Q.add(new int[]{0, 0});
         int[][] dirs = new int[][]{{-1, 0}, {0, -1}, {1, 0}, {0, 1}};
@@ -31,7 +33,7 @@ class Solution {
                 for (int[] ne : t) {
                     int nx = ne[0], ny = ne[1];
                     if (nx < 0 || ny < 0 || nx > m - 1 || ny > n - 1) continue;
-                    if (!g[nx][ny]) continue;
+                    if (g[nx][ny]) continue;
                     if (grid[nx][ny] >= val) {
                         Q.add(new int[]{nx, ny});
                         continue;
@@ -44,14 +46,12 @@ class Solution {
                 }
             }
         }
-        for (int[] a : ans_) {
-            ans[a[1]] = a[0];
-        }
+        for (int[] a : ans_) ans[a[1]] = a[0];
         return ans;
     }
 
     public static void main(String[] args) {
-        //
-        System.out.println(new Q().func());
+        // [5,8,1]
+        System.out.println(Arrays.toString(new Q2503().maxPoints(stringToInt2dArray("[[1,2,3],[2,5,7],[3,5,1]]"), stringToIntegerArray("[5,6,2]"))));
     }
 }
