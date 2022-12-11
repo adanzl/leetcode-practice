@@ -8,13 +8,11 @@ class Solution:
 
     def deleteGreatestValue(self, grid: List[List[int]]) -> int:
         ans = 0
-        for gl in grid:
-            gl.sort(reverse=True)
-        for i in range(len(grid[0])):
-            mx = 0
-            for j in range(len(grid)):
-                mx = max(mx, grid[j][i])
-            ans += mx
+        for row in grid:
+            row.sort()
+        # 遍历列
+        for col in zip(*grid):
+            ans += max(col)
         return ans
 
 
