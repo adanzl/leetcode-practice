@@ -1,4 +1,4 @@
-package com.leo.leetcode;
+package com.leo.leetcode.algorithm.q2500;
 
 import java.util.*;
 
