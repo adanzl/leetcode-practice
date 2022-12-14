@@ -13,17 +13,29 @@
 class Solution:
 
     def minimumDeletions(self, s: str) -> int:
-        bn, ans = 0, 0x3c3c3c3c
-        for c in s:
-            if c == 'a':
-                ans = min(ans + 1, bn)
-            else:
-                bn += 1
+        n = len(s)
+        an, bn = [0] * n, [0] * n
+        if s[-1] == 'a': an[-1] = 1
+        if s[0] == 'b': bn[0] = 1
+        for i in range(n - 2, -1, -1):  # a
+            an[i] = an[i + 1] + (1 if s[i] == 'a' else 0)
+        ans = an[0]
+        for i in range(1, n):  # b
+            bn[i] = bn[i - 1] + (1 if s[i] == 'b' else 0)
+            if i < n - 1: ans = min(ans, bn[i - 1] + an[i + 1])
+        ans = min(ans, bn[n - 1])
+
         return ans
 
 
 if __name__ == '__main__':
+    # 60
+    print(Solution().minimumDeletions("bbbbbbbaabbbbbaaabbbabbbbaabbbbbbaabbaaabaabbbaaaabaaababbbabbabbaaaabbbabbbbbaabbababbbaaaaaababaaababaabbabbbaaaabbbbbabbabaaaabbbaba"))
     # 2
     print(Solution().minimumDeletions("aababbab"))
     # 2
     print(Solution().minimumDeletions("bbaaaaabb"))
+    # 0
+    print(Solution().minimumDeletions("b"))
+    # 0
+    print(Solution().minimumDeletions("bbbbbbbbbbbbbb"))
