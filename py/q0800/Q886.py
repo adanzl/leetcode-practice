@@ -15,7 +15,7 @@ from typing import List
 
 
 class Solution:
-
+    # 「染色法判定二分图」的模板题
     def possibleBipartition(self, n: int, dislikes: List[List[int]]) -> bool:
         g = [[] for i in range(n)]
         for x, y in dislikes:
