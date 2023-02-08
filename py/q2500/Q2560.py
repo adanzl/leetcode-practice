@@ -29,7 +29,7 @@ class Solution:
                     cnt = 0
             return ret + cnt // 2 + cnt % 2
 
-        l, r = 0, 10**2
+        l, r = 0, 10**9
         while l <= r:
             mid = l + (r - l) // 2
             sum = calc(mid)
