@@ -33,6 +33,21 @@ class Solution:
                     ans += less[nums[k]] * great[k][nums[j]]
         return ans
 
+    def countQuadruplets1(self, nums: List[int]) -> int:
+        n = len(nums)
+        ans = 0
+        cnt = [0] * n
+        for i in range(n):
+            large = 0
+            for j in range(i):
+                if nums[i] > nums[j]:
+                    ans += cnt[j]
+                    large += 1
+                else:
+                    cnt[j] += large
+
+        return ans
+
 
 if __name__ == '__main__':
     # 7
