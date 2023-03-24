@@ -5,3 +5,4 @@ out/
 /debug.py
 .DS_Store
 **/__pycache__/
+py/work/
