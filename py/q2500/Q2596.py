@@ -11,26 +11,23 @@
  * 4、grid 中的所有整数 互不相同
  * 链接：https://leetcode.cn/problems/check-knight-tour-configuration/
 """
+from itertools import pairwise
 from typing import List
 
 
 class Solution:
 
     def checkValidGrid(self, grid: List[List[int]]) -> bool:
-        pos: dict[int, List[int]] = dict()
-        for i in range(len(grid)):
-            for j in range(len(grid[i])):
-                pos[grid[i][j]] = [i, j]
-        cur_pos, cur_idx, = [0, 0], 0
-        while cur_idx < len(grid)**2 - 1:
-            nx_idx = cur_idx + 1
-            if nx_idx not in pos: return False
-            nx_pos = pos[nx_idx]
-            v1, v2 = abs(nx_pos[0] - cur_pos[0]), abs(nx_pos[1] - cur_pos[1])
-            if not (v1 == 2 and v2 == 1) and not (v1 == 1 and v2 == 2):
+        pos = [(0,0)] * (len(grid)**2)
+        for i, row in enumerate(grid):
+            for j, x in enumerate(row):
+                pos[x] = (i, j)  # 记录坐标
+        if pos[0] != (0, 0):  # 必须从左上角出发
+            return False
+        for (i, j), (x, y) in pairwise(pos):
+            dx, dy = abs(x - i), abs(y - j)  # 移动距离
+            if (dx != 2 or dy != 1) and (dx != 1 or dy != 2):  # 不合法
                 return False
-            cur_idx = nx_idx
-            cur_pos = nx_pos
         return True
 
 
