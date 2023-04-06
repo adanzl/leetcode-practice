@@ -6,3 +6,4 @@ out/
 .DS_Store
 **/__pycache__/
 py/work/
+py/lc-code-helper
