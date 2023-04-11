@@ -19,7 +19,7 @@
 
 class Solution:
 
-    def isRobotBounded(self, instructions: str) -> bool:
+    def isRobotBounded1(self, instructions: str) -> bool:
         vis = set()
         d = 'N'  # 'N', 'E', 'S', 'W'
         p = (0, 0, d, -1)
@@ -48,6 +48,21 @@ class Solution:
                 d = dirs[(dirs.index(d) + 1 + 4) % 4]
                 p = (p[0], p[1], d, ii)
         return False
+
+    def isRobotBounded(self, instructions: str) -> bool:
+        # 官解思路，经过instructions后若机器人不在原点且朝向为北就能摆脱
+        dirs = [[0, 1], [1, 0], [0, -1], [-1, 0]]
+        x, y, p = 0, 0, 0
+        for c in instructions:
+            if c == 'G':
+                x += dirs[p][0]
+                y += dirs[p][1]
+            elif c == 'L':
+                p -= 1
+            elif c == 'R':
+                p += 1
+            p = (p + 4) % 4
+        return x == 0 and y == 0 or p != 0
 
 
 if __name__ == '__main__':
