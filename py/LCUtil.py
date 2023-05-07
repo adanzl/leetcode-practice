@@ -79,7 +79,8 @@ def treeNodeToString(root: TreeNode) -> str:
     return '[' + ','.join(ret) + ']'
 
 
-def treeNodeListToString(treeNodeList: List[TreeNode]) -> str:
+def treeNodeListToString(treeNodeList: List[TreeNode] | None) -> str:
+    if treeNodeList is None: return "[]"
     return "[" + ",".join([treeNodeToString(node) for node in treeNodeList]) + "]"
 
 
