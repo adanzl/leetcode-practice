@@ -11,6 +11,9 @@ class TreeNode:
 
     def __str__(self):
         return treeNodeToString(self)
+    
+    def __repr__(self):
+        return self.__str__()
 
 
 class ListNode:
@@ -22,6 +25,9 @@ class ListNode:
 
     def __str__(self):
         return listNodeToString(self)
+    
+    def __repr__(self):
+        return self.__str__()
 
 
 def arrayToTreeNode(_input: list[str]) -> Optional[TreeNode]:
