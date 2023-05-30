@@ -10,6 +10,7 @@
  * 6、mat[i] 是一个非递减数组
  * 链接：https://leetcode.cn/problems/find-the-kth-smallest-sum-of-a-matrix-with-sorted-rows/
 """
+from functools import cache
 from heapq import heappush, heapreplace
 from typing import List
 
@@ -17,6 +18,35 @@ from typing import List
 class Solution:
 
     def kthSmallest(self, mat: List[List[int]], k: int) -> int:
+        l, r = 0, 0
+        m, n = len(mat), len(mat[0])
+        for line in mat:
+            l += line[0]
+            r += line[-1]
+
+        @cache
+        def count(target, row):
+            if row == m: return 1
+            cnt = 0
+            for i in range(n):
+                if mat[row][i] > target: break
+                cnt += count(target - mat[row][i], row + 1)
+                if cnt > k:  # 剪枝，没有这个会超时
+                    break
+            return cnt
+
+        ans = 0
+        while l <= r:
+            mid = (l + r) // 2
+            cnt = count(mid, 0)
+            if cnt >= k:
+                r = mid - 1
+                ans = mid
+            else:
+                l = mid + 1
+        return ans
+
+    def kthSmallest1(self, mat: List[List[int]], k: int) -> int:
         m, n = len(mat), len(mat[0])
         h = [0]
         for i in range(m):
