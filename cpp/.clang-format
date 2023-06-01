@@ -1,7 +1,11 @@
+# https://blog.csdn.net/chongbin007/article/details/125173376
 Language: Cpp
 BasedOnStyle: LLVM
 # 允许函数参数在一行
 AllowAllArgumentsOnNextLine: true
+AllowShortIfStatementsOnASingleLine: true #If true, if (a) return; can be put on a single line.
+AllowShortBlocksOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
 # tab宽度
 TabWidth: 4
 # 缩进宽度
