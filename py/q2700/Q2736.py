@@ -1,4 +1,18 @@
 """
+ * 给你两个长度为 n 、下标从 0 开始的整数数组 nums1 和 nums2 ，另给你一个下标从 1 开始的二维数组 queries ，其中 queries[i] = [xi, yi] 。
+ * 对于第 i 个查询，在所有满足 nums1[j] >= xi 且 nums2[j] >= yi 的下标 j (0 <= j < n) 中，
+ * 找出 nums1[j] + nums2[j] 的 最大值 ，如果不存在满足条件的 j 则返回 -1 。
+ * 返回数组 answer ，其中 answer[i] 是第 i 个查询的答案。
+ * 提示：
+ * 1、nums1.length == nums2.length 
+ * 2、n == nums1.length 
+ * 3、1 <= n <= 10^5
+ * 4、1 <= nums1[i], nums2[i] <= 10^9 
+ * 5、1 <= queries.length <= 10^5
+ * 6、queries[i].length == 2
+ * 7、xi == queries[i][1]
+ * 8、yi == queries[i][2]
+ * 9、1 <= xi, yi <= 10^9
  * 链接：https://leetcode.cn/problems/maximum-sum-queries/
 """
 import bisect
