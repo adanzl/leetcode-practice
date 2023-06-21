@@ -20,7 +20,7 @@ void test_case() {
         cin >> b[i];
         if (a[i] <= lim) fr[a[i]][b[i]]++;
     }
-    for (LL i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         if (a[i] <= lim) {
             if (a[i] * a[i] - b[i] >= 1 && a[i] * a[i] - b[i] <= n) ans += fr[a[i]][a[i] * a[i] - b[i]];
         }
