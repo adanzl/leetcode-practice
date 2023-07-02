@@ -11,7 +11,7 @@ class TreeNode:
 
     def __str__(self):
         return treeNodeToString(self)
-    
+
     def __repr__(self):
         return self.__str__()
 
@@ -25,7 +25,7 @@ class ListNode:
 
     def __str__(self):
         return listNodeToString(self)
-    
+
     def __repr__(self):
         return self.__str__()
 
@@ -109,3 +109,36 @@ def listNodeToString(node: Optional[ListNode]) -> str:
         node = node.next
 
     return "[" + ",".join(ans) + "]"
+
+
+class TestCase:
+
+    def __init__(self, _inputFile: str):
+        self.data = []
+        with open(_inputFile, 'r') as f:
+            for line in f.readlines():
+                self.data.append(line.strip())
+
+    def getData(self, lenNum: int = 0) -> str:
+        if lenNum >= len(self.data):
+            print("lenNum > len(self.data)")
+            return ""
+        return self.data[lenNum]
+
+    def getDataInt(self, lenNum: int = 0) -> int:
+        if lenNum >= len(self.data):
+            print("lenNum > len(self.data)")
+            return -1
+        return int(self.data[lenNum])
+    
+    def getDataArray(self, lenNum: int = 0) -> list[str]:
+        if lenNum >= len(self.data):
+            print("lenNum > len(self.data)")
+            return []
+        return self.data[lenNum].split(',')
+    
+    def getDataIntArray(self, lenNum: int = 0) -> list[int]:
+        if lenNum >= len(self.data):
+            print("lenNum > len(self.data)")
+            return []
+        return [int(x) for x in self.data[lenNum][1:-1].split(',')]
