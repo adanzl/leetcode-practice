@@ -30,9 +30,9 @@ class Solution:
                 prime_list.append(i)
 
             for prime in prime_list:
-                next = prime * i
-                if next < LIMIT:
-                    b_prime[next] = True
+                nx = prime * i
+                if nx < LIMIT:
+                    b_prime[nx] = True
                 else:
                     break
         return ans
