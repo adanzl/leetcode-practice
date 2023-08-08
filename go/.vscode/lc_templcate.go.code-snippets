@@ -1,0 +1,24 @@
+{
+	"Import typing": {
+		"scope": "go,go",
+		"body": [
+			"/*",
+			" * 链接：",
+			" */",
+			"package main",
+			"",
+			"import (",
+			"    \"fmt\"",
+			"    \"util\"",
+			")",
+			"",
+			"",
+			"",
+			"func main() {",
+			"    // ",
+			"    fmt.Println(func())",
+		],
+		"prefix": "im_type",
+		"description": "GO import"
+	}
+}
