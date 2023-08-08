@@ -17,6 +17,7 @@
 			"func main() {",
 			"    // ",
 			"    fmt.Println(func())",
+			"}",
 		],
 		"prefix": "im_type",
 		"description": "GO import"
