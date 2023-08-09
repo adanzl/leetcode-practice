@@ -19,6 +19,9 @@ import (
 )
 
 func minimizeMax(nums []int, p int) int {
+	// n-1 个数的解 <= n-3 个数的解 + 1，此处 +1 表示nums[0]和nums[1]符合条件的情况
+	// n-2 个数的解 >= n-3 个数的解。
+	// 联立 (n-1) <= (n-3) + 1 <= (n-2) + 1，如果nums[0]和nums[1]符合条件则选择，是最优解
 	var ans = 0
 	sort.Ints(nums)
 	var l, r = 0, nums[len(nums)-1] - nums[0]
@@ -48,6 +51,4 @@ func main() {
 	fmt.Println(minimizeMax(LCUtil.StringToIntArray("[10, 1, 2, 7, 1, 3]"), 2))
 	// 0
 	fmt.Println(minimizeMax(LCUtil.StringToIntArray("[4, 2, 1, 2]"), 1))
-	//
-	// fmt.Println(minimizeMax())
 }
