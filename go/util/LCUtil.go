@@ -3,6 +3,8 @@ package LCUtil
 
 import (
 	"container/list"
+	"encoding/json"
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -72,7 +74,7 @@ func StringToTreeNode(_input string) *TreeNode {
 	return ArrayToTreeNode(strings.Split(_input, ","))
 }
 
-func stringListToArray(l *list.List) []string {
+func StringListToStrArray(l *list.List) []string {
 	ret := make([]string, l.Len())
 	i := 0
 	for e := l.Front(); e != nil; e = e.Next() {
@@ -106,7 +108,17 @@ func TreeNodeToString(root *TreeNode) string {
 			break
 		}
 	}
-	return strings.Join(stringListToArray(ret), ",")
+	return strings.Join(StringListToStrArray(ret), ",")
+}
+
+func StringToInt2dArray(input string) [][]int {
+	var ret [][]int
+	err := json.Unmarshal([]byte(input), &ret)
+	if err != nil {
+		fmt.Println("解析 JSON 出错:", err)
+		return nil
+	}
+	return ret
 }
 
 func StringToIntArray(input string) []int {
@@ -131,7 +143,7 @@ func TreeNodeListToString(treeNodeList *list.List) string {
 	for e := treeNodeList.Front(); e != nil; e = e.Next() {
 		ret.PushBack(TreeNodeToString(e.Value.(*TreeNode)))
 	}
-	return "[" + strings.Join(stringListToArray(ret), ",") + "]"
+	return "[" + strings.Join(StringListToStrArray(ret), ",") + "]"
 }
 
 func StringToListNode(_input string) *ListNode {
@@ -161,5 +173,5 @@ func ListNodeToString(node *ListNode) string {
 		ret.PushBack(strconv.Itoa(node.val))
 		node = node.next
 	}
-	return "[" + strings.Join(stringListToArray(ret), ",") + "]"
+	return "[" + strings.Join(StringListToStrArray(ret), ",") + "]"
 }
