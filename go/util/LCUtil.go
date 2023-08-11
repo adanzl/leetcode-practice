@@ -15,8 +15,8 @@ type TreeNode struct {
 	right *TreeNode
 }
 
-func (node TreeNode) String() string {
-	return TreeNodeToString(&node)
+func (node *TreeNode) String() string {
+	return TreeNodeToString(node)
 }
 
 type ListNode struct {
