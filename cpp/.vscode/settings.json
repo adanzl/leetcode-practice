@@ -1,5 +1,7 @@
 {
   "cSpell.words": [
+    "imread",
+    "imshow",
     "mincost",
     "popleft",
     "sortedcontainers",
@@ -7,6 +9,7 @@
     "subarray",
     "Subarrays",
     "Subseq",
-    "Superstring"
+    "Superstring",
+    "vect"
   ],
 }

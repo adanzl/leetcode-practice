@@ -10,6 +10,16 @@
             "args": [
                 "-g",
                 "-std=c++17",
+                "-l",
+                "opencv_core",
+                "-l",
+                "opencv_imgcodecs",
+                "-l",
+                "opencv_highgui",
+                "-l",
+                "opencv_dnn",
+                "-l",
+                "opencv_imgproc",
                 "${file}",
                 "-o",
                 "${workspaceFolder}/out/${fileBasenameNoExtension}"
