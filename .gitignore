@@ -7,3 +7,5 @@ out/
 **/__pycache__/
 py/work/
 py/lc-code-helper
+go/bin/
+go/pkg/
