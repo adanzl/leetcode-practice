@@ -115,7 +115,7 @@ func StringToInt2dArray(input string) [][]int {
 	var ret [][]int
 	err := json.Unmarshal([]byte(input), &ret)
 	if err != nil {
-		fmt.Println("解析 JSON 出错:", err)
+		fmt.Println("解析出错:", err)
 		return nil
 	}
 	return ret
@@ -131,6 +131,16 @@ func StringToIntArray(input string) []int {
 	ret := make([]int, len(parts))
 	for i := 0; i < len(parts); i++ {
 		ret[i], _ = strconv.Atoi(strings.TrimSpace(parts[i]))
+	}
+	return ret
+}
+
+func StringToStringArray(input string) []string {
+	var ret []string
+	err := json.Unmarshal([]byte(input), &ret)
+	if err != nil {
+		fmt.Println("解析出错:", err)
+		return nil
 	}
 	return ret
 }

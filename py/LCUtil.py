@@ -91,13 +91,20 @@ def treeNodeListToString(treeNodeList: List[TreeNode] | None) -> str:
 
 
 def stringToListNode(_input: str) -> Optional[ListNode]:
-    nodeValues = _input[1:-1].split(",")
+    
     dummyRoot = ListNode(0)
     ptr = dummyRoot
-    for item in nodeValues:
-        ptr.next = ListNode(int(item))
+    for l in json.loads(_input):
+        ptr.next = ListNode(int(l))
         ptr = ptr.next
     return dummyRoot.next
+
+
+def stringToListNodeList(_input: str) -> List[Optional[ListNode]]:
+    ret = []
+    for l in json.loads(_input):
+        ret.append(stringToListNode(str(l)))
+    return ret
 
 
 def listNodeToString(node: Optional[ListNode]) -> str:
@@ -130,13 +137,13 @@ class TestCase:
             print("lenNum > len(self.data)")
             return -1
         return int(self.data[lenNum])
-    
+
     def getDataArray(self, lenNum: int = 0) -> list[str]:
         if lenNum >= len(self.data):
             print("lenNum > len(self.data)")
             return []
         return self.data[lenNum].split(',')
-    
+
     def getDataIntArray(self, lenNum: int = 0) -> list[int]:
         if lenNum >= len(self.data):
             print("lenNum > len(self.data)")
