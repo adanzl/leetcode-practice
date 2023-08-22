@@ -43,7 +43,7 @@ public class LCUtil {
     public static int[] stringToIntegerArray(String input) {
         input = input.trim();
         input = input.substring(1, input.length() - 1);
-        if (input.length() == 0)
+        if (input.isEmpty())
             return new int[0];
         String[] parts = input.split(",");
         int[] output = new int[parts.length];
@@ -57,7 +57,7 @@ public class LCUtil {
     public static char[] stringToCharArray(String input) {
         input = input.trim();
         input = input.substring(1, input.length() - 1);
-        if (input.length() == 0)
+        if (input.isEmpty())
             return new char[0];
         String[] parts = input.split(",");
         char[] output = new char[parts.length];
@@ -71,7 +71,7 @@ public class LCUtil {
     public static TreeNode stringToTreeNode(String input) {
         input = input.trim();
         input = input.substring(1, input.length() - 1);
-        if (input.length() == 0)
+        if (input.isEmpty())
             return null;
 
         String[] parts = input.split(",");
@@ -120,7 +120,7 @@ public class LCUtil {
 
     public static ListNode[] stringToListNodeArray(String input) {
         JsonArray jsonArray = Json.parse(input).asArray();
-        if (jsonArray.size() == 0)
+        if (jsonArray.isEmpty())
             return new ListNode[0];
         ListNode[] arr = new ListNode[jsonArray.size()];
         for (int i = 0; i < arr.length; i++) {
@@ -227,7 +227,7 @@ public class LCUtil {
 
     public static int[][] stringToInt2dArray(String input) {
         JsonArray jsonArray = Json.parse(input).asArray();
-        if (jsonArray.size() == 0)
+        if (jsonArray.isEmpty())
             return new int[0][0];
         int[][] arr = new int[jsonArray.size()][];
         for (int i = 0; i < arr.length; i++) {
@@ -253,7 +253,7 @@ public class LCUtil {
 
     public static char[][] stringToChar2dArray(String input) {
         JsonArray jsonArray = Json.parse(input).asArray();
-        if (jsonArray.size() == 0)
+        if (jsonArray.isEmpty())
             return new char[0][0];
         char[][] arr = new char[jsonArray.size()][];
         for (int i = 0; i < arr.length; i++) {
@@ -266,7 +266,7 @@ public class LCUtil {
     public static double[] stringToDoubleArray(String input) {
         input = input.trim();
         input = input.substring(1, input.length() - 1);
-        if (input.length() == 0)
+        if (input.isEmpty())
             return new double[0];
         String[] parts = input.split(",");
         double[] output = new double[parts.length];
@@ -377,7 +377,7 @@ public class LCUtil {
     public static Node stringToNodeTree(String input) {
         input = input.trim();
         input = input.substring(1, input.length() - 1);
-        if (input.length() == 0) return null;
+        if (input.isEmpty()) return null;
         String[] parts = input.split(",");
         String item = parts[0];
         Node root = new Node(Integer.parseInt(item));
@@ -411,7 +411,7 @@ public class LCUtil {
      * @return 树的根节点
      */
     public static Node4 stringToNode4Tree(String input) {
-        if (input.length() == 0) return null;
+        if (input.isEmpty()) return null;
         JsonArray jsonArray = Json.parse(input).asArray();
         JsonArray rootItem = jsonArray.get(0).asArray();
         Node4 root = new Node4(1 == rootItem.get(0).asInt(), 1 == rootItem.get(1).asInt());
