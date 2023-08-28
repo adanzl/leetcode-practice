@@ -42,11 +42,9 @@ class Solution:
 
 
 if __name__ == '__main__':
-    #
-    # print(Solution().getMaxFunctionValue([2, 0, 1], k=3))
+    # 5
+    print(Solution().getMaxFunctionValue([2, 0, 1], k=3))
     # 6
     print(Solution().getMaxFunctionValue([2, 0, 1], k=4))
     # 10
     print(Solution().getMaxFunctionValue([1, 1, 1, 2, 3], k=3))
-    #
-    # print(Solution().getMaxFunctionValue())
