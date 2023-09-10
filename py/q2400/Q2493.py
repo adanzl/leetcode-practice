@@ -14,12 +14,120 @@
  * 6、两个点之间至多只有一条边。
  * 链接：https://leetcode.cn/problems/divide-nodes-into-the-maximum-number-of-groups/
 """
+from collections import defaultdict
 from typing import Deque, List
+#
+# @lc app=leetcode.cn id=2493 lang=python3
+#
+# [2493] 将节点分成尽可能多的组
+#
+
+# @lc code=start
 
 
 class Solution:
 
     def magnificentSets(self, n: int, edges: List[List[int]]) -> int:
+        # 良久之后的重写，还真过了~
+        nxt = [[] for _ in range(n)]
+        parent = [i for i in range(n)]
+
+        def find(x):
+            if parent[x] != x:
+                parent[x] = find(parent[x])
+            return parent[x]
+
+        for u, v in edges:
+            u, v = u - 1, v - 1
+            r0, r1 = find(u), find(v)
+            if r0 != r1:
+                parent[r1] = r0
+            nxt[u].append(v)
+            nxt[v].append(u)
+        group = defaultdict(list)
+        for i in range(n):
+            group[find(i)].append(i)
+        ans = 0
+
+        def min_group(lst):
+            ret = -1
+            for s in lst:
+                ll = 0
+                vis = defaultdict(lambda: -1)
+                q = [[s, -1]]
+                vis[s] = 0
+                b = False
+                while q and not b:
+                    t = []
+                    for v, fa in q:
+                        for nx in nxt[v]:
+                            if fa == nx: continue
+                            if 0 <= vis[nx]:
+                                if vis[nx] == ll:
+                                    ll = -1
+                                    b = True
+                                    break
+                                else:
+                                    continue
+                            vis[nx] = ll + 1
+                            t.append([nx, v])
+                        if b: break
+                    if b: break
+                    q = t
+                    ll += 1
+                ret = max(ret, ll)
+            return ret
+
+        for lst in group.values():
+            v = min_group(lst)
+            if v == -1:
+                return -1
+            ans += v
+        return ans
+
+
+# @lc code=end
+
+    def magnificentSets1(self, n: int, edges: List[List[int]]) -> int:
+        g = [[] for _ in range(n)]
+        for x, y in edges:
+            g[x - 1].append(y - 1)
+            g[y - 1].append(x - 1)
+
+        def bfs(start: int) -> int:
+            mx = 0
+            group = {start: base}
+            q = Deque([(start, base)])
+            while q:
+                x, id = q.popleft()
+                mx = max(mx, id)
+                for y in g[x]:
+                    if y not in group:
+                        group[y] = id + 1
+                        q.append((y, id + 1))
+                    elif abs(group[y] - group[x]) != 1:
+                        return 0
+            return mx
+
+        ans = 0
+        vis = [False] * n
+        for i, b in enumerate(vis):
+            if b: continue
+            base = ans + 1
+
+            def dfs(x: int) -> None:
+                nonlocal ans
+                ans = max(ans, bfs(x))
+                vis[x] = True
+                for y in g[x]:
+                    if not vis[y]:
+                        dfs(y)
+
+            dfs(i)
+            if ans < base: return -1  # ans 没有变大，说明无法找到合法的分组
+        return ans
+
+    def magnificentSets2(self, n: int, edges: List[List[int]]) -> int:
         # 这玩意美服会超时
         g = [[] for _ in range(n)]  # 图
         for s, e in edges:
@@ -63,46 +171,6 @@ class Solution:
             # 答案是所有的连通块的答案之和
             ans += size
         return ans
-
-    def magnificentSets1(self, n: int, edges: List[List[int]]) -> int:
-        g = [[] for _ in range(n)]
-        for x, y in edges:
-            g[x - 1].append(y - 1)
-            g[y - 1].append(x - 1)
-
-        def bfs(start: int) -> int:
-            mx = 0
-            group = {start: base}
-            q = Deque([(start, base)])
-            while q:
-                x, id = q.popleft()
-                mx = max(mx, id)
-                for y in g[x]:
-                    if y not in group:
-                        group[y] = id + 1
-                        q.append((y, id + 1))
-                    elif abs(group[y] - group[x]) != 1:
-                        return 0
-            return mx
-
-        ans = 0
-        vis = [False] * n
-        for i, b in enumerate(vis):
-            if b: continue
-            base = ans + 1
-
-            def dfs(x: int) -> None:
-                nonlocal ans
-                ans = max(ans, bfs(x))
-                vis[x] = True
-                for y in g[x]:
-                    if not vis[y]:
-                        dfs(y)
-
-            dfs(i)
-            if ans < base: return -1  # ans 没有变大，说明无法找到合法的分组
-        return ans
-
 
 if __name__ == '__main__':
     # 4
