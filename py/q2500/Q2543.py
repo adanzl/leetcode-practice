@@ -24,6 +24,11 @@ from math import gcd
 class Solution:
 
     def isReachable(self, targetX: int, targetY: int) -> bool:
+        # 从终点倒着走，那么 (x,y) 可以移动到 (x,x+y)、(x+y,y)、(x/2,y)、(x,y/2) 这些位置，后两个移动只有偶数才能除以 2。
+        # 不断循环直到 x=y 且均为奇数（此时无法移动）：
+        # 只要有偶数就除以 2。
+        # 如果都为奇数，比如 x<y，那么走两步可以得到 (x,(x+y)/2)，这里修改 y 是因为 x < (x+y)/2 < y。
+        # 那么总是可以让 x 和 y 不断变小。循环结束时如果 x=y=1，则说明可以做到。
         g = gcd(targetX, targetY)
         return g & (g - 1) == 0
 
