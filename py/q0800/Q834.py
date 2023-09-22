@@ -12,23 +12,54 @@
  * 链接：https://leetcode.cn/problems/sum-of-distances-in-tree/
 """
 
-from collections import defaultdict, deque
-from typing import *
+from collections import deque
+from typing import List
 
 
 class Solution:
 
     def sumOfDistancesInTree(self, n: int, edges: List[List[int]]) -> List[int]:
+        # 换根dp例题
         ans = [0] * n
-        next_map = [list() for _ in range(n)]
-        for edge in edges:
-            next_map[edge[0]].append(edge[1])
-            next_map[edge[1]].append(edge[0])
+        g = [[] for _ in range(n)]
+        for u, v in edges:
+            g[u].append(v)
+            g[v].append(u)
+
+        size = [1] * n  # 注意这里初始化成 1 了，下面只需要累加儿子的子树大小
+
+        def dfs(x: int, fa: int, depth: int) -> None:
+            ans[0] += depth  # depth 为 0 到 x 的距离
+            for y in g[x]:  # 遍历 x 的邻居 y
+                if y == fa: continue
+                # ！！！ 关键替换代码
+                dfs(y, x, depth + 1)  # x 是 y 的父节点
+                size[x] += size[y]  # 累加 x 的儿子 y 的子树大小
+
+        dfs(0, -1, 0)  # 先dfs求 0 为根的深度
+
+        def re_root(x: int, fa: int) -> None:
+            for y in g[x]:  # 遍历 x 的邻居 y
+                if y == fa: continue
+                # ！！！ 关键替换代码
+                ans[y] = ans[x] + n - 2 * size[y]
+                re_root(y, x)  # x 是 y 的父节点
+
+        re_root(0, -1)  # 换根
+
+        return ans
+
+    def sumOfDistancesInTree1(self, n: int, edges: List[List[int]]) -> List[int]:
+        ans = [0] * n
+        g = [[] for _ in range(n)]
+        for u, v in edges:
+            g[u].append(v)
+            g[v].append(u)
         subs = [0] * n
 
         def func(parent, node, subs):
             sub, val = 0, 0
-            next_list = next_map[node]
+            next_list = g[node]
             for next in next_list:
                 if next == parent: continue
                 s, v = func(node, next, subs)
@@ -39,11 +70,11 @@ class Solution:
 
         ans[0] = func(-1, 0, subs)[1]
         q = deque()
-        for next in next_map[0]:
+        for next in g[0]:
             q.append((next, ans[0], 0))  # idx-val-parent
         while q:
             idx, val, parent = q.popleft()
-            next_list = next_map[idx]
+            next_list = g[idx]
             ans[idx] = val + (n - 1 - subs[idx] - 1) - subs[idx]
             for next in next_list:
                 if next == parent: continue

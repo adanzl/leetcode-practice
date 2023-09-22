@@ -21,6 +21,34 @@ from typing import List
 class Solution:
 
     def minEdgeReversals(self, n: int, edges: List[List[int]]) -> List[int]:
+        # 换根dp解法
+        g = [[] for _ in range(n)]
+        for x, y in edges:
+            g[x].append((y, 1))
+            g[y].append((x, -1))  # 从 y 到 x 需要反向
+
+        ans = [0] * n
+
+        def dfs(x: int, fa: int) -> None:
+            for y, dir in g[x]:
+                if y == fa: continue
+                # ！！！ 关键替换代码
+                ans[0] += dir < 0
+                dfs(y, x)
+
+        dfs(0, -1)
+
+        def re_root(x: int, fa: int) -> None:
+            for y, dir in g[x]:
+                if y == fa: continue
+                # ！！！ 关键替换代码
+                ans[y] = ans[x] + dir  # dir 就是从 x 换到 y 的「变化量」
+                re_root(y, x)
+
+        re_root(0, -1)
+        return ans
+
+    def minEdgeReversals1(self, n: int, edges: List[List[int]]) -> List[int]:
         nxt = [[] for _ in range(n)]
         pre = [[] for _ in range(n)]
         for u, v in edges:
