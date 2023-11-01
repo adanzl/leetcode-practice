@@ -45,6 +45,40 @@ class Solution:
 
         return ans
 
+    def longestDupSubstring1(self, s: str) -> str:
+        n = len(s)
+        P = 5
+        hs, p = [0] * (n + 5), [1] * (n + 5)
+        for i, c in enumerate(s):
+            hs[i + 1] = (hs[i] << P) + ord(c) - ord('a') + 1
+            p[i + 1] = p[i] << P
+
+        def check(ln):
+            st = set([hs[ln]])
+            for i in range(ln, n):
+                vv = hs[i + 1] & (p[ln] - 1)
+                if vv in st:
+                    return True, i
+                st.add(vv)
+            return False, -1
+
+        ans_len, ans_i = 0, -1
+        l, r = 1, n - 1
+        while l <= r:
+            mid = (l + r) // 2
+            valid, idx = check(mid)
+            if valid:
+                ans_i = idx
+                ans_len = mid
+                l = mid + 1
+            else:
+                r = mid - 1
+        return '' if ans_len == 0 else s[ans_i - ans_len + 1:ans_i + 1]
+
+    def longestDupSubstring2(self, s: str) -> str:
+        # 后缀数组
+        return ''
+
 
 # @lc code=end
 
