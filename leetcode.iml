@@ -2,7 +2,7 @@
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Python" name="Python">
-      <configuration sdkName="Python 3.11" />
+      <configuration sdkName="" />
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
@@ -15,6 +15,5 @@
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="hamcrest-core-1.3" level="project" />
     <orderEntry type="library" name="minimal-json-0.9.5" level="project" />
-    <orderEntry type="library" name="Python 3.11 interpreter library" level="application" />
   </component>
 </module>
