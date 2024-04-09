@@ -1,70 +1,169 @@
 {
-	// Place your py workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
-	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
-	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
-	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
-	// Placeholders with the same ids are connected.
-	// Example:
-	// "Print to console": {
-	// 	"scope": "javascript,typescript",
-	// 	"prefix": "log",
-	// 	"body": [
-	// 		"console.log('$1');",
-	// 		"$2"
-	// 	],
-	// 	"description": "Log output to console"
-	// }
-	"Leetcode": {
-		"scope": "python,py",
-		"body": [
-			"\"\"\"",
-			"",
-			"\"\"\"",
-			"from typing import *",
-			"from math import *",
-			"from collections import *",
-			"",
-			"",
-			"class Solution:",
-			"    def func():",
-			"        ans = 0",
-			"        return ans",
-			"",
-			"",
-			"if __name__ == '__main__':",
-			"    # ",
-			"    print(Solution().func())",
-		],
-		"prefix": "lc_template",
-		"description": "Python leetcode template"
-	},
-	"Import typing": {
-		"scope": "python,py",
-		"body": [
-			"\"\"\"",
-			" * 链接：",
-			"\"\"\"",
-			"from typing import List",
-			"",
-			"",
-			"",
-			"",
-			"if __name__ == '__main__':",
-			"    # ",
-			"    print(Solution().func())",
-		],
-		"prefix": "im_type",
-		"description": "Python import"
-	},
-	"Import LCUTIL": {
-		"scope": "python,py",
-		"body": [
-			"import sys, os",
-			"sys.path.append(os.path.dirname(__file__) + '/../')",
-			"from LCUtil import *",
-		],
-		"prefix": "im_util",
-		"description": "Python import"
-	}
+  // Place your py workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "Leetcode": {
+    "scope": "python,py",
+    "body": [
+      "\"\"\"",
+      "",
+      "\"\"\"",
+      "from typing import *",
+      "from math import *",
+      "from collections import *",
+      "",
+      "",
+      "class Solution:",
+      "    def func():",
+      "        ans = 0",
+      "        return ans",
+      "",
+      "",
+      "if __name__ == '__main__':",
+      "    # ",
+      "    print(Solution().func())"
+    ],
+    "prefix": "lc_template",
+    "description": "Python leetcode template"
+  },
+  "Import typing": {
+    "scope": "python,py",
+    "body": [
+      "\"\"\"",
+      " * 链接：",
+      "\"\"\"",
+      "from typing import List",
+      "",
+      "",
+      "",
+      "",
+      "if __name__ == '__main__':",
+      "    # ",
+      "    print(Solution().func())"
+    ],
+    "prefix": "im_type",
+    "description": "Python import"
+  },
+  "Import LCUTIL": {
+    "scope": "python,py",
+    "body": [
+      "import sys, os",
+      "sys.path.append(os.path.dirname(__file__) + '/../')",
+      "from LCUtil import *"
+    ],
+    "prefix": "im_util",
+    "description": "Python import"
+  },
+  "并查集": {
+    "scope": "python,py",
+    "body": [
+      "parent = [i for i in range(n)]",
+      "def find(x):",
+      "    r = x",
+      "    while parent[r] != r:",
+      "        r = parent[r]",
+      "    while parent[x] != r:",
+      "        parent[x], x = r, parent[x]",
+      "    return r"
+    ],
+    "prefix": "union_find",
+    "description": "并查集"
+  },
+  "线性筛质数": {
+    "scope": "python,py",
+    "body": [
+      "LIMIT = 10**5 + 5",
+      "prime_list = []",
+      "b_composite = [False] * LIMIT",
+      "b_composite[1] = True  # 这里 1 被算为合数",
+      "",
+      "def build_prime_list():",
+      "    # 线性筛选质数",
+      "    for i in range(2, LIMIT):",
+      "        if not b_composite[i]:",
+      "            prime_list.append(i)",
+      "        for prime in prime_list:",
+      "            nx = prime * i",
+      "            if nx < LIMIT:",
+      "                b_composite[nx] = True",
+      "            else:",
+      "                break",
+      "build_prime_list()"
+    ],
+    "prefix": "prime_list"
+  },
+  "树状数组": {
+    "scope": "python,py",
+    "body": [
+      "# 树状数组 下标从 1 开始，二维求和",
+      "class BIT:",
+      "",
+      "    def __init__(self, n):",
+      "        self.tree = [[0, 0]] * (n + 1)",
+      "",
+      "    def add(self, i, val):",
+      "        while i < len(self.tree):",
+      "            self.tree[i] = [self.tree[i][0] + val[0], self.tree[i][1] + val[1]]",
+      "            i += i & -i  # low_bit",
+      "",
+      "    def query(self, i):",
+      "        res = [0, 0]",
+      "        while i > 0:",
+      "            res = [res[0] + self.tree[i][0], res[1] + self.tree[i][1]]",
+      "            i &= i - 1",
+      "        return res",
+      "t = BIT($1)"
+    ],
+    "prefix": "cls_bit"
+  },
+  "kmp_next": {
+    "scope": "python,py",
+    "body": [
+      "# kmp 构建next数组",
+      "def build_next(ss):",
+      "    next_arr = [0] * len(ss)",
+      "    c = 0",
+      "    for i in range(1, len(ss)):",
+      "        v = ss[i]",
+      "        while c and ss[c] != v:",
+      "            c = next_arr[c - 1]",
+      "        if ss[c] == v:",
+      "            c += 1",
+      "        next_arr[i] = c",
+      "    return next_arr",
+      ""
+    ],
+    "prefix": "kmp_next"
+  },
+  "kmp_search": {
+    "scope": "python,py",
+    "body": [
+      "def kmp_search(s: str, pattern: str) -> int:",
+      "    next_arr = build_next(pattern)",
+      "    c, ans = 0, 0",
+      "    for v in s:",
+      "        while c and pattern[c] != v:",
+      "            c = next_arr[c - 1]",
+      "        if pattern[c] == v:",
+      "            c += 1",
+      "        if c == len(pattern):",
+      "            ans += 1",
+      "            c = next_arr[c - 1]",
+      "    return ans"
+    ],
+    "prefix": "kmp_search"
+  }
 }
