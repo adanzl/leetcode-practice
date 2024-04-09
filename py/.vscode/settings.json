@@ -19,7 +19,8 @@
     "Submatrix",
     "Subseq",
     "Superstring",
-    "Toeplitz"
+    "Toeplitz",
+    "unfollow"
   ],
   "python.analysis.typeCheckingMode": "basic",
   "svn.ignoreMissingSvnWarning": true,
