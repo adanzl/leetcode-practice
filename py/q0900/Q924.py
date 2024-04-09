@@ -38,9 +38,12 @@ class Solution:
         size = [1] * n
 
         def find(x):
-            if parent[x] == x: return x
-            parent[x] = find(parent[x])
-            return parent[x]
+            r = x
+            while parent[r] != r:
+                r = parent[r]
+            while parent[x] != r:
+                parent[x], x = r, parent[x]
+            return r
 
         for i in range(n):
             for j in range(n):
@@ -55,12 +58,12 @@ class Solution:
             cnt[find(v)] += 1
         for v in initial:
             r = find(v)
-            if cnt[r] == 1 :
+            if cnt[r] == 1:
                 if size[r] > s:
                     ans = v
                     s = size[r]
-                elif size[r] == s :
-                    ans = min(ans, v) 
+                elif size[r] == s:
+                    ans = min(ans, v)
         return ans if ans != -1 else min(initial)
 
 
@@ -68,9 +71,11 @@ class Solution:
 
 if __name__ == '__main__':
     # 2
-    print(Solution().minMalwareSpread([[1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1], [0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0], [0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0],
-                                       [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0], [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0],
-                                       [0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]], [7, 8, 6, 2, 3]))
+    print(Solution().minMalwareSpread(
+        [[1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1], [0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0],
+         [0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0], [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0],
+         [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0],
+         [0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]], [7, 8, 6, 2, 3]))
     # 2
     print(Solution().minMalwareSpread([[1, 1, 0], [1, 1, 0], [0, 0, 1]], [0, 1, 2]))
     # 0
