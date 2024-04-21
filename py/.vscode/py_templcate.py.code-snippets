@@ -178,8 +178,6 @@
       "       mn, idx = heappop(q)",
       "       if vis[idx]: continue",
       "       for nx_i, nx_c in next_v[idx]:",
-      "           if nx_c + mn >= disappear[nx_i]:",
-      "               continue",
       "           if nx_c + mn < dist[nx_i]:",
       "               dist[nx_i] = nx_c + mn",
       "               heappush(q, [dist[nx_i], nx_i])",
