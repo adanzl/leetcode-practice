@@ -185,5 +185,20 @@
       "   return dist"
     ],
     "prefix": "dijkstra"
+  },
+  "bin_search": {
+    "scope": "python,py",
+    "body": [
+      "def check(v):",
+      "    return False",
+      "lo, hi = 0, 0",
+      "while lo < hi:",
+      "    mid = (lo + hi) // 2",
+      "    if check(mid):",
+      "        hi = mid",
+      "    else:",
+      "        lo = mid + 1"
+    ],
+    "prefix": "bin_search"
   }
 }
