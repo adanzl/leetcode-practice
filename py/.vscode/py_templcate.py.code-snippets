@@ -186,7 +186,7 @@
     ],
     "prefix": "dijkstra"
   },
-  "bin_search": {
+  "二分查找": {
     "scope": "python,py",
     "body": [
       "def check(v):",
