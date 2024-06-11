@@ -10,8 +10,6 @@
  * 链接：https://leetcode.com/problems/relative-sort-array
 """
 
-from typing import Counter, List
-
 #
 # @lc app=leetcode.cn id=1122 lang=python3
 #
