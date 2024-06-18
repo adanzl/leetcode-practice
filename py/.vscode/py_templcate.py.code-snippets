@@ -105,7 +105,7 @@
     ],
     "prefix": "prime_list"
   },
-  "树状数组": {
+  "二维树状数组": {
     "scope": "python,py",
     "body": [
       "# 树状数组 下标从 1 开始，二维求和",
@@ -123,6 +123,30 @@
       "        res = [0, 0]",
       "        while i > 0:",
       "            res = [res[0] + self.tree[i][0], res[1] + self.tree[i][1]]",
+      "            i &= i - 1",
+      "        return res",
+      "t = BIT($1)"
+    ],
+    "prefix": "cls_bit"
+  },
+  "树状数组": {
+    "scope": "python,py",
+    "body": [
+      "# 树状数组 下标从 1 开始，求和",
+      "class BIT:",
+      "",
+      "    def __init__(self, n):",
+      "        self.tree = [0] * (n + 1)",
+      "",
+      "    def add(self, i, val):",
+      "        while i < len(self.tree):",
+      "            self.tree[i] += val",
+      "            i += i & -i  # low_bit",
+      "",
+      "    def query(self, i):",
+      "        res = 0",
+      "        while i > 0:",
+      "            res += self.tree[i]",
       "            i &= i - 1",
       "        return res",
       "t = BIT($1)"
