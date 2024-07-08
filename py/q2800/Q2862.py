@@ -15,7 +15,14 @@ from itertools import count
 import math
 from typing import List
 
+#
+# @lc app=leetcode.cn id=2862 lang=python3
+#
+# [2862] 完全子集的最大元素和
+#
 
+
+# @lc code=start
 @cache
 def core(num):  # 返回num去除完全平方因子之后的结果
     res = 1
@@ -37,6 +44,21 @@ class Solution:
             s[core(i)] += x
         return max(s.values())
 
+    def maximumSum2(self, nums: List[int]) -> int:
+        n = len(nums)
+        ans = max(nums)
+        base = []
+        for i in range(math.isqrt(n)):
+            base.append((i + 1)**2)
+        for mul in count(1):
+            val = 0
+            for b in base:
+                if b * mul > n: break
+                val += nums[b * mul - 1]
+            if val == 0: break
+            ans = max(ans, val)
+        return ans
+
     def maximumSum(self, nums: List[int]) -> int:
         n = len(nums)
         ans = 0
@@ -49,6 +71,8 @@ class Solution:
             ans = max(ans, vv)
         return ans
 
+
+# @lc code=end
 
 if __name__ == '__main__':
     # 97
