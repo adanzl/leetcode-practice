@@ -24,12 +24,12 @@ class TNode:
 
 class Solution:
 
-    # 前缀树 Tire Tree
+    # 前缀树 Trie Tree
     def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:
         ans = []
         m, n = len(board), len(board[0])
 
-        tireTree = TNode()
+        trieTree = TNode()
 
         def buildTree(word, idx, tree):
             if idx == len(word):
@@ -53,10 +53,10 @@ class Solution:
             if not subTree.children: tree.children.pop(c)
 
         for word in words:
-            buildTree(word, 0, tireTree)
+            buildTree(word, 0, trieTree)
         for i in range(m):
             for j in range(n):
-                dfs(i, j, tireTree)
+                dfs(i, j, trieTree)
                 if len(ans) == len(words): return ans
         return ans
 

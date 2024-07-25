@@ -27,9 +27,9 @@ class StreamChecker:
 
     def __init__(self, words: List[str]):
         self.queries = set()
-        self.tire = StreamChecker.TNode(None)
+        self.trie = StreamChecker.TNode(None)
         for word in words:
-            node = self.tire
+            node = self.trie
             for c in word:
                 if c not in node.children:
                     node.children[c] = StreamChecker.TNode(c)
@@ -46,8 +46,8 @@ class StreamChecker:
                 if q.end:
                     ans = True
                 self.queries.add(q)
-        if letter in self.tire.children:
-            q = self.tire.children[letter]
+        if letter in self.trie.children:
+            q = self.trie.children[letter]
             if q.end:
                 ans = True
             else:
