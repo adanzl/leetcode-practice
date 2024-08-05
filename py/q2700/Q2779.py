@@ -34,16 +34,4 @@ if __name__ == '__main__':
     print(Solution().maximumBeauty([4, 6, 1, 2], k=2))
     # 4
     print(Solution().maximumBeauty([1, 1, 1, 1], k=10))
-    # build test cases
-    # config = [[10, 10], [100, 10000], [200, 100_000]]
-    # import random
-    # random.seed(9527)
-    # idx = 0
-    # for cnt, limit in config:
-    #     for _ in range(cnt):
-    #         with open('case/' + str(idx) + '.in', 'w') as in_f, open('case/' + str(idx) + '.out', 'w') as out_f:
-    #             k = random.randint(1, limit)
-    #             nums = [random.randint(0, limit) for __ in range(k)]
-    #             in_f.write(str(nums) + ', ' + str(k) + '\n')
-    #             out_f.write(str(Solution().maximumBeauty(nums, k)) + '\n')
-    #             idx += 1
+
