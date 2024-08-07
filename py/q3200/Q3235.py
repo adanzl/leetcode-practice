@@ -50,7 +50,7 @@ class Solution:
             inter_up = x <= X and abs(y - Y) <= r
             inter_in = y <= Y and x <= r
             inter_right = y > Y and in_circle(x, y, r, 0, Y)
-            if vis[i] and (inter_up or inter_in or inter_right) and dfs(i):
+            if not vis[i] and (inter_up or inter_in or inter_right) and dfs(i):
                 return False
         return True
 
