@@ -299,6 +299,7 @@
       "                node = node.fail  # type: ignore",
       "        return ret"
     ],
+    "description": "在目标串中查找待选串，求匹配子串和位置",
     "prefix": "trie_ac"
   },
   "线段树": {
