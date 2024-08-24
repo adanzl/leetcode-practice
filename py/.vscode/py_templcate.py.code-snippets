@@ -15,30 +15,6 @@
   // 	],
   // 	"description": "Log output to console"
   // }
-  "Leetcode": {
-    "scope": "python,py",
-    "body": [
-      "\"\"\"",
-      "",
-      "\"\"\"",
-      "from typing import *",
-      "from math import *",
-      "from collections import *",
-      "",
-      "",
-      "class Solution:",
-      "    def func():",
-      "        ans = 0",
-      "        return ans",
-      "",
-      "",
-      "if __name__ == '__main__':",
-      "    # ",
-      "    print(Solution().func())"
-    ],
-    "prefix": "lc_template",
-    "description": "Python leetcode template"
-  },
   "Import typing": {
     "scope": "python,py",
     "body": [
@@ -46,7 +22,7 @@
       " * 链接：",
       "\"\"\"",
       "from typing import List",
-      "",
+      "INF = 0x3c3c3c3c3c3c3c3c3c",
       "",
       "",
       "",
