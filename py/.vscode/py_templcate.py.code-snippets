@@ -278,10 +278,11 @@
     "description": "在目标串中查找待选串，求匹配子串和位置",
     "prefix": "trie_ac"
   },
-  "线段树": {
+  "线段树_区间修改": {
     "scope": "python,py",
     "body": [
       "# tree 表示求和",
+      "# set_value(0, 0, n - 1, ii + 1, i, 1)",
       "tree = [0 for _ in range(2 << n.bit_length())]",
       "# 值可能为0时，dirty设置为-1",
       "dirty = [-1 for _ in range(2 << n.bit_length())]",
