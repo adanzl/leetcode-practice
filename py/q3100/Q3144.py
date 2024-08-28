@@ -9,7 +9,6 @@
  * 2、s 只包含小写英文字母。
  * 链接：https://leetcode.cn/problems/minimum-substring-partition-of-equal-character-frequency/
 """
-from collections import Counter
 
 
 class Solution:
@@ -20,16 +19,23 @@ class Solution:
         dp[0] = 0
 
         for i in range(n):
-            cnt = Counter({s[i]: 1})
+            cnt = [0] * 26
+            cnt[ord(s[i]) - ord('a')] = 1
             dp[i + 1] = dp[i] + 1
             for j in range(i - 1, -1, -1):
-                cnt[s[j]] += 1
-                if len(set(cnt.values())) == 1:
+                cnt[ord(s[j]) - ord('a')] += 1
+                ss = set(cnt)
+                ss.discard(0)
+                if len(ss) == 1:
                     dp[i + 1] = min(dp[i + 1], dp[j] + 1)
         return dp[-1]
 
 
 if __name__ == '__main__':
+    # 2
+    print(Solution().minimumSubstringsInPartition(
+        "ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababacdefghijklmnopqrstuvwxyzcdefghijklmnopqrstuvwxyzb"
+    ))
     # 2
     print(Solution().minimumSubstringsInPartition("bccbaacabc"))
     # 3
