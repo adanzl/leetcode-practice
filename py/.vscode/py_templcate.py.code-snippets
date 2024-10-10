@@ -153,18 +153,36 @@
     "body": [
       "def kmp_search(s: str, pattern: str) -> int:",
       "    next_arr = build_next(pattern)",
-      "    c, ans = 0, 0",
+      "    i_p, ans = 0, 0",
       "    for v in s:",
-      "        while c and pattern[c] != v:",
-      "            c = next_arr[c - 1]",
-      "        if pattern[c] == v:",
-      "            c += 1",
-      "        if c == len(pattern):",
+      "        while i_p and pattern[i_p] != v:",
+      "            i_p = next_arr[i_p - 1]",
+      "        if pattern[i_p] == v:",
+      "            i_p += 1",
+      "        if i_p == len(pattern):",
       "            ans += 1",
-      "            c = next_arr[c - 1]",
+      "            i_p = next_arr[i_p - 1]",
       "    return ans"
     ],
     "prefix": "kmp_search"
+  },
+  "kmp_z": {
+    "scope": "python,py",
+    "body": [
+      "def calc_z(self, s: str) -> list[int]:",
+      "    n = len(s)",
+      "    z = [0] * n",
+      "    box_l = box_r = 0  # z-box 左右边界",
+      "    for i in range(1, n):",
+      "        if i <= box_r:",
+      "            z[i] = min(z[i - box_l], box_r - i + 1)  # 改成手动 if 可以加快速度",
+      "        while i + z[i] < n and s[z[i]] == s[i + z[i]]:",
+      "            box_l, box_r = i, i + z[i]",
+      "            z[i] += 1",
+      "    return z"
+    ],
+    "description": "计算 z 数组，z[i]表示s[i:]与 s 的最长公共前缀的长度",
+    "prefix": "kmp_z"
   },
   "dijkstra": {
     "scope": "python,py",
