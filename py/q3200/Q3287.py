@@ -29,7 +29,7 @@ class Solution:
         for i in range(1, n + 1):  # 400 前 i 个
             for j in range(min(i, k), 0, -1):  # 400 取 j 个
                 for num in range(1 << 7):  # 128
-                    f[i][j][num] |= f[i - 1][j][num]
+                    f[i][j][num] |= bool(f[i - 1][j][num])
                     if f[i - 1][j - 1][num]:
                         f[i][j][num | nums[i - 1]] = True
                     f1[i][j][num] |= f1[i - 1][j][num]
