@@ -9,7 +9,6 @@
  * 3、word1 和 word2 都只包含小写英文字母。
  * 链接：https://leetcode.cn/problems/count-substrings-that-can-be-rearranged-to-contain-a-string-ii/
 """
-from typing import Counter
 
 INF = 0x3c3c3c3c3c3c3c3c3c
 
