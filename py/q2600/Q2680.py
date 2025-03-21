@@ -14,26 +14,13 @@ from typing import List
 class Solution:
 
     def maximumOr(self, nums: List[int], k: int) -> int:
-
-        def calc_b(num):
-            b = [0] * 32
-            for i in range(32):
-                b[i] = num & 1
-                num >>= 1
-            return b
-
-        b_cnt = [0] * 32
-        for num in nums:
-            b = calc_b(num)
-            for i in range(32):
-                b_cnt[i] += b[i]
         ans = 0
+        or_l, or_r_v = [0], 0
         for num in nums:
-            v = num << k
-            b = calc_b(num)
-            for i, c in enumerate(b_cnt):
-                v |= (1 << i) if c > b[i] else 0
-            ans = max(ans, v)
+            or_l.append(or_l[-1] | num)
+        for i in range(len(nums) - 1, -1, -1):
+            ans = max(ans, or_l[i] | (nums[i] << k) | or_r_v)
+            or_r_v |= nums[i]
         return ans
 
 
